@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ownCloud</title>
+    <link>https://owncloud.github.io/</link>
+    <description>Recent content on ownCloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Mar 2019 08:47:11 +0100</lastBuildDate>
+    
+	<atom:link href="https://owncloud.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MariaDB</title>
+      <link>https://owncloud.github.io/role/mariadb/</link>
+      <pubDate>Tue, 26 Mar 2019 08:47:11 +0100</pubDate>
+      
+      <guid>https://owncloud.github.io/role/mariadb/</guid>
+      <description> WARNING: This Ansible role is currently in beta state. Use it at your own risk.
+ </description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://owncloud.github.io/role/redis/</link>
+      <pubDate>Tue, 26 Mar 2019 08:47:11 +0100</pubDate>
+      
+      <guid>https://owncloud.github.io/role/redis/</guid>
+      <description>WARNING: This Ansible role is currently in beta state. Use it at your own risk.
+ Ansible role to setup Redis server
+Table of content  Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies License Author  Default Variables redis_appendfsync Default value redis_appendfsync: everysec  redis_appendonly Default value redis_appendonly: no  redis_bind_interface Default value redis_bind_interface: 127.</description>
+    </item>
+    
+  </channel>
+</rss>
