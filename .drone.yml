@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: sync
-  image: alpine/git:later
+  image: alpine/git:latest
   commands:
     - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
 
@@ -32,6 +32,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: dccd926c8336c28b4c6932c6226527a05014018f851623dc9692af14c469e4d1
+hmac: 3c2d2ecfdb21b041120c1ebba82f5783d8207927dbabe31e486666a50cb26564
 
 ...
