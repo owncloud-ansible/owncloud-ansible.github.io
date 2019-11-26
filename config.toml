@@ -1,5 +1,5 @@
-baseURL = "https://owncloud.github.io/"
+baseURL = "https://owncloud-ansible.github.io/"
 languageCode = "en-us"
-title = "ownCloud"
+title = "ownCloud Ansible"
 
 theme = "dot"
