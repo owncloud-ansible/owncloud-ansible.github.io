@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: build
-  image: klakegg/0.59.1-alpine
+  image: klakegg/hugo:0.59.1-alpine
   commands:
     - hugo --theme dot
   when:
@@ -26,6 +26,6 @@ steps:
       - refs/heads/source
 ---
 kind: signature
-hmac: 83bc9677c23595c4f75ad2be21e359339572faa0495ea9248cf9a51f533d3671
+hmac: fe0680aeb4200574685ade260f36a5be8b83e40a4f5764c7540667fc8888910e
 
 ...
