@@ -1,0 +1,31 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: klakegg/hugo:0.59-alpine
+  commands:
+    - hugo --theme dot
+  when:
+    ref:
+      - refs/heads/source
+      - "refs/pull/**"
+
+- name: publish
+  image: plugins/gh-pages:latest
+  settings:
+    username:
+      from_secret: github_username
+    password:
+      from_secret: github_token
+    pages_directory: public/
+    target_branch: master
+  when:
+    ref:
+      - refs/heads/source
+---
+kind: signature
+hmac: 829e7b5363ffd4e6529538432784028bd1301609f0ce7ae873a61fc8d490fbf2
+
+...

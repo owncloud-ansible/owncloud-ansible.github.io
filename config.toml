@@ -1,0 +1,5 @@
+baseURL = "https://owncloud.github.io/"
+languageCode = "en-us"
+title = "ownCloud"
+
+theme = "dot"
