@@ -6,10 +6,8 @@ steps:
 - name: build
   image: klakegg/hugo:0.59.1-alpine
   commands:
-    - hugo --theme dot
+    - hugo-official --theme dot
     - ls -l
-  environment:
-    HUGO_DESTINATION: ./public
   when:
     ref:
       - refs/heads/source
@@ -29,6 +27,6 @@ steps:
       - refs/heads/source
 ---
 kind: signature
-hmac: 57e54c3ebb55f30bedf03ecfbe911f8dcfcbced3673d1860bc33d985899ae44c
+hmac: 5483d0a4c214d8babeaef4b2d1a6a1fe0da047dbaddba14e8f28189bd074a041
 
 ...
