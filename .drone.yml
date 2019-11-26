@@ -7,6 +7,8 @@ steps:
   image: klakegg/hugo:0.59.1-alpine
   commands:
     - hugo --theme dot
+    - pwd
+    - ls -l
   when:
     ref:
       - refs/heads/source
@@ -26,6 +28,6 @@ steps:
       - refs/heads/source
 ---
 kind: signature
-hmac: fe0680aeb4200574685ade260f36a5be8b83e40a4f5764c7540667fc8888910e
+hmac: 832cf8769b30b7c8d195ec323193aad2537272df2eb6a1eb25e131c372dc59bd
 
 ...
