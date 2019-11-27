@@ -2,13 +2,16 @@
 kind: pipeline
 name: default
 
+concurrency:
+  limit: 1
+
 steps:
 - name: sync
   image: alpine/git:latest
   commands:
     - git clone https://github.com/owncloud-ansible/playground --branch docs --single-branch content/getting_started
     - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
-    #- git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
+    - git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
     #- git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
     #- git clone https://github.com/owncloud-ansible/mariadb --branch docs --single-branch content/role/mariadb
     - git clone https://github.com/owncloud-ansible/apache --branch docs --single-branch content/role/apache
