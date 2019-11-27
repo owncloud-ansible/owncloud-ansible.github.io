@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="src"><meta property="og:title" content="src" />
+<meta property="og:description" content="Setup apache webserver
+ Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override: All  apache_listen_ip Default value apache_listen_ip: &#39;*&#39;  apache_listen_port Default value apache_listen_port: 80  apache_listen_port_ssl Default value apache_listen_port_ssl: 443  apache_mods_disabled Default value apache_mods_disabled: []  apache_mods_enabled Only used on Debian/Ubuntu.
+Default value apache_mods_enabled: - rewrite.load - ssl." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://owncloud-ansible.github.io/role/apache/" />
+
+<title>src | ownCloud Ansible</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+
+
+<script defer src="/en.search.min.b282b8adc765b9c8f963654bbb920627cd07e6ed2a71b9133aae1251bc707d3c.js" integrity="sha256-soK4rcdlucj5Y2VLu5IGJ80H5u0qcbkTOq4SUbxwfTw="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <div class="image-container"><img src="/logo.svg" alt="Logo" /></div>
+  <div class="title-container">
+  <a href="https://owncloud-ansible.github.io/">ownCloud Ansible</a>
+  </div>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li >
+    
+      <span>Getting started</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/getting_started/setup/" >
+      Setup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li >
+    
+      <span>Roles</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/role/owncloud/" >
+      owncloud
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/apache/"  class="active">
+      src
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ownCloud Ansible</strong>
+</header>
+
+      
+<article class="markdown">
+  <h1>src</h1>
+
+<p>Setup apache webserver</p>
+
+<ul>
+<li><a href="#default-variables">Default Variables</a>
+
+<ul>
+<li><a href="#apache-allow-override">apache_allow_override</a></li>
+<li><a href="#apache-listen-ip">apache_listen_ip</a></li>
+<li><a href="#apache-listen-port">apache_listen_port</a></li>
+<li><a href="#apache-listen-port-ssl">apache_listen_port_ssl</a></li>
+<li><a href="#apache-mods-disabled">apache_mods_disabled</a></li>
+<li><a href="#apache-mods-enabled">apache_mods_enabled</a></li>
+<li><a href="#apache-options">apache_options</a></li>
+<li><a href="#apache-packages-extra">apache_packages_extra</a></li>
+<li><a href="#apache-packages-state">apache_packages_state</a></li>
+<li><a href="#apache-restart-state">apache_restart_state</a></li>
+<li><a href="#apache-ssl-cipher-suite">apache_ssl_cipher_suite</a></li>
+<li><a href="#apache-ssl-protocol">apache_ssl_protocol</a></li>
+<li><a href="#apache-state">apache_state</a></li>
+<li><a href="#apache-vhost-name">apache_vhost_name</a></li>
+<li><a href="#apache-vhosts">apache_vhosts</a></li>
+<li><a href="#apache-vhosts-ssl">apache_vhosts_ssl</a></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+
+<hr />
+
+<h2 id="default-variables">Default Variables</h2>
+
+<h3 id="apache-allow-override">apache_allow_override</h3>
+
+<h4 id="default-value">Default value</h4>
+
+<pre><code class="language-YAML">apache_allow_override: All
+</code></pre>
+
+<h3 id="apache-listen-ip">apache_listen_ip</h3>
+
+<h4 id="default-value-1">Default value</h4>
+
+<pre><code class="language-YAML">apache_listen_ip: '*'
+</code></pre>
+
+<h3 id="apache-listen-port">apache_listen_port</h3>
+
+<h4 id="default-value-2">Default value</h4>
+
+<pre><code class="language-YAML">apache_listen_port: 80
+</code></pre>
+
+<h3 id="apache-listen-port-ssl">apache_listen_port_ssl</h3>
+
+<h4 id="default-value-3">Default value</h4>
+
+<pre><code class="language-YAML">apache_listen_port_ssl: 443
+</code></pre>
+
+<h3 id="apache-mods-disabled">apache_mods_disabled</h3>
+
+<h4 id="default-value-4">Default value</h4>
+
+<pre><code class="language-YAML">apache_mods_disabled: []
+</code></pre>
+
+<h3 id="apache-mods-enabled">apache_mods_enabled</h3>
+
+<p>Only used on Debian/Ubuntu.</p>
+
+<h4 id="default-value-5">Default value</h4>
+
+<pre><code class="language-YAML">apache_mods_enabled:
+  - rewrite.load
+  - ssl.load
+  - headers.load
+  - env.load
+  - dir.load
+  - mime.load
+  - unique_id.load
+  - autoindex.load
+</code></pre>
+
+<h3 id="apache-options">apache_options</h3>
+
+<h4 id="default-value-6">Default value</h4>
+
+<pre><code class="language-YAML">apache_options:
+  - -Indexes
+  - +FollowSymLinks
+</code></pre>
+
+<h3 id="apache-packages-extra">apache_packages_extra</h3>
+
+<p>Can be used to install other dependency packages.</p>
+
+<h4 id="default-value-7">Default value</h4>
+
+<pre><code class="language-YAML">apache_packages_extra: []
+</code></pre>
+
+<h3 id="apache-packages-state">apache_packages_state</h3>
+
+<p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
+
+<h4 id="default-value-8">Default value</h4>
+
+<pre><code class="language-YAML">apache_packages_state: present
+</code></pre>
+
+<h3 id="apache-restart-state">apache_restart_state</h3>
+
+<p>Set apache state when configuration changes are made. Recommended values: <code>restarted</code> or <code>reloaded</code>.</p>
+
+<h4 id="default-value-9">Default value</h4>
+
+<pre><code class="language-YAML">apache_restart_state: restarted
+</code></pre>
+
+<h3 id="apache-ssl-cipher-suite">apache_ssl_cipher_suite</h3>
+
+<h4 id="default-value-10">Default value</h4>
+
+<pre><code class="language-YAML">apache_ssl_cipher_suite: AES256+EECDH:AES256+EDH
+</code></pre>
+
+<h3 id="apache-ssl-protocol">apache_ssl_protocol</h3>
+
+<h4 id="default-value-11">Default value</h4>
+
+<pre><code class="language-YAML">apache_ssl_protocol: All -SSLv2 -SSLv3
+</code></pre>
+
+<h3 id="apache-state">apache_state</h3>
+
+<p>Set initial apache state. Recommended values: <code>started</code> or <code>stopped</code>.</p>
+
+<h4 id="default-value-12">Default value</h4>
+
+<pre><code class="language-YAML">apache_state: started
+</code></pre>
+
+<h3 id="apache-vhost-name">apache_vhost_name</h3>
+
+<h4 id="default-value-13">Default value</h4>
+
+<pre><code class="language-YAML">apache_vhost_name: owncloud.conf
+</code></pre>
+
+<h3 id="apache-vhosts">apache_vhosts</h3>
+
+<h4 id="default-value-14">Default value</h4>
+
+<pre><code class="language-YAML">apache_vhosts:
+  - servername: cloud.owncloud.demo
+    documentroot: /var/www/owncloud
+</code></pre>
+
+<h3 id="apache-vhosts-ssl">apache_vhosts_ssl</h3>
+
+<h4 id="default-value-15">Default value</h4>
+
+<pre><code class="language-YAML">apache_vhosts_ssl: []
+</code></pre>
+
+<h4 id="example-usage">Example usage</h4>
+
+<pre><code class="language-YAML">apache_vhosts_ssl
+  - servername: &quot;local.dev&quot;,
+    documentroot: &quot;/var/www/html&quot;,
+    certificate_file: &quot;/path/to/certificate.crt&quot;,
+    certificate_file_source: &quot;/path/to/source/on/ansible_host/certificate.crt&quot;
+    certificate_key_file: &quot;/path/to/certificate.key&quot;,
+    certificate_key_source: &quot;/path/to/source/on/ansible_host/certificate.key&quot;
+     Optional.
+    certificate_chain_file: &quot;/path/to/certificate_chain.crt&quot;
+    certificate_chain_source: &quot;/path/to/source/on/ansible_host/certificate_chain.crt&quot;
+    header_ocsp_trusted_certificate:
+    header_hsts_options:
+      - max-age=63072000
+      - includeSubDomains
+    header_xfo_policy: deny
+    header_xcto_enabled: True
+    header_csp_options:
+      - directive: frame-ancestors
+        parameters:
+          - https://example.com
+          - https://mypage.com
+    header_xxxsp_parameters:
+      - mode=block
+</code></pre>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>None.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
