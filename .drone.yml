@@ -40,6 +40,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: 3998aaf2a7bb1865b68028cc0f78269477b5fa606fd9748e8602afdcd7fc6bb5
+hmac: ae7d78aa4d497fed803becd417e1323dad6498a6b4969789fce02d34eb755e8e
 
 ...
