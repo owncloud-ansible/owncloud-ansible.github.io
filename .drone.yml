@@ -12,8 +12,8 @@ steps:
     - git clone https://github.com/owncloud-ansible/playground --branch docs --single-branch content/getting_started
     - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
     - git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
-    #- git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
-    #- git clone https://github.com/owncloud-ansible/mariadb --branch docs --single-branch content/role/mariadb
+    - git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
+    - git clone https://github.com/owncloud-ansible/mariadb --branch docs --single-branch content/role/mariadb
     - git clone https://github.com/owncloud-ansible/apache --branch docs --single-branch content/role/apache
 
 - name: build
@@ -40,6 +40,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: ae7d78aa4d497fed803becd417e1323dad6498a6b4969789fce02d34eb755e8e
+hmac: 2aa7c9b9490ff9bf238747f9ca940cdbcc31bbb92a05d8fea5ce79d4545cde43
 
 ...
