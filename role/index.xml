@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>apache</title>
+      <link>https://owncloud-ansible.github.io/role/apache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud-ansible.github.io/role/apache/</guid>
+      <description>Setup apache webserver
+ Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override: All  apache_listen_ip Default value apache_listen_ip: &#39;*&#39;  apache_listen_port Default value apache_listen_port: 80  apache_listen_port_ssl Default value apache_listen_port_ssl: 443  apache_mods_disabled Default value apache_mods_disabled: []  apache_mods_enabled Only used on Debian/Ubuntu.
+Default value apache_mods_enabled: - rewrite.load - ssl.</description>
+    </item>
+    
+    <item>
       <title>owncloud</title>
       <link>https://owncloud-ansible.github.io/role/owncloud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -28,17 +39,6 @@
       <guid>https://owncloud-ansible.github.io/role/redis/</guid>
       <description>Ansible role to setup Redis server
  Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync: everysec  redis_appendonly Default value redis_appendonly: no  redis_bind_interface Default value redis_bind_interface: 127.0.0.1  redis_databases Default value redis_databases: 16  redis_dbdir Default value redis_dbdir: /var/lib/redis  redis_dbfilename Default value redis_dbfilename: dump.</description>
-    </item>
-    
-    <item>
-      <title>src</title>
-      <link>https://owncloud-ansible.github.io/role/apache/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://owncloud-ansible.github.io/role/apache/</guid>
-      <description>Setup apache webserver
- Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override: All  apache_listen_ip Default value apache_listen_ip: &#39;*&#39;  apache_listen_port Default value apache_listen_port: 80  apache_listen_port_ssl Default value apache_listen_port_ssl: 443  apache_mods_disabled Default value apache_mods_disabled: []  apache_mods_enabled Only used on Debian/Ubuntu.
-Default value apache_mods_enabled: - rewrite.load - ssl.</description>
     </item>
     
   </channel>

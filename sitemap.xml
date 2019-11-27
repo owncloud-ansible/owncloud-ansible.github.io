@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>https://owncloud-ansible.github.io/role/apache/</loc>
+  </url>
+  
+  <url>
     <loc>https://owncloud-ansible.github.io/categories/</loc>
   </url>
   
@@ -24,10 +28,6 @@
   
   <url>
     <loc>https://owncloud-ansible.github.io/getting_started/setup/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud-ansible.github.io/role/apache/</loc>
   </url>
   
   <url>
