@@ -6,6 +6,7 @@ steps:
 - name: sync
   image: alpine/git:latest
   commands:
+    - git clone https://github.com/owncloud-ansible/playground --branch docs --single-branch content/getting_started
     - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
     #- git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
     #- git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
@@ -36,6 +37,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: dadd5ff92567affb7b640cddcfe9697e0876190f3881b0894e1153a69c786e80
+hmac: 2e96b2631ca040b6d1dc8a2bff821e51046fd623186f74931b8beff9446e500e
 
 ...
