@@ -15,7 +15,15 @@
   </url>
   
   <url>
+    <loc>https://owncloud-ansible.github.io/role/mariadb/</loc>
+  </url>
+  
+  <url>
     <loc>https://owncloud-ansible.github.io/role/owncloud/</loc>
+  </url>
+  
+  <url>
+    <loc>https://owncloud-ansible.github.io/role/php/</loc>
   </url>
   
   <url>

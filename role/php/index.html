@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="php"><meta property="og:title" content="php" />
+<meta property="og:description" content="Ansible role to setup PHP
+ Default Variables  php_allow_url_fopen php_apc_enable_cli php_apc_enabled php_apc_shm_size php_date_timezone php_default_version php_disable_functions php_display_errors php_display_startup_errors php_error_reporting php_expose_php php_file_uploads php_fpm_enabled php_fpm_listen php_fpm_listen_allowed_clients php_fpm_pm_max_children php_fpm_pm_max_spare_servers php_fpm_pm_min_spare_servers php_fpm_pm_start_servers php_max_execution_time php_max_file_uploads php_max_input_time php_max_input_vars php_memory_limit php_opcache_blacklist_filename php_opcache_enable_cli php_opcache_enabled php_opcache_interned_strings_buffer php_opcache_max_accelerated_files php_opcache_max_file_size php_opcache_max_wasted_percentage php_opcache_memory_consumption php_opcache_revalidate_freq php_opcache_revalidate_path php_opcache_validate_timestamps php_output_buffering php_packages_extra php_packages_state php_post_max_size php_realpath_cache_size php_sendmail_path php_session_cookie_lifetime php_session_gc_divisor php_session_gc_maxlifetime php_session_gc_probability php_session_save_handler php_session_save_path php_short_open_tag php_upload_max_filesize php_webserver_enabled  Dependencies  Default Variables php_allow_url_fopen Default value php_allow_url_fopen: On  php_apc_enable_cli Default value php_apc_enable_cli: &#39;1&#39;  php_apc_enabled Default value php_apc_enabled: true  php_apc_shm_size Default value php_apc_shm_size: 96M  php_date_timezone Default value php_date_timezone: America/Chicago  php_default_version Default value php_default_version: &#39;7." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://owncloud-ansible.github.io/role/php/" />
+
+<title>php | ownCloud Ansible</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+
+
+<script defer src="/en.search.min.ae07e8308b4bb08006833472d8c9b082969203375ab368cbeef461a8952e06e3.js" integrity="sha256-rgfoMItLsIAGgzRy2MmwgpaSAzdas2jL7vRhqJUuBuM="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <div class="image-container"><img src="/logo.svg" alt="Logo" /></div>
+  <div class="title-container">
+  <a href="https://owncloud-ansible.github.io/">ownCloud Ansible</a>
+  </div>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li >
+    
+      <span>Getting started</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/getting_started/setup/" >
+      Setup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li >
+    
+      <span>Roles</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/role/apache/" >
+      apache
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/mariadb/" >
+      mariadb
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/owncloud/" >
+      owncloud
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/php/"  class="active">
+      php
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/redis/" >
+      redis
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ownCloud Ansible</strong>
+</header>
+
+      
+<article class="markdown">
+  <h1>php</h1>
+
+<p>Ansible role to setup PHP</p>
+
+<ul>
+<li><a href="#default-variables">Default Variables</a>
+
+<ul>
+<li><a href="#php-allow-url-fopen">php_allow_url_fopen</a></li>
+<li><a href="#php-apc-enable-cli">php_apc_enable_cli</a></li>
+<li><a href="#php-apc-enabled">php_apc_enabled</a></li>
+<li><a href="#php-apc-shm-size">php_apc_shm_size</a></li>
+<li><a href="#php-date-timezone">php_date_timezone</a></li>
+<li><a href="#php-default-version">php_default_version</a></li>
+<li><a href="#php-disable-functions">php_disable_functions</a></li>
+<li><a href="#php-display-errors">php_display_errors</a></li>
+<li><a href="#php-display-startup-errors">php_display_startup_errors</a></li>
+<li><a href="#php-error-reporting">php_error_reporting</a></li>
+<li><a href="#php-expose-php">php_expose_php</a></li>
+<li><a href="#php-file-uploads">php_file_uploads</a></li>
+<li><a href="#php-fpm-enabled">php_fpm_enabled</a></li>
+<li><a href="#php-fpm-listen">php_fpm_listen</a></li>
+<li><a href="#php-fpm-listen-allowed-clients">php_fpm_listen_allowed_clients</a></li>
+<li><a href="#php-fpm-pm-max-children">php_fpm_pm_max_children</a></li>
+<li><a href="#php-fpm-pm-max-spare-servers">php_fpm_pm_max_spare_servers</a></li>
+<li><a href="#php-fpm-pm-min-spare-servers">php_fpm_pm_min_spare_servers</a></li>
+<li><a href="#php-fpm-pm-start-servers">php_fpm_pm_start_servers</a></li>
+<li><a href="#php-max-execution-time">php_max_execution_time</a></li>
+<li><a href="#php-max-file-uploads">php_max_file_uploads</a></li>
+<li><a href="#php-max-input-time">php_max_input_time</a></li>
+<li><a href="#php-max-input-vars">php_max_input_vars</a></li>
+<li><a href="#php-memory-limit">php_memory_limit</a></li>
+<li><a href="#php-opcache-blacklist-filename">php_opcache_blacklist_filename</a></li>
+<li><a href="#php-opcache-enable-cli">php_opcache_enable_cli</a></li>
+<li><a href="#php-opcache-enabled">php_opcache_enabled</a></li>
+<li><a href="#php-opcache-interned-strings-buffer">php_opcache_interned_strings_buffer</a></li>
+<li><a href="#php-opcache-max-accelerated-files">php_opcache_max_accelerated_files</a></li>
+<li><a href="#php-opcache-max-file-size">php_opcache_max_file_size</a></li>
+<li><a href="#php-opcache-max-wasted-percentage">php_opcache_max_wasted_percentage</a></li>
+<li><a href="#php-opcache-memory-consumption">php_opcache_memory_consumption</a></li>
+<li><a href="#php-opcache-revalidate-freq">php_opcache_revalidate_freq</a></li>
+<li><a href="#php-opcache-revalidate-path">php_opcache_revalidate_path</a></li>
+<li><a href="#php-opcache-validate-timestamps">php_opcache_validate_timestamps</a></li>
+<li><a href="#php-output-buffering">php_output_buffering</a></li>
+<li><a href="#php-packages-extra">php_packages_extra</a></li>
+<li><a href="#php-packages-state">php_packages_state</a></li>
+<li><a href="#php-post-max-size">php_post_max_size</a></li>
+<li><a href="#php-realpath-cache-size">php_realpath_cache_size</a></li>
+<li><a href="#php-sendmail-path">php_sendmail_path</a></li>
+<li><a href="#php-session-cookie-lifetime">php_session_cookie_lifetime</a></li>
+<li><a href="#php-session-gc-divisor">php_session_gc_divisor</a></li>
+<li><a href="#php-session-gc-maxlifetime">php_session_gc_maxlifetime</a></li>
+<li><a href="#php-session-gc-probability">php_session_gc_probability</a></li>
+<li><a href="#php-session-save-handler">php_session_save_handler</a></li>
+<li><a href="#php-session-save-path">php_session_save_path</a></li>
+<li><a href="#php-short-open-tag">php_short_open_tag</a></li>
+<li><a href="#php-upload-max-filesize">php_upload_max_filesize</a></li>
+<li><a href="#php-webserver-enabled">php_webserver_enabled</a></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+
+<hr />
+
+<h2 id="default-variables">Default Variables</h2>
+
+<h3 id="php-allow-url-fopen">php_allow_url_fopen</h3>
+
+<h4 id="default-value">Default value</h4>
+
+<pre><code class="language-YAML">php_allow_url_fopen: On
+</code></pre>
+
+<h3 id="php-apc-enable-cli">php_apc_enable_cli</h3>
+
+<h4 id="default-value-1">Default value</h4>
+
+<pre><code class="language-YAML">php_apc_enable_cli: '1'
+</code></pre>
+
+<h3 id="php-apc-enabled">php_apc_enabled</h3>
+
+<h4 id="default-value-2">Default value</h4>
+
+<pre><code class="language-YAML">php_apc_enabled: true
+</code></pre>
+
+<h3 id="php-apc-shm-size">php_apc_shm_size</h3>
+
+<h4 id="default-value-3">Default value</h4>
+
+<pre><code class="language-YAML">php_apc_shm_size: 96M
+</code></pre>
+
+<h3 id="php-date-timezone">php_date_timezone</h3>
+
+<h4 id="default-value-4">Default value</h4>
+
+<pre><code class="language-YAML">php_date_timezone: America/Chicago
+</code></pre>
+
+<h3 id="php-default-version">php_default_version</h3>
+
+<h4 id="default-value-5">Default value</h4>
+
+<pre><code class="language-YAML">php_default_version: '7.2'
+</code></pre>
+
+<h3 id="php-disable-functions">php_disable_functions</h3>
+
+<h4 id="default-value-6">Default value</h4>
+
+<pre><code class="language-YAML">php_disable_functions: []
+</code></pre>
+
+<h3 id="php-display-errors">php_display_errors</h3>
+
+<h4 id="default-value-7">Default value</h4>
+
+<pre><code class="language-YAML">php_display_errors: Off
+</code></pre>
+
+<h3 id="php-display-startup-errors">php_display_startup_errors</h3>
+
+<h4 id="default-value-8">Default value</h4>
+
+<pre><code class="language-YAML">php_display_startup_errors: Off
+</code></pre>
+
+<h3 id="php-error-reporting">php_error_reporting</h3>
+
+<h4 id="default-value-9">Default value</h4>
+
+<pre><code class="language-YAML">php_error_reporting: E_ALL &amp; ~E_DEPRECATED &amp; ~E_STRICT
+</code></pre>
+
+<h3 id="php-expose-php">php_expose_php</h3>
+
+<h4 id="default-value-10">Default value</h4>
+
+<pre><code class="language-YAML">php_expose_php: On
+</code></pre>
+
+<h3 id="php-file-uploads">php_file_uploads</h3>
+
+<h4 id="default-value-11">Default value</h4>
+
+<pre><code class="language-YAML">php_file_uploads: On
+</code></pre>
+
+<h3 id="php-fpm-enabled">php_fpm_enabled</h3>
+
+<h4 id="default-value-12">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_enabled: false
+</code></pre>
+
+<h3 id="php-fpm-listen">php_fpm_listen</h3>
+
+<h4 id="default-value-13">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_listen: 127.0.0.1:9000
+</code></pre>
+
+<h3 id="php-fpm-listen-allowed-clients">php_fpm_listen_allowed_clients</h3>
+
+<h4 id="default-value-14">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_listen_allowed_clients: 127.0.0.1
+</code></pre>
+
+<h3 id="php-fpm-pm-max-children">php_fpm_pm_max_children</h3>
+
+<h4 id="default-value-15">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_pm_max_children: 50
+</code></pre>
+
+<h3 id="php-fpm-pm-max-spare-servers">php_fpm_pm_max_spare_servers</h3>
+
+<h4 id="default-value-16">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_pm_max_spare_servers: 5
+</code></pre>
+
+<h3 id="php-fpm-pm-min-spare-servers">php_fpm_pm_min_spare_servers</h3>
+
+<h4 id="default-value-17">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_pm_min_spare_servers: 5
+</code></pre>
+
+<h3 id="php-fpm-pm-start-servers">php_fpm_pm_start_servers</h3>
+
+<h4 id="default-value-18">Default value</h4>
+
+<pre><code class="language-YAML">php_fpm_pm_start_servers: 5
+</code></pre>
+
+<h3 id="php-max-execution-time">php_max_execution_time</h3>
+
+<h4 id="default-value-19">Default value</h4>
+
+<pre><code class="language-YAML">php_max_execution_time: '3600'
+</code></pre>
+
+<h3 id="php-max-file-uploads">php_max_file_uploads</h3>
+
+<h4 id="default-value-20">Default value</h4>
+
+<pre><code class="language-YAML">php_max_file_uploads: '20'
+</code></pre>
+
+<h3 id="php-max-input-time">php_max_input_time</h3>
+
+<h4 id="default-value-21">Default value</h4>
+
+<pre><code class="language-YAML">php_max_input_time: '{{ php_max_execution_time }}'
+</code></pre>
+
+<h3 id="php-max-input-vars">php_max_input_vars</h3>
+
+<h4 id="default-value-22">Default value</h4>
+
+<pre><code class="language-YAML">php_max_input_vars: '1000'
+</code></pre>
+
+<h3 id="php-memory-limit">php_memory_limit</h3>
+
+<h4 id="default-value-23">Default value</h4>
+
+<pre><code class="language-YAML">php_memory_limit: 256M
+</code></pre>
+
+<h3 id="php-opcache-blacklist-filename">php_opcache_blacklist_filename</h3>
+
+<h4 id="default-value-24">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_blacklist_filename: ''
+</code></pre>
+
+<h3 id="php-opcache-enable-cli">php_opcache_enable_cli</h3>
+
+<h4 id="default-value-25">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_enable_cli: '1'
+</code></pre>
+
+<h3 id="php-opcache-enabled">php_opcache_enabled</h3>
+
+<h4 id="default-value-26">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_enabled: true
+</code></pre>
+
+<h3 id="php-opcache-interned-strings-buffer">php_opcache_interned_strings_buffer</h3>
+
+<h4 id="default-value-27">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_interned_strings_buffer: '16'
+</code></pre>
+
+<h3 id="php-opcache-max-accelerated-files">php_opcache_max_accelerated_files</h3>
+
+<h4 id="default-value-28">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_max_accelerated_files: '4096'
+</code></pre>
+
+<h3 id="php-opcache-max-file-size">php_opcache_max_file_size</h3>
+
+<h4 id="default-value-29">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_max_file_size: '0'
+</code></pre>
+
+<h3 id="php-opcache-max-wasted-percentage">php_opcache_max_wasted_percentage</h3>
+
+<h4 id="default-value-30">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_max_wasted_percentage: '5'
+</code></pre>
+
+<h3 id="php-opcache-memory-consumption">php_opcache_memory_consumption</h3>
+
+<h4 id="default-value-31">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_memory_consumption: '96'
+</code></pre>
+
+<h3 id="php-opcache-revalidate-freq">php_opcache_revalidate_freq</h3>
+
+<h4 id="default-value-32">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_revalidate_freq: '2'
+</code></pre>
+
+<h3 id="php-opcache-revalidate-path">php_opcache_revalidate_path</h3>
+
+<h4 id="default-value-33">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_revalidate_path: '0'
+</code></pre>
+
+<h3 id="php-opcache-validate-timestamps">php_opcache_validate_timestamps</h3>
+
+<h4 id="default-value-34">Default value</h4>
+
+<pre><code class="language-YAML">php_opcache_validate_timestamps: '1'
+</code></pre>
+
+<h3 id="php-output-buffering">php_output_buffering</h3>
+
+<h4 id="default-value-35">Default value</h4>
+
+<pre><code class="language-YAML">php_output_buffering: '4096'
+</code></pre>
+
+<h3 id="php-packages-extra">php_packages_extra</h3>
+
+<p>Can be used to install other dependency packages e.g. gcc (required by pecl).</p>
+
+<h4 id="default-value-36">Default value</h4>
+
+<pre><code class="language-YAML">php_packages_extra: []
+</code></pre>
+
+<h3 id="php-packages-state">php_packages_state</h3>
+
+<p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
+
+<h4 id="default-value-37">Default value</h4>
+
+<pre><code class="language-YAML">php_packages_state: present
+</code></pre>
+
+<h3 id="php-post-max-size">php_post_max_size</h3>
+
+<h4 id="default-value-38">Default value</h4>
+
+<pre><code class="language-YAML">php_post_max_size: 32M
+</code></pre>
+
+<h3 id="php-realpath-cache-size">php_realpath_cache_size</h3>
+
+<h4 id="default-value-39">Default value</h4>
+
+<pre><code class="language-YAML">php_realpath_cache_size: 32K
+</code></pre>
+
+<h3 id="php-sendmail-path">php_sendmail_path</h3>
+
+<h4 id="default-value-40">Default value</h4>
+
+<pre><code class="language-YAML">php_sendmail_path: /usr/sbin/sendmail -t -i
+</code></pre>
+
+<h3 id="php-session-cookie-lifetime">php_session_cookie_lifetime</h3>
+
+<h4 id="default-value-41">Default value</h4>
+
+<pre><code class="language-YAML">php_session_cookie_lifetime: 0
+</code></pre>
+
+<h3 id="php-session-gc-divisor">php_session_gc_divisor</h3>
+
+<h4 id="default-value-42">Default value</h4>
+
+<pre><code class="language-YAML">php_session_gc_divisor: 1000
+</code></pre>
+
+<h3 id="php-session-gc-maxlifetime">php_session_gc_maxlifetime</h3>
+
+<h4 id="default-value-43">Default value</h4>
+
+<pre><code class="language-YAML">php_session_gc_maxlifetime: 1440
+</code></pre>
+
+<h3 id="php-session-gc-probability">php_session_gc_probability</h3>
+
+<h4 id="default-value-44">Default value</h4>
+
+<pre><code class="language-YAML">php_session_gc_probability: 1
+</code></pre>
+
+<h3 id="php-session-save-handler">php_session_save_handler</h3>
+
+<h4 id="default-value-45">Default value</h4>
+
+<pre><code class="language-YAML">php_session_save_handler: files
+</code></pre>
+
+<h3 id="php-session-save-path">php_session_save_path</h3>
+
+<h4 id="default-value-46">Default value</h4>
+
+<pre><code class="language-YAML">php_session_save_path: ''
+</code></pre>
+
+<h3 id="php-short-open-tag">php_short_open_tag</h3>
+
+<h4 id="default-value-47">Default value</h4>
+
+<pre><code class="language-YAML">php_short_open_tag: Off
+</code></pre>
+
+<h3 id="php-upload-max-filesize">php_upload_max_filesize</h3>
+
+<h4 id="default-value-48">Default value</h4>
+
+<pre><code class="language-YAML">php_upload_max_filesize: 64M
+</code></pre>
+
+<h3 id="php-webserver-enabled">php_webserver_enabled</h3>
+
+<p>Set this to <code>False</code> if you&rsquo;re not using PHP with a webserver e.g. Apache/Nginx.</p>
+
+<h4 id="default-value-49">Default value</h4>
+
+<pre><code class="language-YAML">php_webserver_enabled: true
+</code></pre>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>None.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

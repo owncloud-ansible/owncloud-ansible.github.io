@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="mariadb"><meta property="og:title" content="mariadb" />
+<meta property="og:description" content="Ansible role to setup MariaDB server
+ Default Variables  mariadb_bind_address mariadb_config_file mariadb_config_include_dir mariadb_config_include_files mariadb_databases mariadb_datadir mariadb_enabled_on_startup mariadb_event_scheduler_state mariadb_group_concat_max_len mariadb_innodb_buffer_pool_size mariadb_innodb_file_per_table mariadb_innodb_flush_log_at_trx_commit mariadb_innodb_flush_method mariadb_innodb_io_capacity mariadb_innodb_lock_wait_timeout mariadb_innodb_log_buffer_size mariadb_innodb_log_file_size mariadb_innodb_read_io_threads mariadb_innodb_write_io_threads mariadb_join_buffer_size mariadb_key_buffer_size mariadb_log_error mariadb_log_file_group mariadb_lower_case_table_names mariadb_max_allowed_packet mariadb_max_connections mariadb_max_heap_table_size mariadb_myisam_sort_buffer_size mariadb_mysqldump_max_allowed_packet mariadb_overwrite_global_mycnf mariadb_packages mariadb_packages_extra mariadb_pid_file mariadb_port mariadb_query_cache_limit mariadb_query_cache_size mariadb_query_cache_type mariadb_read_buffer_size mariadb_read_rnd_buffer_size mariadb_root_password mariadb_skip_name_resolve mariadb_socket mariadb_sort_buffer_size mariadb_sql_mode mariadb_sync_binlog mariadb_table_open_cache mariadb_thread_cache_size mariadb_tmp_table_size mariadb_transaction_isolation_level mariadb_users mariadb_wait_timeout  Dependencies  Default Variables mariadb_bind_address Default value mariadb_bind_address: 127." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://owncloud-ansible.github.io/role/mariadb/" />
+
+<title>mariadb | ownCloud Ansible</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+
+
+<script defer src="/en.search.min.ae07e8308b4bb08006833472d8c9b082969203375ab368cbeef461a8952e06e3.js" integrity="sha256-rgfoMItLsIAGgzRy2MmwgpaSAzdas2jL7vRhqJUuBuM="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <div class="image-container"><img src="/logo.svg" alt="Logo" /></div>
+  <div class="title-container">
+  <a href="https://owncloud-ansible.github.io/">ownCloud Ansible</a>
+  </div>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li >
+    
+      <span>Getting started</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/getting_started/setup/" >
+      Setup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li >
+    
+      <span>Roles</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/role/apache/" >
+      apache
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/mariadb/"  class="active">
+      mariadb
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/owncloud/" >
+      owncloud
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/php/" >
+      php
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/redis/" >
+      redis
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ownCloud Ansible</strong>
+</header>
+
+      
+<article class="markdown">
+  <h1>mariadb</h1>
+
+<p>Ansible role to setup MariaDB server</p>
+
+<ul>
+<li><a href="#default-variables">Default Variables</a>
+
+<ul>
+<li><a href="#mariadb-bind-address">mariadb_bind_address</a></li>
+<li><a href="#mariadb-config-file">mariadb_config_file</a></li>
+<li><a href="#mariadb-config-include-dir">mariadb_config_include_dir</a></li>
+<li><a href="#mariadb-config-include-files">mariadb_config_include_files</a></li>
+<li><a href="#mariadb-databases">mariadb_databases</a></li>
+<li><a href="#mariadb-datadir">mariadb_datadir</a></li>
+<li><a href="#mariadb-enabled-on-startup">mariadb_enabled_on_startup</a></li>
+<li><a href="#mariadb-event-scheduler-state">mariadb_event_scheduler_state</a></li>
+<li><a href="#mariadb-group-concat-max-len">mariadb_group_concat_max_len</a></li>
+<li><a href="#mariadb-innodb-buffer-pool-size">mariadb_innodb_buffer_pool_size</a></li>
+<li><a href="#mariadb-innodb-file-per-table">mariadb_innodb_file_per_table</a></li>
+<li><a href="#mariadb-innodb-flush-log-at-trx-commit">mariadb_innodb_flush_log_at_trx_commit</a></li>
+<li><a href="#mariadb-innodb-flush-method">mariadb_innodb_flush_method</a></li>
+<li><a href="#mariadb-innodb-io-capacity">mariadb_innodb_io_capacity</a></li>
+<li><a href="#mariadb-innodb-lock-wait-timeout">mariadb_innodb_lock_wait_timeout</a></li>
+<li><a href="#mariadb-innodb-log-buffer-size">mariadb_innodb_log_buffer_size</a></li>
+<li><a href="#mariadb-innodb-log-file-size">mariadb_innodb_log_file_size</a></li>
+<li><a href="#mariadb-innodb-read-io-threads">mariadb_innodb_read_io_threads</a></li>
+<li><a href="#mariadb-innodb-write-io-threads">mariadb_innodb_write_io_threads</a></li>
+<li><a href="#mariadb-join-buffer-size">mariadb_join_buffer_size</a></li>
+<li><a href="#mariadb-key-buffer-size">mariadb_key_buffer_size</a></li>
+<li><a href="#mariadb-log-error">mariadb_log_error</a></li>
+<li><a href="#mariadb-log-file-group">mariadb_log_file_group</a></li>
+<li><a href="#mariadb-lower-case-table-names">mariadb_lower_case_table_names</a></li>
+<li><a href="#mariadb-max-allowed-packet">mariadb_max_allowed_packet</a></li>
+<li><a href="#mariadb-max-connections">mariadb_max_connections</a></li>
+<li><a href="#mariadb-max-heap-table-size">mariadb_max_heap_table_size</a></li>
+<li><a href="#mariadb-myisam-sort-buffer-size">mariadb_myisam_sort_buffer_size</a></li>
+<li><a href="#mariadb-mysqldump-max-allowed-packet">mariadb_mysqldump_max_allowed_packet</a></li>
+<li><a href="#mariadb-overwrite-global-mycnf">mariadb_overwrite_global_mycnf</a></li>
+<li><a href="#mariadb-packages">mariadb_packages</a></li>
+<li><a href="#mariadb-packages-extra">mariadb_packages_extra</a></li>
+<li><a href="#mariadb-pid-file">mariadb_pid_file</a></li>
+<li><a href="#mariadb-port">mariadb_port</a></li>
+<li><a href="#mariadb-query-cache-limit">mariadb_query_cache_limit</a></li>
+<li><a href="#mariadb-query-cache-size">mariadb_query_cache_size</a></li>
+<li><a href="#mariadb-query-cache-type">mariadb_query_cache_type</a></li>
+<li><a href="#mariadb-read-buffer-size">mariadb_read_buffer_size</a></li>
+<li><a href="#mariadb-read-rnd-buffer-size">mariadb_read_rnd_buffer_size</a></li>
+<li><a href="#mariadb-root-password">mariadb_root_password</a></li>
+<li><a href="#mariadb-skip-name-resolve">mariadb_skip_name_resolve</a></li>
+<li><a href="#mariadb-socket">mariadb_socket</a></li>
+<li><a href="#mariadb-sort-buffer-size">mariadb_sort_buffer_size</a></li>
+<li><a href="#mariadb-sql-mode">mariadb_sql_mode</a></li>
+<li><a href="#mariadb-sync-binlog">mariadb_sync_binlog</a></li>
+<li><a href="#mariadb-table-open-cache">mariadb_table_open_cache</a></li>
+<li><a href="#mariadb-thread-cache-size">mariadb_thread_cache_size</a></li>
+<li><a href="#mariadb-tmp-table-size">mariadb_tmp_table_size</a></li>
+<li><a href="#mariadb-transaction-isolation-level">mariadb_transaction_isolation_level</a></li>
+<li><a href="#mariadb-users">mariadb_users</a></li>
+<li><a href="#mariadb-wait-timeout">mariadb_wait_timeout</a></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+
+<hr />
+
+<h2 id="default-variables">Default Variables</h2>
+
+<h3 id="mariadb-bind-address">mariadb_bind_address</h3>
+
+<h4 id="default-value">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_bind_address: 127.0.0.0
+</code></pre>
+
+<h3 id="mariadb-config-file">mariadb_config_file</h3>
+
+<h4 id="example-usage">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_config_file: /etc/mysql/mariadb.cnf
+</code></pre>
+
+<h3 id="mariadb-config-include-dir">mariadb_config_include_dir</h3>
+
+<p>Include dir for custom MariaDB config files. The default value depends on the operatig system.</p>
+
+<h4 id="example-usage-1">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_config_include_dir: /etc/mysql/conf.d
+</code></pre>
+
+<h3 id="mariadb-config-include-files">mariadb_config_include_files</h3>
+
+<h4 id="default-value-1">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_config_include_files: []
+</code></pre>
+
+<h4 id="example-usage-2">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_config_include_files:
+  - src: path/relative/to/playbook/file.cnf
+  - src: path/relative/to/playbook/anotherfile.cnf
+    force: yes
+</code></pre>
+
+<h3 id="mariadb-databases">mariadb_databases</h3>
+
+<h4 id="default-value-2">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_databases:
+  - name: owncloud
+    collation: utf8mb4_bin
+    encoding: utf8mb4
+</code></pre>
+
+<h3 id="mariadb-datadir">mariadb_datadir</h3>
+
+<p>MariaDB data directory to use. Default value depends on your operating system.</p>
+
+<h4 id="example-usage-3">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_datadir: /var/lib/mysql
+</code></pre>
+
+<h3 id="mariadb-enabled-on-startup">mariadb_enabled_on_startup</h3>
+
+<h4 id="default-value-3">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_enabled_on_startup: true
+</code></pre>
+
+<h3 id="mariadb-event-scheduler-state">mariadb_event_scheduler_state</h3>
+
+<h4 id="default-value-4">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_event_scheduler_state: OFF
+</code></pre>
+
+<h3 id="mariadb-group-concat-max-len">mariadb_group_concat_max_len</h3>
+
+<h4 id="default-value-5">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_group_concat_max_len: '1024'
+</code></pre>
+
+<h3 id="mariadb-innodb-buffer-pool-size">mariadb_innodb_buffer_pool_size</h3>
+
+<h4 id="default-value-6">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_buffer_pool_size: 256M
+</code></pre>
+
+<h3 id="mariadb-innodb-file-per-table">mariadb_innodb_file_per_table</h3>
+
+<h4 id="default-value-7">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_file_per_table: ON
+</code></pre>
+
+<h3 id="mariadb-innodb-flush-log-at-trx-commit">mariadb_innodb_flush_log_at_trx_commit</h3>
+
+<h4 id="default-value-8">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_flush_log_at_trx_commit: '1'
+</code></pre>
+
+<h3 id="mariadb-innodb-flush-method">mariadb_innodb_flush_method</h3>
+
+<h4 id="default-value-9">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_flush_method: O_DIRECT
+</code></pre>
+
+<h3 id="mariadb-innodb-io-capacity">mariadb_innodb_io_capacity</h3>
+
+<h4 id="default-value-10">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_io_capacity: 200
+</code></pre>
+
+<h3 id="mariadb-innodb-lock-wait-timeout">mariadb_innodb_lock_wait_timeout</h3>
+
+<h4 id="default-value-11">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_lock_wait_timeout: '50'
+</code></pre>
+
+<h3 id="mariadb-innodb-log-buffer-size">mariadb_innodb_log_buffer_size</h3>
+
+<h4 id="default-value-12">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_log_buffer_size: 8M
+</code></pre>
+
+<h3 id="mariadb-innodb-log-file-size">mariadb_innodb_log_file_size</h3>
+
+<h4 id="default-value-13">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_log_file_size: 128M
+</code></pre>
+
+<h3 id="mariadb-innodb-read-io-threads">mariadb_innodb_read_io_threads</h3>
+
+<h4 id="default-value-14">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_read_io_threads: 4
+</code></pre>
+
+<h3 id="mariadb-innodb-write-io-threads">mariadb_innodb_write_io_threads</h3>
+
+<h4 id="default-value-15">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_innodb_write_io_threads: '{{ mariadb_innodb_read_io_threads }}'
+</code></pre>
+
+<h3 id="mariadb-join-buffer-size">mariadb_join_buffer_size</h3>
+
+<h4 id="default-value-16">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_join_buffer_size: '262144'
+</code></pre>
+
+<h3 id="mariadb-key-buffer-size">mariadb_key_buffer_size</h3>
+
+<h4 id="default-value-17">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_key_buffer_size: 256M
+</code></pre>
+
+<h3 id="mariadb-log-error">mariadb_log_error</h3>
+
+<p>Default value depends on your operating system.</p>
+
+<h4 id="example-usage-4">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_log_error: /var/log/mysql/error.log
+</code></pre>
+
+<h3 id="mariadb-log-file-group">mariadb_log_file_group</h3>
+
+<p>Default value depends on your operating system.</p>
+
+<h4 id="example-usage-5">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_log_file_group: adm
+</code></pre>
+
+<h3 id="mariadb-lower-case-table-names">mariadb_lower_case_table_names</h3>
+
+<h4 id="default-value-18">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_lower_case_table_names: '0'
+</code></pre>
+
+<h3 id="mariadb-max-allowed-packet">mariadb_max_allowed_packet</h3>
+
+<h4 id="default-value-19">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_max_allowed_packet: 64M
+</code></pre>
+
+<h3 id="mariadb-max-connections">mariadb_max_connections</h3>
+
+<h4 id="default-value-20">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_max_connections: '151'
+</code></pre>
+
+<h3 id="mariadb-max-heap-table-size">mariadb_max_heap_table_size</h3>
+
+<h4 id="default-value-21">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_max_heap_table_size: 16M
+</code></pre>
+
+<h3 id="mariadb-myisam-sort-buffer-size">mariadb_myisam_sort_buffer_size</h3>
+
+<h4 id="default-value-22">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_myisam_sort_buffer_size: 64M
+</code></pre>
+
+<h3 id="mariadb-mysqldump-max-allowed-packet">mariadb_mysqldump_max_allowed_packet</h3>
+
+<h4 id="default-value-23">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_mysqldump_max_allowed_packet: 64M
+</code></pre>
+
+<h3 id="mariadb-overwrite-global-mycnf">mariadb_overwrite_global_mycnf</h3>
+
+<p>Whether my.cnf should be updated on every run.</p>
+
+<h4 id="default-value-24">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_overwrite_global_mycnf: true
+</code></pre>
+
+<h3 id="mariadb-packages">mariadb_packages</h3>
+
+<p>Define a custom list of packages to install. Default value depends on your operating system.</p>
+
+<h4 id="example-usage-6">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_packages:
+  - mariadb
+  - mariadb-server
+  - MySQL-python
+</code></pre>
+
+<h3 id="mariadb-packages-extra">mariadb_packages_extra</h3>
+
+<p>List of extra packages to install e.g. a set of custom dependencies.</p>
+
+<h4 id="default-value-25">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_packages_extra: []
+</code></pre>
+
+<h3 id="mariadb-pid-file">mariadb_pid_file</h3>
+
+<p>Path to MariaDB PID file. Default value depends on your operating system.</p>
+
+<h4 id="example-usage-7">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_pid_file: /var/run/mysqld/mysqld.pid
+</code></pre>
+
+<h3 id="mariadb-port">mariadb_port</h3>
+
+<h4 id="default-value-26">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_port: '3306'
+</code></pre>
+
+<h3 id="mariadb-query-cache-limit">mariadb_query_cache_limit</h3>
+
+<h4 id="default-value-27">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_query_cache_limit: 1M
+</code></pre>
+
+<h3 id="mariadb-query-cache-size">mariadb_query_cache_size</h3>
+
+<h4 id="default-value-28">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_query_cache_size: 16M
+</code></pre>
+
+<h3 id="mariadb-query-cache-type">mariadb_query_cache_type</h3>
+
+<h4 id="default-value-29">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_query_cache_type: '0'
+</code></pre>
+
+<h3 id="mariadb-read-buffer-size">mariadb_read_buffer_size</h3>
+
+<h4 id="default-value-30">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_read_buffer_size: 1M
+</code></pre>
+
+<h3 id="mariadb-read-rnd-buffer-size">mariadb_read_rnd_buffer_size</h3>
+
+<h4 id="default-value-31">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_read_rnd_buffer_size: 4M
+</code></pre>
+
+<h3 id="mariadb-root-password">mariadb_root_password</h3>
+
+<p>Password for the default MariaDB root user. For security reasons you should change it to some secure in production use!</p>
+
+<h4 id="default-value-32">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_root_password: root
+</code></pre>
+
+<h3 id="mariadb-skip-name-resolve">mariadb_skip_name_resolve</h3>
+
+<h4 id="default-value-33">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_skip_name_resolve: false
+</code></pre>
+
+<h3 id="mariadb-socket">mariadb_socket</h3>
+
+<p>Path to MariaDB unix socket. Default value depends on your operating system.</p>
+
+<h4 id="example-usage-8">Example usage</h4>
+
+<pre><code class="language-YAML">mariadb_socket: /var/run/mysqld/mysqld.sock
+</code></pre>
+
+<h3 id="mariadb-sort-buffer-size">mariadb_sort_buffer_size</h3>
+
+<h4 id="default-value-34">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_sort_buffer_size: 1M
+</code></pre>
+
+<h3 id="mariadb-sql-mode">mariadb_sql_mode</h3>
+
+<p>MariaDB supports several different modes. You can pass a list of options to to suit your needs.</p>
+
+<h4 id="default-value-35">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_sql_mode: []
+</code></pre>
+
+<h3 id="mariadb-sync-binlog">mariadb_sync_binlog</h3>
+
+<h4 id="default-value-36">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_sync_binlog: 1
+</code></pre>
+
+<h3 id="mariadb-table-open-cache">mariadb_table_open_cache</h3>
+
+<h4 id="default-value-37">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_table_open_cache: '256'
+</code></pre>
+
+<h3 id="mariadb-thread-cache-size">mariadb_thread_cache_size</h3>
+
+<h4 id="default-value-38">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_thread_cache_size: '8'
+</code></pre>
+
+<h3 id="mariadb-tmp-table-size">mariadb_tmp_table_size</h3>
+
+<h4 id="default-value-39">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_tmp_table_size: 16M
+</code></pre>
+
+<h3 id="mariadb-transaction-isolation-level">mariadb_transaction_isolation_level</h3>
+
+<p>Set transaction isolation level. Possible values: <code>READ-UNCOMMITTED|READ-COMMITTED|REPEATABLE-READ|SERIALIZABLE</code></p>
+
+<h4 id="default-value-40">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_transaction_isolation_level: READ-COMMITTED
+</code></pre>
+
+<h3 id="mariadb-users">mariadb_users</h3>
+
+<h4 id="default-value-41">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_users:
+  - name: owncloud
+    host: localhost
+    password: owncloud
+    priv: owncloud.*:ALL
+</code></pre>
+
+<h3 id="mariadb-wait-timeout">mariadb_wait_timeout</h3>
+
+<h4 id="default-value-42">Default value</h4>
+
+<pre><code class="language-YAML">mariadb_wait_timeout: '28800'
+</code></pre>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>None.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
