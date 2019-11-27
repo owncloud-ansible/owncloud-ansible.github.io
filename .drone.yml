@@ -13,9 +13,9 @@ steps:
     #- git clone https://github.com/owncloud-ansible/apache --branch docs --single-branch content/role/apache
 
 - name: build
-  image: klakegg/hugo:0.59.1-alpine
+  image: klakegg/hugo:0.59.1-ext-alpine
   commands:
-    - hugo-official --theme dot
+    - hugo-official
 
 - name: publish
   image: plugins/gh-pages:latest
@@ -36,6 +36,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: 9f6dddf2c73d8934ac4aa51064be1f95682e078d7706f45d684cfec41990811a
+hmac: dadd5ff92567affb7b640cddcfe9697e0876190f3881b0894e1153a69c786e80
 
 ...
