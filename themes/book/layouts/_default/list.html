@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="markdown">
+  <h1>{{ .Page.Title }}</h1>
+  {{- .Content -}}
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
