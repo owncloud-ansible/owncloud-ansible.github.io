@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="redis"><meta property="og:title" content="redis" />
+<meta property="og:description" content="Ansible role to setup Redis server
+ Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync: everysec  redis_appendonly Default value redis_appendonly: no  redis_bind_interface Default value redis_bind_interface: 127.0.0.1  redis_databases Default value redis_databases: 16  redis_dbdir Default value redis_dbdir: /var/lib/redis  redis_dbfilename Default value redis_dbfilename: dump." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://owncloud-ansible.github.io/role/redis/" />
+
+<title>redis | ownCloud Ansible</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+
+
+<script defer src="/en.search.min.c311a3947b017c05a5dcf9bd23319c12e8a6c14c6483537e14baea321d3e0324.js" integrity="sha256-wxGjlHsBfAWl3Pm9IzGcEuimwUxkg1N&#43;FLrqMh0&#43;AyQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <div class="image-container"><img src="/logo.svg" alt="Logo" /></div>
+  <div class="title-container">
+  <a href="https://owncloud-ansible.github.io/">ownCloud Ansible</a>
+  </div>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li >
+    
+      <span>Getting started</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/getting_started/setup/" >
+      Setup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li >
+    
+      <span>Roles</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/role/owncloud/" >
+      owncloud
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/redis/"  class="active">
+      redis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/role/apache/" >
+      src
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ownCloud Ansible</strong>
+</header>
+
+      
+<article class="markdown">
+  <h1>redis</h1>
+
+<p>Ansible role to setup Redis server</p>
+
+<ul>
+<li><a href="#default-variables">Default Variables</a>
+
+<ul>
+<li><a href="#redis-appendfsync">redis_appendfsync</a></li>
+<li><a href="#redis-appendonly">redis_appendonly</a></li>
+<li><a href="#redis-bind-interface">redis_bind_interface</a></li>
+<li><a href="#redis-databases">redis_databases</a></li>
+<li><a href="#redis-dbdir">redis_dbdir</a></li>
+<li><a href="#redis-dbfilename">redis_dbfilename</a></li>
+<li><a href="#redis-disabled-commands">redis_disabled_commands</a></li>
+<li><a href="#redis-includes">redis_includes</a></li>
+<li><a href="#redis-logfile">redis_logfile</a></li>
+<li><a href="#redis-loglevel">redis_loglevel</a></li>
+<li><a href="#redis-maxmemory">redis_maxmemory</a></li>
+<li><a href="#redis-maxmemory-policy">redis_maxmemory_policy</a></li>
+<li><a href="#redis-maxmemory-samples">redis_maxmemory_samples</a></li>
+<li><a href="#redis-packages">redis_packages</a></li>
+<li><a href="#redis-packages-extra">redis_packages_extra</a></li>
+<li><a href="#redis-port">redis_port</a></li>
+<li><a href="#redis-rdbcompression">redis_rdbcompression</a></li>
+<li><a href="#redis-requirepass">redis_requirepass</a></li>
+<li><a href="#redis-save">redis_save</a></li>
+<li><a href="#redis-timeout">redis_timeout</a></li>
+<li><a href="#redis-unixsocket">redis_unixsocket</a></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+
+<hr />
+
+<h2 id="default-variables">Default Variables</h2>
+
+<h3 id="redis-appendfsync">redis_appendfsync</h3>
+
+<h4 id="default-value">Default value</h4>
+
+<pre><code class="language-YAML">redis_appendfsync: everysec
+</code></pre>
+
+<h3 id="redis-appendonly">redis_appendonly</h3>
+
+<h4 id="default-value-1">Default value</h4>
+
+<pre><code class="language-YAML">redis_appendonly: no
+</code></pre>
+
+<h3 id="redis-bind-interface">redis_bind_interface</h3>
+
+<h4 id="default-value-2">Default value</h4>
+
+<pre><code class="language-YAML">redis_bind_interface: 127.0.0.1
+</code></pre>
+
+<h3 id="redis-databases">redis_databases</h3>
+
+<h4 id="default-value-3">Default value</h4>
+
+<pre><code class="language-YAML">redis_databases: 16
+</code></pre>
+
+<h3 id="redis-dbdir">redis_dbdir</h3>
+
+<h4 id="default-value-4">Default value</h4>
+
+<pre><code class="language-YAML">redis_dbdir: /var/lib/redis
+</code></pre>
+
+<h3 id="redis-dbfilename">redis_dbfilename</h3>
+
+<h4 id="default-value-5">Default value</h4>
+
+<pre><code class="language-YAML">redis_dbfilename: dump.rdb
+</code></pre>
+
+<h3 id="redis-disabled-commands">redis_disabled_commands</h3>
+
+<p>Disable certain Redis commands for security reasons.</p>
+
+<h4 id="default-value-6">Default value</h4>
+
+<pre><code class="language-YAML">redis_disabled_commands: []
+</code></pre>
+
+<h4 id="example-usage">Example usage</h4>
+
+<pre><code class="language-YAML">redis_disabled_commands:
+  - FLUSHDB
+  - FLUSHALL
+  - KEYS
+  - PEXPIRE
+  - DEL
+  - CONFIG
+  - SHUTDOWN
+  - BGREWRITEAOF
+  - BGSAVE
+  - SAVE
+  - SPOP
+  - SREM
+  - RENAME
+  - DEBUG
+</code></pre>
+
+<h3 id="redis-includes">redis_includes</h3>
+
+<p>Add extra include files for local configuration/overrides.</p>
+
+<h4 id="default-value-7">Default value</h4>
+
+<pre><code class="language-YAML">redis_includes: []
+</code></pre>
+
+<h3 id="redis-logfile">redis_logfile</h3>
+
+<h4 id="default-value-8">Default value</h4>
+
+<pre><code class="language-YAML">redis_logfile: /var/log/redis/redis-server.log
+</code></pre>
+
+<h3 id="redis-loglevel">redis_loglevel</h3>
+
+<h4 id="default-value-9">Default value</h4>
+
+<pre><code class="language-YAML">redis_loglevel: notice
+</code></pre>
+
+<h3 id="redis-maxmemory">redis_maxmemory</h3>
+
+<h4 id="default-value-10">Default value</h4>
+
+<pre><code class="language-YAML">redis_maxmemory: 0
+</code></pre>
+
+<h3 id="redis-maxmemory-policy">redis_maxmemory_policy</h3>
+
+<h4 id="default-value-11">Default value</h4>
+
+<pre><code class="language-YAML">redis_maxmemory_policy: noeviction
+</code></pre>
+
+<h3 id="redis-maxmemory-samples">redis_maxmemory_samples</h3>
+
+<h4 id="default-value-12">Default value</h4>
+
+<pre><code class="language-YAML">redis_maxmemory_samples: 5
+</code></pre>
+
+<h3 id="redis-packages">redis_packages</h3>
+
+<p>Define a custom list of packages to install. Default value depends on your operating system.</p>
+
+<h4 id="default-value-13">Default value</h4>
+
+<pre><code class="language-YAML">redis_packages: _os_specific_
+</code></pre>
+
+<h3 id="redis-packages-extra">redis_packages_extra</h3>
+
+<p>Can be used to install other dependency packages.</p>
+
+<h4 id="default-value-14">Default value</h4>
+
+<pre><code class="language-YAML">redis_packages_extra: []
+</code></pre>
+
+<h3 id="redis-port">redis_port</h3>
+
+<h4 id="default-value-15">Default value</h4>
+
+<pre><code class="language-YAML">redis_port: 6379
+</code></pre>
+
+<h3 id="redis-rdbcompression">redis_rdbcompression</h3>
+
+<h4 id="default-value-16">Default value</h4>
+
+<pre><code class="language-YAML">redis_rdbcompression: yes
+</code></pre>
+
+<h3 id="redis-requirepass">redis_requirepass</h3>
+
+<p>Require authentication to Redis with a password.</p>
+
+<h4 id="default-value-17">Default value</h4>
+
+<pre><code class="language-YAML">redis_requirepass: _unset_
+</code></pre>
+
+<h3 id="redis-save">redis_save</h3>
+
+<p>Set to an empty set to disable persistence (saving the DB to disk).</p>
+
+<h4 id="default-value-18">Default value</h4>
+
+<pre><code class="language-YAML">redis_save:
+  - 900 1
+  - 300 10
+  - 60 10000
+</code></pre>
+
+<h3 id="redis-timeout">redis_timeout</h3>
+
+<h4 id="default-value-19">Default value</h4>
+
+<pre><code class="language-YAML">redis_timeout: 300
+</code></pre>
+
+<h3 id="redis-unixsocket">redis_unixsocket</h3>
+
+<h4 id="default-value-20">Default value</h4>
+
+<pre><code class="language-YAML">redis_unixsocket: _unset_
+</code></pre>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>None.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
