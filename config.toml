@@ -2,4 +2,10 @@ baseURL = "https://owncloud-ansible.github.io/"
 languageCode = "en-us"
 title = "ownCloud Ansible"
 
-theme = "dot"
+theme = "book"
+
+[params]
+  BookToC = false
+  BookSection = '*'
+
+  BookLogo = 'logo.svg'

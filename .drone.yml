@@ -7,6 +7,10 @@ steps:
   image: alpine/git:latest
   commands:
     - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
+    #- git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
+    #- git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
+    #- git clone https://github.com/owncloud-ansible/mariadb --branch docs --single-branch content/role/mariadb
+    #- git clone https://github.com/owncloud-ansible/apache --branch docs --single-branch content/role/apache
 
 - name: build
   image: klakegg/hugo:0.59.1-alpine
@@ -32,6 +36,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: 3c2d2ecfdb21b041120c1ebba82f5783d8207927dbabe31e486666a50cb26564
+hmac: 9f6dddf2c73d8934ac4aa51064be1f95682e078d7706f45d684cfec41990811a
 
 ...
