@@ -2,4 +2,4 @@
 title: Welcome
 ---
 
-Coming soon...
+Coming soon..
