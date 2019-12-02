@@ -7,14 +7,9 @@ concurrency:
 
 steps:
 - name: sync
-  image: alpine/git:latest
+  image: xoxys/git-batch:latest
   commands:
-    - git clone https://github.com/owncloud-ansible/playground --branch docs --single-branch content/getting_started
-    - git clone https://github.com/owncloud-ansible/owncloud --branch docs --single-branch content/role/owncloud
-    - git clone https://github.com/owncloud-ansible/redis --branch docs --single-branch content/role/redis
-    - git clone https://github.com/owncloud-ansible/php --branch docs --single-branch content/role/php
-    - git clone https://github.com/owncloud-ansible/mariadb --branch docs --single-branch content/role/mariadb
-    - git clone https://github.com/owncloud-ansible/apache --branch docs --single-branch content/role/apache
+    - git-batch
 
 - name: build
   image: klakegg/hugo:0.59.1-ext-alpine
@@ -40,6 +35,6 @@ trigger:
   - refs/pull/**
 ---
 kind: signature
-hmac: 2aa7c9b9490ff9bf238747f9ca940cdbcc31bbb92a05d8fea5ce79d4545cde43
+hmac: 5f6c06cdff36a2f33bf83299eb7f910b6feeccd01a2470b2aeb5de39d0f3ded4
 
 ...

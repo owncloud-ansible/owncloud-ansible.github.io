@@ -1,0 +1,6 @@
+https://github.com/owncloud-ansible/playground;docs;content/getting_started
+https://github.com/owncloud-ansible/owncloud;docs;content/role/owncloud
+https://github.com/owncloud-ansible/redis;docs;content/role/redis
+https://github.com/owncloud-ansible/php;docs;content/role/php
+https://github.com/owncloud-ansible/mariadb;docs;content/role/mariadb
+https://github.com/owncloud-ansible/apache;docs;content/role/apache
