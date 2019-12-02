@@ -7,7 +7,7 @@
 <meta name="description" content="mariadb"><meta property="og:title" content="mariadb" />
 <meta property="og:description" content="WARNING: This Ansible role is currently in beta state. Use it at your own risk.
  Role to setup MariaDB server.
- Default Variables  mariadb_bind_address mariadb_config_file mariadb_config_include_dir mariadb_config_include_files mariadb_databases mariadb_datadir mariadb_enabled_on_startup mariadb_event_scheduler_state mariadb_group_concat_max_len mariadb_innodb_buffer_pool_size mariadb_innodb_file_per_table mariadb_innodb_flush_log_at_trx_commit mariadb_innodb_flush_method mariadb_innodb_io_capacity mariadb_innodb_lock_wait_timeout mariadb_innodb_log_buffer_size mariadb_innodb_log_file_size mariadb_innodb_read_io_threads mariadb_innodb_write_io_threads mariadb_join_buffer_size mariadb_key_buffer_size mariadb_log_error mariadb_log_file_group mariadb_lower_case_table_names mariadb_max_allowed_packet mariadb_max_connections mariadb_max_heap_table_size mariadb_myisam_sort_buffer_size mariadb_mysqldump_max_allowed_packet mariadb_overwrite_global_mycnf mariadb_packages mariadb_packages_extra mariadb_pid_file mariadb_port mariadb_query_cache_limit mariadb_query_cache_size mariadb_query_cache_type mariadb_read_buffer_size mariadb_read_rnd_buffer_size mariadb_root_password mariadb_skip_name_resolve mariadb_socket mariadb_sort_buffer_size mariadb_sql_mode mariadb_sync_binlog mariadb_table_open_cache mariadb_thread_cache_size mariadb_tmp_table_size mariadb_transaction_isolation_level mariadb_users mariadb_wait_timeout  Dependencies  Default Variables mariadb_bind_address Default value mariadb_bind_address: 127." />
+ Default Variables  mariadb_bind_address mariadb_config_file mariadb_config_include_dir mariadb_config_include_files mariadb_databases mariadb_datadir mariadb_enabled_on_startup mariadb_event_scheduler_state mariadb_group_concat_max_len mariadb_innodb_buffer_pool_size mariadb_innodb_file_per_table mariadb_innodb_flush_log_at_trx_commit mariadb_innodb_flush_method mariadb_innodb_io_capacity mariadb_innodb_lock_wait_timeout mariadb_innodb_log_buffer_size mariadb_innodb_log_file_size mariadb_innodb_read_io_threads mariadb_innodb_write_io_threads mariadb_join_buffer_size mariadb_key_buffer_size mariadb_log_error mariadb_log_file_group mariadb_lower_case_table_names mariadb_max_allowed_packet mariadb_max_connections mariadb_max_heap_table_size mariadb_myisam_sort_buffer_size mariadb_mysqldump_max_allowed_packet mariadb_overwrite_global_mycnf mariadb_packages mariadb_packages_extra mariadb_pid_file mariadb_port mariadb_query_cache_limit mariadb_query_cache_size mariadb_query_cache_type mariadb_read_buffer_size mariadb_read_rnd_buffer_size mariadb_root_password mariadb_skip_name_resolve mariadb_socket mariadb_sort_buffer_size mariadb_sql_mode mariadb_sync_binlog mariadb_table_open_cache mariadb_thread_cache_size mariadb_tmp_table_size mariadb_transaction_isolation_level mariadb_users mariadb_wait_timeout  Dependencies  Default Variables mariadb_bind_address Default value mariadb_bind_address:127." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://owncloud-ansible.github.io/role/mariadb/" />
 
@@ -15,10 +15,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+<link rel="stylesheet" href="/book.min.c82cbc7d64dbf7f152b3d7c92436db67721866907bbf2ab4e386dd65335887fa.css" integrity="sha256-yCy8fWTb9/FSs9fJJDbbZ3IYZpB7vyq044bdZTNYh/o=">
 
 
-<script defer src="/en.search.min.c51f590cbc9fa2ba430499e33851f5c17468ca1f28a59f4c41904f36cc60d963.js" integrity="sha256-xR9ZDLyforpDBJnjOFH1wXRoyh8opZ9MQZBPNsxg2WM="></script>
+<script defer src="/en.search.min.b67ac645fbaab67e457a011d2c57f1650ca131393fe63cfbeacebb9f98dd0889.js" integrity="sha256-tnrGRfuqtn5FegEdLFfxZQyhMTk/5jz76s67n5jdCIk="></script>
 
 <!--
 Made with Book Theme
@@ -282,402 +282,246 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="mariadb-bind-address">mariadb_bind_address</h3>
 
 <h4 id="default-value">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_bind_address: 127.0.0.0
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_bind_address<span class="p">:</span><span class="w"> </span><span class="m">127.0.0.0</span></code></pre></div>
 <h3 id="mariadb-config-file">mariadb_config_file</h3>
 
 <h4 id="example-usage">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_config_file: /etc/mysql/mariadb.cnf
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_config_file<span class="p">:</span><span class="w"> </span>/etc/mysql/mariadb.cnf</code></pre></div>
 <h3 id="mariadb-config-include-dir">mariadb_config_include_dir</h3>
 
 <p>Include dir for custom MariaDB config files. The default value depends on the operatig system.</p>
 
 <h4 id="example-usage-1">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_config_include_dir: /etc/mysql/conf.d
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_config_include_dir<span class="p">:</span><span class="w"> </span>/etc/mysql/conf.d</code></pre></div>
 <h3 id="mariadb-config-include-files">mariadb_config_include_files</h3>
 
 <h4 id="default-value-1">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_config_include_files: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_config_include_files<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage-2">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_config_include_files:
-- src: path/relative/to/playbook/file.cnf
-- src: path/relative/to/playbook/anotherfile.cnf
-force: yes
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_config_include_files<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>src<span class="p">:</span><span class="w"> </span>path/relative/to/playbook/file.cnf<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>src<span class="p">:</span><span class="w"> </span>path/relative/to/playbook/anotherfile.cnf<span class="w">
+</span><span class="w"></span>force<span class="p">:</span><span class="w"> </span>yes</code></pre></div>
 <h3 id="mariadb-databases">mariadb_databases</h3>
 
 <h4 id="default-value-2">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_databases:
-  - name: owncloud
-    collation: utf8mb4_bin
-    encoding: utf8mb4
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_databases<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>owncloud<span class="w">
+</span><span class="w">    </span>collation<span class="p">:</span><span class="w"> </span>utf8mb4_bin<span class="w">
+</span><span class="w">    </span>encoding<span class="p">:</span><span class="w"> </span>utf8mb4</code></pre></div>
 <h3 id="mariadb-datadir">mariadb_datadir</h3>
 
 <p>MariaDB data directory to use. Default value depends on your operating system.</p>
 
 <h4 id="example-usage-3">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_datadir: /var/lib/mysql
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_datadir<span class="p">:</span><span class="w"> </span>/var/lib/mysql</code></pre></div>
 <h3 id="mariadb-enabled-on-startup">mariadb_enabled_on_startup</h3>
 
 <h4 id="default-value-3">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_enabled_on_startup: true
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_enabled_on_startup<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="mariadb-event-scheduler-state">mariadb_event_scheduler_state</h3>
 
 <h4 id="default-value-4">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_event_scheduler_state: OFF
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_event_scheduler_state<span class="p">:</span><span class="w"> </span>OFF</code></pre></div>
 <h3 id="mariadb-group-concat-max-len">mariadb_group_concat_max_len</h3>
 
 <h4 id="default-value-5">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_group_concat_max_len: '1024'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_group_concat_max_len<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1024&#39;</span></code></pre></div>
 <h3 id="mariadb-innodb-buffer-pool-size">mariadb_innodb_buffer_pool_size</h3>
 
 <h4 id="default-value-6">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_buffer_pool_size: 256M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_buffer_pool_size<span class="p">:</span><span class="w"> </span>256M</code></pre></div>
 <h3 id="mariadb-innodb-file-per-table">mariadb_innodb_file_per_table</h3>
 
 <h4 id="default-value-7">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_file_per_table: ON
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_file_per_table<span class="p">:</span><span class="w"> </span>ON</code></pre></div>
 <h3 id="mariadb-innodb-flush-log-at-trx-commit">mariadb_innodb_flush_log_at_trx_commit</h3>
 
 <h4 id="default-value-8">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_flush_log_at_trx_commit: '1'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_flush_log_at_trx_commit<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span></code></pre></div>
 <h3 id="mariadb-innodb-flush-method">mariadb_innodb_flush_method</h3>
 
 <h4 id="default-value-9">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_flush_method: O_DIRECT
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_flush_method<span class="p">:</span><span class="w"> </span>O_DIRECT</code></pre></div>
 <h3 id="mariadb-innodb-io-capacity">mariadb_innodb_io_capacity</h3>
 
 <h4 id="default-value-10">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_io_capacity: 200
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_io_capacity<span class="p">:</span><span class="w"> </span><span class="m">200</span></code></pre></div>
 <h3 id="mariadb-innodb-lock-wait-timeout">mariadb_innodb_lock_wait_timeout</h3>
 
 <h4 id="default-value-11">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_lock_wait_timeout: '50'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_lock_wait_timeout<span class="p">:</span><span class="w"> </span><span class="s1">&#39;50&#39;</span></code></pre></div>
 <h3 id="mariadb-innodb-log-buffer-size">mariadb_innodb_log_buffer_size</h3>
 
 <h4 id="default-value-12">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_log_buffer_size: 8M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_log_buffer_size<span class="p">:</span><span class="w"> </span>8M</code></pre></div>
 <h3 id="mariadb-innodb-log-file-size">mariadb_innodb_log_file_size</h3>
 
 <h4 id="default-value-13">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_log_file_size: 128M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_log_file_size<span class="p">:</span><span class="w"> </span>128M</code></pre></div>
 <h3 id="mariadb-innodb-read-io-threads">mariadb_innodb_read_io_threads</h3>
 
 <h4 id="default-value-14">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_read_io_threads: 4
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_read_io_threads<span class="p">:</span><span class="w"> </span><span class="m">4</span></code></pre></div>
 <h3 id="mariadb-innodb-write-io-threads">mariadb_innodb_write_io_threads</h3>
 
 <h4 id="default-value-15">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_innodb_write_io_threads: '{{ mariadb_innodb_read_io_threads }}'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_innodb_write_io_threads<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ mariadb_innodb_read_io_threads }}&#39;</span></code></pre></div>
 <h3 id="mariadb-join-buffer-size">mariadb_join_buffer_size</h3>
 
 <h4 id="default-value-16">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_join_buffer_size: '262144'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_join_buffer_size<span class="p">:</span><span class="w"> </span><span class="s1">&#39;262144&#39;</span></code></pre></div>
 <h3 id="mariadb-key-buffer-size">mariadb_key_buffer_size</h3>
 
 <h4 id="default-value-17">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_key_buffer_size: 256M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_key_buffer_size<span class="p">:</span><span class="w"> </span>256M</code></pre></div>
 <h3 id="mariadb-log-error">mariadb_log_error</h3>
 
 <p>Default value depends on your operating system.</p>
 
 <h4 id="example-usage-4">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_log_error: /var/log/mysql/error.log
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_log_error<span class="p">:</span><span class="w"> </span>/var/log/mysql/error.log</code></pre></div>
 <h3 id="mariadb-log-file-group">mariadb_log_file_group</h3>
 
 <p>Default value depends on your operating system.</p>
 
 <h4 id="example-usage-5">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_log_file_group: adm
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_log_file_group<span class="p">:</span><span class="w"> </span>adm</code></pre></div>
 <h3 id="mariadb-lower-case-table-names">mariadb_lower_case_table_names</h3>
 
 <h4 id="default-value-18">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_lower_case_table_names: '0'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_lower_case_table_names<span class="p">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span></code></pre></div>
 <h3 id="mariadb-max-allowed-packet">mariadb_max_allowed_packet</h3>
 
 <h4 id="default-value-19">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_max_allowed_packet: 64M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_max_allowed_packet<span class="p">:</span><span class="w"> </span>64M</code></pre></div>
 <h3 id="mariadb-max-connections">mariadb_max_connections</h3>
 
 <h4 id="default-value-20">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_max_connections: '151'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_max_connections<span class="p">:</span><span class="w"> </span><span class="s1">&#39;151&#39;</span></code></pre></div>
 <h3 id="mariadb-max-heap-table-size">mariadb_max_heap_table_size</h3>
 
 <h4 id="default-value-21">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_max_heap_table_size: 16M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_max_heap_table_size<span class="p">:</span><span class="w"> </span>16M</code></pre></div>
 <h3 id="mariadb-myisam-sort-buffer-size">mariadb_myisam_sort_buffer_size</h3>
 
 <h4 id="default-value-22">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_myisam_sort_buffer_size: 64M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_myisam_sort_buffer_size<span class="p">:</span><span class="w"> </span>64M</code></pre></div>
 <h3 id="mariadb-mysqldump-max-allowed-packet">mariadb_mysqldump_max_allowed_packet</h3>
 
 <h4 id="default-value-23">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_mysqldump_max_allowed_packet: 64M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_mysqldump_max_allowed_packet<span class="p">:</span><span class="w"> </span>64M</code></pre></div>
 <h3 id="mariadb-overwrite-global-mycnf">mariadb_overwrite_global_mycnf</h3>
 
 <p>Whether my.cnf should be updated on every run.</p>
 
 <h4 id="default-value-24">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_overwrite_global_mycnf: true
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_overwrite_global_mycnf<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="mariadb-packages">mariadb_packages</h3>
 
 <p>Define a custom list of packages to install. Default value depends on your operating system.</p>
 
 <h4 id="example-usage-6">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_packages:
-  - mariadb
-  - mariadb-server
-  - MySQL-python
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_packages<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>mariadb<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>mariadb-server<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>MySQL-python</code></pre></div>
 <h3 id="mariadb-packages-extra">mariadb_packages_extra</h3>
 
 <p>List of extra packages to install e.g. a set of custom dependencies.</p>
 
 <h4 id="default-value-25">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_packages_extra: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="mariadb-pid-file">mariadb_pid_file</h3>
 
 <p>Path to MariaDB PID file. Default value depends on your operating system.</p>
 
 <h4 id="example-usage-7">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_pid_file: /var/run/mysqld/mysqld.pid
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_pid_file<span class="p">:</span><span class="w"> </span>/var/run/mysqld/mysqld.pid</code></pre></div>
 <h3 id="mariadb-port">mariadb_port</h3>
 
 <h4 id="default-value-26">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_port: '3306'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_port<span class="p">:</span><span class="w"> </span><span class="s1">&#39;3306&#39;</span></code></pre></div>
 <h3 id="mariadb-query-cache-limit">mariadb_query_cache_limit</h3>
 
 <h4 id="default-value-27">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_query_cache_limit: 1M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_query_cache_limit<span class="p">:</span><span class="w"> </span>1M</code></pre></div>
 <h3 id="mariadb-query-cache-size">mariadb_query_cache_size</h3>
 
 <h4 id="default-value-28">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_query_cache_size: 16M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_query_cache_size<span class="p">:</span><span class="w"> </span>16M</code></pre></div>
 <h3 id="mariadb-query-cache-type">mariadb_query_cache_type</h3>
 
 <h4 id="default-value-29">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_query_cache_type: '0'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_query_cache_type<span class="p">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span></code></pre></div>
 <h3 id="mariadb-read-buffer-size">mariadb_read_buffer_size</h3>
 
 <h4 id="default-value-30">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_read_buffer_size: 1M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_read_buffer_size<span class="p">:</span><span class="w"> </span>1M</code></pre></div>
 <h3 id="mariadb-read-rnd-buffer-size">mariadb_read_rnd_buffer_size</h3>
 
 <h4 id="default-value-31">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_read_rnd_buffer_size: 4M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_read_rnd_buffer_size<span class="p">:</span><span class="w"> </span>4M</code></pre></div>
 <h3 id="mariadb-root-password">mariadb_root_password</h3>
 
 <p>Password for the default MariaDB root user. For security reasons you should change it to some secure in production use!</p>
 
 <h4 id="default-value-32">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_root_password: root
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_root_password<span class="p">:</span><span class="w"> </span>root</code></pre></div>
 <h3 id="mariadb-skip-name-resolve">mariadb_skip_name_resolve</h3>
 
 <h4 id="default-value-33">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_skip_name_resolve: false
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_skip_name_resolve<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="mariadb-socket">mariadb_socket</h3>
 
 <p>Path to MariaDB unix socket. Default value depends on your operating system.</p>
 
 <h4 id="example-usage-8">Example usage</h4>
-
-<pre><code class="language-YAML">mariadb_socket: /var/run/mysqld/mysqld.sock
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_socket<span class="p">:</span><span class="w"> </span>/var/run/mysqld/mysqld.sock</code></pre></div>
 <h3 id="mariadb-sort-buffer-size">mariadb_sort_buffer_size</h3>
 
 <h4 id="default-value-34">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_sort_buffer_size: 1M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_sort_buffer_size<span class="p">:</span><span class="w"> </span>1M</code></pre></div>
 <h3 id="mariadb-sql-mode">mariadb_sql_mode</h3>
 
 <p>MariaDB supports several different modes. You can pass a list of options to to suit your needs.</p>
 
 <h4 id="default-value-35">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_sql_mode: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_sql_mode<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="mariadb-sync-binlog">mariadb_sync_binlog</h3>
 
 <h4 id="default-value-36">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_sync_binlog: 1
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_sync_binlog<span class="p">:</span><span class="w"> </span><span class="m">1</span></code></pre></div>
 <h3 id="mariadb-table-open-cache">mariadb_table_open_cache</h3>
 
 <h4 id="default-value-37">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_table_open_cache: '256'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_table_open_cache<span class="p">:</span><span class="w"> </span><span class="s1">&#39;256&#39;</span></code></pre></div>
 <h3 id="mariadb-thread-cache-size">mariadb_thread_cache_size</h3>
 
 <h4 id="default-value-38">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_thread_cache_size: '8'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_thread_cache_size<span class="p">:</span><span class="w"> </span><span class="s1">&#39;8&#39;</span></code></pre></div>
 <h3 id="mariadb-tmp-table-size">mariadb_tmp_table_size</h3>
 
 <h4 id="default-value-39">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_tmp_table_size: 16M
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_tmp_table_size<span class="p">:</span><span class="w"> </span>16M</code></pre></div>
 <h3 id="mariadb-transaction-isolation-level">mariadb_transaction_isolation_level</h3>
 
 <p>Set transaction isolation level. Possible values: <code>READ-UNCOMMITTED|READ-COMMITTED|REPEATABLE-READ|SERIALIZABLE</code></p>
 
 <h4 id="default-value-40">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_transaction_isolation_level: READ-COMMITTED
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_transaction_isolation_level<span class="p">:</span><span class="w"> </span>READ-COMMITTED</code></pre></div>
 <h3 id="mariadb-users">mariadb_users</h3>
 
 <h4 id="default-value-41">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_users:
-  - name: owncloud
-    host: localhost
-    password: owncloud
-    priv: owncloud.*:ALL
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_users<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>owncloud<span class="w">
+</span><span class="w">    </span>host<span class="p">:</span><span class="w"> </span>localhost<span class="w">
+</span><span class="w">    </span>password<span class="p">:</span><span class="w"> </span>owncloud<span class="w">
+</span><span class="w">    </span>priv<span class="p">:</span><span class="w"> </span>owncloud.<span class="cp">*:ALL</span></code></pre></div>
 <h3 id="mariadb-wait-timeout">mariadb_wait_timeout</h3>
 
 <h4 id="default-value-42">Default value</h4>
-
-<pre><code class="language-YAML">mariadb_wait_timeout: '28800'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">mariadb_wait_timeout<span class="p">:</span><span class="w"> </span><span class="s1">&#39;28800&#39;</span></code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
 <p>None.</p>

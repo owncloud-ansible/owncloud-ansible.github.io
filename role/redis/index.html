@@ -7,7 +7,7 @@
 <meta name="description" content="redis"><meta property="og:title" content="redis" />
 <meta property="og:description" content="WARNING: This Ansible role is currently in beta state. Use it at your own risk.
  Role to setup Redis server.
- Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync: everysec  redis_appendonly Default value redis_appendonly: no  redis_bind_interface Default value redis_bind_interface: 127.0.0.1  redis_databases Default value redis_databases: 16  redis_dbdir Default value redis_dbdir: /var/lib/redis  redis_dbfilename Default value redis_dbfilename: dump." />
+ Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync:everysec redis_appendonly Default value redis_appendonly:no redis_bind_interface Default value redis_bind_interface:127.0.0.1 redis_databases Default value redis_databases:16 redis_dbdir Default value redis_dbdir:/var/lib/redis redis_dbfilename Default value redis_dbfilename:dump." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://owncloud-ansible.github.io/role/redis/" />
 
@@ -15,10 +15,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+<link rel="stylesheet" href="/book.min.c82cbc7d64dbf7f152b3d7c92436db67721866907bbf2ab4e386dd65335887fa.css" integrity="sha256-yCy8fWTb9/FSs9fJJDbbZ3IYZpB7vyq044bdZTNYh/o=">
 
 
-<script defer src="/en.search.min.c51f590cbc9fa2ba430499e33851f5c17468ca1f28a59f4c41904f36cc60d963.js" integrity="sha256-xR9ZDLyforpDBJnjOFH1wXRoyh8opZ9MQZBPNsxg2WM="></script>
+<script defer src="/en.search.min.b67ac645fbaab67e457a011d2c57f1650ca131393fe63cfbeacebb9f98dd0889.js" integrity="sha256-tnrGRfuqtn5FegEdLFfxZQyhMTk/5jz76s67n5jdCIk="></script>
 
 <!--
 Made with Book Theme
@@ -252,184 +252,118 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="redis-appendfsync">redis_appendfsync</h3>
 
 <h4 id="default-value">Default value</h4>
-
-<pre><code class="language-YAML">redis_appendfsync: everysec
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_appendfsync<span class="p">:</span><span class="w"> </span>everysec</code></pre></div>
 <h3 id="redis-appendonly">redis_appendonly</h3>
 
 <h4 id="default-value-1">Default value</h4>
-
-<pre><code class="language-YAML">redis_appendonly: no
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_appendonly<span class="p">:</span><span class="w"> </span>no</code></pre></div>
 <h3 id="redis-bind-interface">redis_bind_interface</h3>
 
 <h4 id="default-value-2">Default value</h4>
-
-<pre><code class="language-YAML">redis_bind_interface: 127.0.0.1
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_bind_interface<span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span></code></pre></div>
 <h3 id="redis-databases">redis_databases</h3>
 
 <h4 id="default-value-3">Default value</h4>
-
-<pre><code class="language-YAML">redis_databases: 16
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_databases<span class="p">:</span><span class="w"> </span><span class="m">16</span></code></pre></div>
 <h3 id="redis-dbdir">redis_dbdir</h3>
 
 <h4 id="default-value-4">Default value</h4>
-
-<pre><code class="language-YAML">redis_dbdir: /var/lib/redis
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_dbdir<span class="p">:</span><span class="w"> </span>/var/lib/redis</code></pre></div>
 <h3 id="redis-dbfilename">redis_dbfilename</h3>
 
 <h4 id="default-value-5">Default value</h4>
-
-<pre><code class="language-YAML">redis_dbfilename: dump.rdb
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_dbfilename<span class="p">:</span><span class="w"> </span>dump.rdb</code></pre></div>
 <h3 id="redis-disabled-commands">redis_disabled_commands</h3>
 
 <p>Disable certain Redis commands for security reasons.</p>
 
 <h4 id="default-value-6">Default value</h4>
-
-<pre><code class="language-YAML">redis_disabled_commands: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_disabled_commands<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage">Example usage</h4>
-
-<pre><code class="language-YAML">redis_disabled_commands:
-- FLUSHDB
-- FLUSHALL
-- KEYS
-- PEXPIRE
-- DEL
-- CONFIG
-- SHUTDOWN
-- BGREWRITEAOF
-- BGSAVE
-- SAVE
-- SPOP
-- SREM
-- RENAME
-- DEBUG
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_disabled_commands<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>FLUSHDB<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>FLUSHALL<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>KEYS<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>PEXPIRE<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>DEL<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>CONFIG<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>SHUTDOWN<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>BGREWRITEAOF<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>BGSAVE<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>SAVE<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>SPOP<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>SREM<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>RENAME<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>DEBUG</code></pre></div>
 <h3 id="redis-includes">redis_includes</h3>
 
 <p>Add extra include files for local configuration/overrides.</p>
 
 <h4 id="default-value-7">Default value</h4>
-
-<pre><code class="language-YAML">redis_includes: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_includes<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="redis-logfile">redis_logfile</h3>
 
 <h4 id="default-value-8">Default value</h4>
-
-<pre><code class="language-YAML">redis_logfile: /var/log/redis/redis-server.log
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_logfile<span class="p">:</span><span class="w"> </span>/var/log/redis/redis-server.log</code></pre></div>
 <h3 id="redis-loglevel">redis_loglevel</h3>
 
 <h4 id="default-value-9">Default value</h4>
-
-<pre><code class="language-YAML">redis_loglevel: notice
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_loglevel<span class="p">:</span><span class="w"> </span>notice</code></pre></div>
 <h3 id="redis-maxmemory">redis_maxmemory</h3>
 
 <h4 id="default-value-10">Default value</h4>
-
-<pre><code class="language-YAML">redis_maxmemory: 0
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_maxmemory<span class="p">:</span><span class="w"> </span><span class="m">0</span></code></pre></div>
 <h3 id="redis-maxmemory-policy">redis_maxmemory_policy</h3>
 
 <h4 id="default-value-11">Default value</h4>
-
-<pre><code class="language-YAML">redis_maxmemory_policy: noeviction
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_maxmemory_policy<span class="p">:</span><span class="w"> </span>noeviction</code></pre></div>
 <h3 id="redis-maxmemory-samples">redis_maxmemory_samples</h3>
 
 <h4 id="default-value-12">Default value</h4>
-
-<pre><code class="language-YAML">redis_maxmemory_samples: 5
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_maxmemory_samples<span class="p">:</span><span class="w"> </span><span class="m">5</span></code></pre></div>
 <h3 id="redis-packages">redis_packages</h3>
 
 <p>Define a custom list of packages to install. Default value depends on your operating system.</p>
 
 <h4 id="default-value-13">Default value</h4>
-
-<pre><code class="language-YAML">redis_packages: _os_specific_
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_packages<span class="p">:</span><span class="w"> </span>_os_specific_</code></pre></div>
 <h3 id="redis-packages-extra">redis_packages_extra</h3>
 
 <p>Can be used to install other dependency packages.</p>
 
 <h4 id="default-value-14">Default value</h4>
-
-<pre><code class="language-YAML">redis_packages_extra: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="redis-port">redis_port</h3>
 
 <h4 id="default-value-15">Default value</h4>
-
-<pre><code class="language-YAML">redis_port: 6379
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_port<span class="p">:</span><span class="w"> </span><span class="m">6379</span></code></pre></div>
 <h3 id="redis-rdbcompression">redis_rdbcompression</h3>
 
 <h4 id="default-value-16">Default value</h4>
-
-<pre><code class="language-YAML">redis_rdbcompression: yes
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_rdbcompression<span class="p">:</span><span class="w"> </span>yes</code></pre></div>
 <h3 id="redis-requirepass">redis_requirepass</h3>
 
 <p>Require authentication to Redis with a password.</p>
 
 <h4 id="default-value-17">Default value</h4>
-
-<pre><code class="language-YAML">redis_requirepass: _unset_
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_requirepass<span class="p">:</span><span class="w"> </span>_unset_</code></pre></div>
 <h3 id="redis-save">redis_save</h3>
 
 <p>Set to an empty set to disable persistence (saving the DB to disk).</p>
 
 <h4 id="default-value-18">Default value</h4>
-
-<pre><code class="language-YAML">redis_save:
-  - 900 1
-  - 300 10
-  - 60 10000
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_save<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">10000</span></code></pre></div>
 <h3 id="redis-timeout">redis_timeout</h3>
 
 <h4 id="default-value-19">Default value</h4>
-
-<pre><code class="language-YAML">redis_timeout: 300
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_timeout<span class="p">:</span><span class="w"> </span><span class="m">300</span></code></pre></div>
 <h3 id="redis-unixsocket">redis_unixsocket</h3>
 
 <h4 id="default-value-20">Default value</h4>
-
-<pre><code class="language-YAML">redis_unixsocket: _unset_
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_unixsocket<span class="p">:</span><span class="w"> </span>_unset_</code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
 <p>None.</p>

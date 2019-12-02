@@ -7,7 +7,7 @@
 <meta name="description" content="apache"><meta property="og:title" content="apache" />
 <meta property="og:description" content="WARNING: This Ansible role is currently in beta state. Use it at your own risk.
  Role to setup Apache webserver.
- Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override: All  apache_listen_ip Default value apache_listen_ip: &#39;*&#39;  apache_listen_port Default value apache_listen_port: 80  apache_listen_port_ssl Default value apache_listen_port_ssl: 443  apache_mods_disabled Default value apache_mods_disabled: []  apache_mods_enabled Only used on Debian/Ubuntu." />
+ Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override:All apache_listen_ip Default value apache_listen_ip:&#39;*&#39; apache_listen_port Default value apache_listen_port:80 apache_listen_port_ssl Default value apache_listen_port_ssl:443 apache_mods_disabled Default value apache_mods_disabled:[] apache_mods_enabled Only used on Debian/Ubuntu." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://owncloud-ansible.github.io/role/apache/" />
 
@@ -15,10 +15,10 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
+<link rel="stylesheet" href="/book.min.c82cbc7d64dbf7f152b3d7c92436db67721866907bbf2ab4e386dd65335887fa.css" integrity="sha256-yCy8fWTb9/FSs9fJJDbbZ3IYZpB7vyq044bdZTNYh/o=">
 
 
-<script defer src="/en.search.min.c51f590cbc9fa2ba430499e33851f5c17468ca1f28a59f4c41904f36cc60d963.js" integrity="sha256-xR9ZDLyforpDBJnjOFH1wXRoyh8opZ9MQZBPNsxg2WM="></script>
+<script defer src="/en.search.min.b67ac645fbaab67e457a011d2c57f1650ca131393fe63cfbeacebb9f98dd0889.js" integrity="sha256-tnrGRfuqtn5FegEdLFfxZQyhMTk/5jz76s67n5jdCIk="></script>
 
 <!--
 Made with Book Theme
@@ -247,164 +247,113 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="apache-allow-override">apache_allow_override</h3>
 
 <h4 id="default-value">Default value</h4>
-
-<pre><code class="language-YAML">apache_allow_override: All
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_allow_override<span class="p">:</span><span class="w"> </span>All</code></pre></div>
 <h3 id="apache-listen-ip">apache_listen_ip</h3>
 
 <h4 id="default-value-1">Default value</h4>
-
-<pre><code class="language-YAML">apache_listen_ip: '*'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_ip<span class="p">:</span><span class="w"> </span><span class="s1">&#39;*&#39;</span></code></pre></div>
 <h3 id="apache-listen-port">apache_listen_port</h3>
 
 <h4 id="default-value-2">Default value</h4>
-
-<pre><code class="language-YAML">apache_listen_port: 80
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_port<span class="p">:</span><span class="w"> </span><span class="m">80</span></code></pre></div>
 <h3 id="apache-listen-port-ssl">apache_listen_port_ssl</h3>
 
 <h4 id="default-value-3">Default value</h4>
-
-<pre><code class="language-YAML">apache_listen_port_ssl: 443
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_port_ssl<span class="p">:</span><span class="w"> </span><span class="m">443</span></code></pre></div>
 <h3 id="apache-mods-disabled">apache_mods_disabled</h3>
 
 <h4 id="default-value-4">Default value</h4>
-
-<pre><code class="language-YAML">apache_mods_disabled: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_mods_disabled<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="apache-mods-enabled">apache_mods_enabled</h3>
 
 <p>Only used on Debian/Ubuntu.</p>
 
 <h4 id="default-value-5">Default value</h4>
-
-<pre><code class="language-YAML">apache_mods_enabled:
-  - rewrite.load
-  - ssl.load
-  - headers.load
-  - env.load
-  - dir.load
-  - mime.load
-  - unique_id.load
-  - autoindex.load
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_mods_enabled<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>rewrite.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>ssl.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>headers.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>env.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>dir.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>mime.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>unique_id.load<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>autoindex.load</code></pre></div>
 <h3 id="apache-options">apache_options</h3>
 
 <h4 id="default-value-6">Default value</h4>
-
-<pre><code class="language-YAML">apache_options:
-  - -Indexes
-  - +FollowSymLinks
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_options<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>-Indexes<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>+FollowSymLinks</code></pre></div>
 <h3 id="apache-packages-extra">apache_packages_extra</h3>
 
 <p>Can be used to install other dependency packages.</p>
 
 <h4 id="default-value-7">Default value</h4>
-
-<pre><code class="language-YAML">apache_packages_extra: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="apache-packages-state">apache_packages_state</h3>
 
 <p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
 
 <h4 id="default-value-8">Default value</h4>
-
-<pre><code class="language-YAML">apache_packages_state: present
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_packages_state<span class="p">:</span><span class="w"> </span>present</code></pre></div>
 <h3 id="apache-restart-state">apache_restart_state</h3>
 
 <p>Set apache state when configuration changes are made. Recommended values: <code>restarted</code> or <code>reloaded</code>.</p>
 
 <h4 id="default-value-9">Default value</h4>
-
-<pre><code class="language-YAML">apache_restart_state: restarted
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_restart_state<span class="p">:</span><span class="w"> </span>restarted</code></pre></div>
 <h3 id="apache-ssl-cipher-suite">apache_ssl_cipher_suite</h3>
 
 <h4 id="default-value-10">Default value</h4>
-
-<pre><code class="language-YAML">apache_ssl_cipher_suite: AES256+EECDH:AES256+EDH
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_cipher_suite<span class="p">:</span><span class="w"> </span>AES256+EECDH<span class="p">:</span>AES256+EDH</code></pre></div>
 <h3 id="apache-ssl-protocol">apache_ssl_protocol</h3>
 
 <h4 id="default-value-11">Default value</h4>
-
-<pre><code class="language-YAML">apache_ssl_protocol: All -SSLv2 -SSLv3
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_protocol<span class="p">:</span><span class="w"> </span>All<span class="w"> </span>-SSLv2<span class="w"> </span>-SSLv3</code></pre></div>
 <h3 id="apache-state">apache_state</h3>
 
 <p>Set initial apache state. Recommended values: <code>started</code> or <code>stopped</code>.</p>
 
 <h4 id="default-value-12">Default value</h4>
-
-<pre><code class="language-YAML">apache_state: started
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_state<span class="p">:</span><span class="w"> </span>started</code></pre></div>
 <h3 id="apache-vhost-name">apache_vhost_name</h3>
 
 <h4 id="default-value-13">Default value</h4>
-
-<pre><code class="language-YAML">apache_vhost_name: owncloud.conf
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhost_name<span class="p">:</span><span class="w"> </span>owncloud.conf</code></pre></div>
 <h3 id="apache-vhosts">apache_vhosts</h3>
 
 <h4 id="default-value-14">Default value</h4>
-
-<pre><code class="language-YAML">apache_vhosts:
-  - servername: cloud.owncloud.demo
-    documentroot: /var/www/owncloud
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>servername<span class="p">:</span><span class="w"> </span>cloud.owncloud.demo<span class="w">
+</span><span class="w">    </span>documentroot<span class="p">:</span><span class="w"> </span>/var/www/owncloud</code></pre></div>
 <h3 id="apache-vhosts-ssl">apache_vhosts_ssl</h3>
 
 <h4 id="default-value-15">Default value</h4>
-
-<pre><code class="language-YAML">apache_vhosts_ssl: []
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage">Example usage</h4>
-
-<pre><code class="language-YAML">apache_vhosts_ssl
-- servername: &quot;local.dev&quot;,
-documentroot: &quot;/var/www/html&quot;,
-certificate_file: &quot;/path/to/certificate.crt&quot;,
-certificate_file_source: &quot;/path/to/source/on/ansible_host/certificate.crt&quot;
-certificate_key_file: &quot;/path/to/certificate.key&quot;,
-certificate_key_source: &quot;/path/to/source/on/ansible_host/certificate.key&quot;
-Optional.
-certificate_chain_file: &quot;/path/to/certificate_chain.crt&quot;
-certificate_chain_source: &quot;/path/to/source/on/ansible_host/certificate_chain.crt&quot;
-header_ocsp_trusted_certificate:
-header_hsts_options:
-- max-age=63072000
-- includeSubDomains
-header_xfo_policy: deny
-header_xcto_enabled: True
-header_csp_options:
-- directive: frame-ancestors
-parameters:
-- https://example.com
-- https://mypage.com
-header_xxxsp_parameters:
-- mode=block
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>servername<span class="p">:</span><span class="w"> </span><span class="s2">&#34;local.dev&#34;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span>documentroot<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/html&#34;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span>certificate_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span>certificate_file_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
+</span><span class="w"></span>certificate_key_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.key&#34;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span>certificate_key_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
+</span><span class="w"></span>Optional.<span class="w">
+</span><span class="w"></span>certificate_chain_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate_chain.crt&#34;</span><span class="w">
+</span><span class="w"></span>certificate_chain_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate_chain.crt&#34;</span><span class="w">
+</span><span class="w"></span>header_ocsp_trusted_certificate<span class="p">:</span><span class="w">
+</span><span class="w"></span>header_hsts_options<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>max-age=<span class="m">63072000</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>includeSubDomains<span class="w">
+</span><span class="w"></span>header_xfo_policy<span class="p">:</span><span class="w"> </span>deny<span class="w">
+</span><span class="w"></span>header_xcto_enabled<span class="p">:</span><span class="w"> </span>True<span class="w">
+</span><span class="w"></span>header_csp_options<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>directive<span class="p">:</span><span class="w"> </span>frame-ancestors<span class="w">
+</span><span class="w"></span>parameters<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>https<span class="p">:</span>//example.com<span class="w">
+</span><span class="w"></span>-<span class="w"> </span>https<span class="p">:</span>//mypage.com<span class="w">
+</span><span class="w"></span>header_xxxsp_parameters<span class="p">:</span><span class="w">
+</span><span class="w"></span>-<span class="w"> </span>mode=block</code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
 <p>None.</p>
