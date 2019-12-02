@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "ownCloud Ansible"
 
 theme = "book"
+pygmentsUseClasses = true
+pygmentsCodefences = true
 
 [params]
   BookToC = false
