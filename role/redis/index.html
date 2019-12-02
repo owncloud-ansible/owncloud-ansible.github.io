@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="redis"><meta property="og:title" content="redis" />
-<meta property="og:description" content="Ansible role to setup Redis server
+<meta property="og:description" content="WARNING: This Ansible role is currently in beta state. Use it at your own risk.
+ Role to setup Redis server.
  Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync: everysec  redis_appendonly Default value redis_appendonly: no  redis_bind_interface Default value redis_bind_interface: 127.0.0.1  redis_databases Default value redis_databases: 16  redis_dbdir Default value redis_dbdir: /var/lib/redis  redis_dbfilename Default value redis_dbfilename: dump." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://owncloud-ansible.github.io/role/redis/" />
@@ -17,7 +18,7 @@
 <link rel="stylesheet" href="/book.min.2f64d625fdd63f950bf9500392f46c2ca78cae8c33979c9ab02bf9502a3ce04e.css" integrity="sha256-L2TWJf3WP5UL&#43;VADkvRsLKeMrowzl5yasCv5UCo84E4=">
 
 
-<script defer src="/en.search.min.479b5730d51a06c639921df344f3647e366394f7b184955c833284ec516de022.js" integrity="sha256-R5tXMNUaBsY5kh3zRPNkfjZjlPexhJVcgzKE7FFt4CI="></script>
+<script defer src="/en.search.min.a3e8df062c45171a2b6d41bbeb018b6f5217aa9bb7117ae9f8e13172811fb748.js" integrity="sha256-o&#43;jfBixFFxorbUG76wGLb1IXqpu3EXrp&#43;OExcoEft0g="></script>
 
 <!--
 Made with Book Theme
@@ -209,7 +210,11 @@ https://github.com/alex-shpak/hugo-book
 <article class="markdown">
   <h1>redis</h1>
 
-<p>Ansible role to setup Redis server</p>
+<blockquote>
+<p><strong>WARNING</strong>: This Ansible role is currently in beta state. Use it at your own risk.</p>
+</blockquote>
+
+<p>Role to setup Redis server.</p>
 
 <ul>
 <li><a href="#default-variables">Default Variables</a>
@@ -298,20 +303,20 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="example-usage">Example usage</h4>
 
 <pre><code class="language-YAML">redis_disabled_commands:
-  - FLUSHDB
-  - FLUSHALL
-  - KEYS
-  - PEXPIRE
-  - DEL
-  - CONFIG
-  - SHUTDOWN
-  - BGREWRITEAOF
-  - BGSAVE
-  - SAVE
-  - SPOP
-  - SREM
-  - RENAME
-  - DEBUG
+- FLUSHDB
+- FLUSHALL
+- KEYS
+- PEXPIRE
+- DEL
+- CONFIG
+- SHUTDOWN
+- BGREWRITEAOF
+- BGSAVE
+- SAVE
+- SPOP
+- SREM
+- RENAME
+- DEBUG
 </code></pre>
 
 <h3 id="redis-includes">redis_includes</h3>
