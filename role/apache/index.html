@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/book.min.c82cbc7d64dbf7f152b3d7c92436db67721866907bbf2ab4e386dd65335887fa.css" integrity="sha256-yCy8fWTb9/FSs9fJJDbbZ3IYZpB7vyq044bdZTNYh/o=">
 
 
-<script defer src="/en.search.min.b67ac645fbaab67e457a011d2c57f1650ca131393fe63cfbeacebb9f98dd0889.js" integrity="sha256-tnrGRfuqtn5FegEdLFfxZQyhMTk/5jz76s67n5jdCIk="></script>
+<script defer src="/en.search.min.d2b657b614601862312c018c6df45efb0f39deb5acfd81e22274cdc07357aaea.js" integrity="sha256-0rZXthRgGGIxLAGMbfRe&#43;w853rWs/YHiInTNwHNXquo="></script>
 
 <!--
 Made with Book Theme
@@ -331,29 +331,29 @@ https://github.com/alex-shpak/hugo-book
 <h4 id="default-value-15">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage">Example usage</h4>
-<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>servername<span class="p">:</span><span class="w"> </span><span class="s2">&#34;local.dev&#34;</span><span class="p">,</span><span class="w">
-</span><span class="w"></span>documentroot<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/html&#34;</span><span class="p">,</span><span class="w">
-</span><span class="w"></span>certificate_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="p">,</span><span class="w">
-</span><span class="w"></span>certificate_file_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
-</span><span class="w"></span>certificate_key_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.key&#34;</span><span class="p">,</span><span class="w">
-</span><span class="w"></span>certificate_key_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
-</span><span class="w"></span>Optional.<span class="w">
-</span><span class="w"></span>certificate_chain_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate_chain.crt&#34;</span><span class="w">
-</span><span class="w"></span>certificate_chain_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate_chain.crt&#34;</span><span class="w">
-</span><span class="w"></span>header_ocsp_trusted_certificate<span class="p">:</span><span class="w">
-</span><span class="w"></span>header_hsts_options<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>max-age=<span class="m">63072000</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>includeSubDomains<span class="w">
-</span><span class="w"></span>header_xfo_policy<span class="p">:</span><span class="w"> </span>deny<span class="w">
-</span><span class="w"></span>header_xcto_enabled<span class="p">:</span><span class="w"> </span>True<span class="w">
-</span><span class="w"></span>header_csp_options<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>directive<span class="p">:</span><span class="w"> </span>frame-ancestors<span class="w">
-</span><span class="w"></span>parameters<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>https<span class="p">:</span>//example.com<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>https<span class="p">:</span>//mypage.com<span class="w">
-</span><span class="w"></span>header_xxxsp_parameters<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>mode=block</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>servername<span class="p">:</span><span class="w"> </span><span class="s2">&#34;local.dev&#34;</span><span class="w">
+</span><span class="w">    </span>documentroot<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/html&#34;</span><span class="w">
+</span><span class="w">    </span>certificate_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="w">
+</span><span class="w">    </span>certificate_file_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
+</span><span class="w">    </span>certificate_key_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.key&#34;</span><span class="w">
+</span><span class="w">    </span>certificate_key_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
+</span><span class="w">     </span>Optional.<span class="w">
+</span><span class="w">    </span>certificate_chain_file<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate_chain.crt&#34;</span><span class="w">
+</span><span class="w">    </span>certificate_chain_source<span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate_chain.crt&#34;</span><span class="w">
+</span><span class="w">    </span>header_ocsp_trusted_certificate<span class="p">:</span><span class="w">
+</span><span class="w">    </span>header_hsts_options<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>max-age=<span class="m">63072000</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>includeSubDomains<span class="w">
+</span><span class="w">    </span>header_xfo_policy<span class="p">:</span><span class="w"> </span>deny<span class="w">
+</span><span class="w">    </span>header_xcto_enabled<span class="p">:</span><span class="w"> </span>True<span class="w">
+</span><span class="w">    </span>header_csp_options<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>directive<span class="p">:</span><span class="w"> </span>frame-ancestors<span class="w">
+</span><span class="w">        </span>parameters<span class="p">:</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span>https<span class="p">:</span>//example.com<span class="w">
+</span><span class="w">          </span>-<span class="w"> </span>https<span class="p">:</span>//mypage.com<span class="w">
+</span><span class="w">    </span>header_xxxsp_parameters<span class="p">:</span><span class="w">
+</span><span class="w">      </span>-<span class="w"> </span>mode=block</code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
 <p>None.</p>
