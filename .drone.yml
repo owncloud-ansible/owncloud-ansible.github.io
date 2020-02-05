@@ -14,7 +14,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.5/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.7/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 
 - name: sync
   image: xoxys/git-batch:latest
@@ -46,6 +46,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 0a34283dfb3aa17f58cbf327f1812aeafaf0c1a671ecabac37a6941f08324ce6
+hmac: 539d309bbcab92b1a36eb45db3960a5050e0a2c23a2f24de4167c835f38dffc0
 
 ...
