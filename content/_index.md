@@ -4,7 +4,7 @@ title: Documentation
 
 The main goal of the ownCloud Ansible project is to provide a simple way to set up your ownCloud instance.
 
-In this context, we provide a collection of Ansible roles to configure and manage the required software stack. Even 
+In this context, we provide a collection of Ansible roles to configure and manage the required software stack. Even
 though we only provide roles for recommended components, role-based modularization allows you to customize individual
 components as needed.
 

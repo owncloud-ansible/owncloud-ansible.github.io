@@ -2,39 +2,50 @@
 kind: pipeline
 name: default
 
+platform:
+  os: linux
+  arch: amd64
+
 concurrency:
   limit: 1
 
 steps:
+- name: assets
+  image: byrnedo/alpine-curl
+  commands:
+  - mkdir -p themes/hugo-geekdoc/
+  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.5/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+
 - name: sync
   image: xoxys/git-batch:latest
   commands:
-    - git-batch
+  - git-batch
 
 - name: build
   image: klakegg/hugo:0.59.1-ext-alpine
   commands:
-    - hugo-official
+  - hugo-official
 
 - name: publish
   image: plugins/gh-pages:latest
   settings:
-    username:
-      from_secret: github_username
+    pages_directory: public/
     password:
       from_secret: github_token
-    pages_directory: public/
     target_branch: master
+    username:
+      from_secret: github_username
   when:
     ref:
-      - refs/heads/source
+    - refs/heads/source
 
 trigger:
   ref:
   - refs/heads/source
   - refs/pull/**
+
 ---
 kind: signature
-hmac: 5f6c06cdff36a2f33bf83299eb7f910b6feeccd01a2470b2aeb5de39d0f3ded4
+hmac: 0a34283dfb3aa17f58cbf327f1812aeafaf0c1a671ecabac37a6941f08324ce6
 
 ...
