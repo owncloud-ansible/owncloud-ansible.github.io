@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on ownCloud Ansible</title>
+    <title>Categories on owncloud-ansible</title>
     <link>https://owncloud-ansible.github.io/categories/</link>
-    <description>Recent content in Categories on ownCloud Ansible</description>
+    <description>Recent content in Categories on owncloud-ansible</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
