@@ -303,6 +303,7 @@
 
 <ul>
 <li><a href="#apache-allow-override">apache_allow_override</a></li>
+<li><a href="#apache-apt-cache-update">apache_apt_cache_update</a></li>
 <li><a href="#apache-listen-ip">apache_listen_ip</a></li>
 <li><a href="#apache-listen-port">apache_listen_port</a></li>
 <li><a href="#apache-listen-port-ssl">apache_listen_port_ssl</a></li>
@@ -330,27 +331,33 @@
 
 <h4 id="default-value">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_allow_override<span class="p">:</span><span class="w"> </span>All</code></pre></div>
-<h3 id="apache-listen-ip">apache_listen_ip</h3>
+<h3 id="apache-apt-cache-update">apache_apt_cache_update</h3>
+
+<p>Automatically update apt cache on package installations. This setting will only applied on apt-based operating systems e.g. Ubuntu.</p>
 
 <h4 id="default-value-1">Default value</h4>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_apt_cache_update<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
+<h3 id="apache-listen-ip">apache_listen_ip</h3>
+
+<h4 id="default-value-2">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_ip<span class="p">:</span><span class="w"> </span><span class="s1">&#39;*&#39;</span></code></pre></div>
 <h3 id="apache-listen-port">apache_listen_port</h3>
 
-<h4 id="default-value-2">Default value</h4>
+<h4 id="default-value-3">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_port<span class="p">:</span><span class="w"> </span><span class="m">80</span></code></pre></div>
 <h3 id="apache-listen-port-ssl">apache_listen_port_ssl</h3>
 
-<h4 id="default-value-3">Default value</h4>
+<h4 id="default-value-4">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_listen_port_ssl<span class="p">:</span><span class="w"> </span><span class="m">443</span></code></pre></div>
 <h3 id="apache-mods-disabled">apache_mods_disabled</h3>
 
-<h4 id="default-value-4">Default value</h4>
+<h4 id="default-value-5">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_mods_disabled<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="apache-mods-enabled">apache_mods_enabled</h3>
 
 <p>Only used on Debian/Ubuntu.</p>
 
-<h4 id="default-value-5">Default value</h4>
+<h4 id="default-value-6">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_mods_enabled<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>rewrite.load<span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>ssl.load<span class="w">
@@ -362,7 +369,7 @@
 </span><span class="w">  </span>-<span class="w"> </span>autoindex.load</code></pre></div>
 <h3 id="apache-options">apache_options</h3>
 
-<h4 id="default-value-6">Default value</h4>
+<h4 id="default-value-7">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_options<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>-Indexes<span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>+FollowSymLinks</code></pre></div>
@@ -370,47 +377,47 @@
 
 <p>Can be used to install other dependency packages.</p>
 
-<h4 id="default-value-7">Default value</h4>
+<h4 id="default-value-8">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="apache-packages-state">apache_packages_state</h3>
 
 <p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
 
-<h4 id="default-value-8">Default value</h4>
+<h4 id="default-value-9">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_packages_state<span class="p">:</span><span class="w"> </span>present</code></pre></div>
 <h3 id="apache-restart-state">apache_restart_state</h3>
 
 <p>Set apache state when configuration changes are made. Recommended values: <code>restarted</code> or <code>reloaded</code>.</p>
 
-<h4 id="default-value-9">Default value</h4>
+<h4 id="default-value-10">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_restart_state<span class="p">:</span><span class="w"> </span>restarted</code></pre></div>
 <h3 id="apache-ssl-cipher-suite">apache_ssl_cipher_suite</h3>
 
-<h4 id="default-value-10">Default value</h4>
+<h4 id="default-value-11">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_cipher_suite<span class="p">:</span><span class="w"> </span>AES256+EECDH<span class="p">:</span>AES256+EDH</code></pre></div>
 <h3 id="apache-ssl-protocol">apache_ssl_protocol</h3>
 
-<h4 id="default-value-11">Default value</h4>
+<h4 id="default-value-12">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_protocol<span class="p">:</span><span class="w"> </span>All<span class="w"> </span>-SSLv2<span class="w"> </span>-SSLv3</code></pre></div>
 <h3 id="apache-state">apache_state</h3>
 
 <p>Set initial apache state. Recommended values: <code>started</code> or <code>stopped</code>.</p>
 
-<h4 id="default-value-12">Default value</h4>
+<h4 id="default-value-13">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_state<span class="p">:</span><span class="w"> </span>started</code></pre></div>
 <h3 id="apache-vhost-name">apache_vhost_name</h3>
 
-<h4 id="default-value-13">Default value</h4>
+<h4 id="default-value-14">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhost_name<span class="p">:</span><span class="w"> </span>owncloud.conf</code></pre></div>
 <h3 id="apache-vhosts">apache_vhosts</h3>
 
-<h4 id="default-value-14">Default value</h4>
+<h4 id="default-value-15">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>servername<span class="p">:</span><span class="w"> </span>cloud.owncloud.demo<span class="w">
 </span><span class="w">    </span>documentroot<span class="p">:</span><span class="w"> </span>/var/www/owncloud</code></pre></div>
 <h3 id="apache-vhosts-ssl">apache_vhosts_ssl</h3>
 
-<h4 id="default-value-15">Default value</h4>
+<h4 id="default-value-16">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage">Example usage</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_vhosts_ssl<span class="p">:</span><span class="w">
