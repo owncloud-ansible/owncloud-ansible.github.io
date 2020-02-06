@@ -289,9 +289,12 @@
         <h1>redis</h1>
         
 
-<blockquote>
-<p><strong>WARNING</strong>: This Ansible role is currently in beta state. Use it at your own risk.</p>
+<p><a href="https://github.com/owncloud-ansible/redis"><img src="https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;logoColor=white" alt="Source Code" /></a> <a href="https://drone.owncloud.com/owncloud-ansible/redis"><img src="https://drone.owncloud.com/api/badges/owncloud-ansible/redis/status.svg" alt="Build Status" /></a> <a href="https://github.com/owncloud-ansible/redis/blob/master/LICENSE"><img src="https://img.shields.io/github/license/owncloud-ansible/redis" alt="GitHub" /></a></p>
+
+<blockquote class="gdoc-hint warning">
+    <strong>Warning</strong><br/> This Ansible role is currently in beta state. Use it at your own risk.
 </blockquote>
+
 
 <p>Role to setup Redis server.</p>
 
@@ -360,20 +363,20 @@
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_disabled_commands<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h4 id="example-usage">Example usage</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">redis_disabled_commands<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>FLUSHDB<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>FLUSHALL<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>KEYS<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>PEXPIRE<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>DEL<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>CONFIG<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>SHUTDOWN<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>BGREWRITEAOF<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>BGSAVE<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>SAVE<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>SPOP<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>SREM<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>RENAME<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>DEBUG</code></pre></div>
+</span><span class="w">  </span>-<span class="w"> </span>FLUSHDB<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>FLUSHALL<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>KEYS<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>PEXPIRE<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>DEL<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>CONFIG<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>SHUTDOWN<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>BGREWRITEAOF<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>BGSAVE<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>SAVE<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>SPOP<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>SREM<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>RENAME<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>DEBUG</code></pre></div>
 <h3 id="redis-includes">redis_includes</h3>
 
 <p>Add extra include files for local configuration/overrides.</p>

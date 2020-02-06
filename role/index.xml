@@ -59,8 +59,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/redis/</guid>
-      <description>WARNING: This Ansible role is currently in beta state. Use it at your own risk.
- Role to setup Redis server.
+      <description>Warning This Ansible role is currently in beta state. Use it at your own risk.  Role to setup Redis server.
  Default Variables  redis_appendfsync redis_appendonly redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket  Dependencies  Default Variables redis_appendfsync Default value redis_appendfsync:everysec redis_appendonly Default value redis_appendonly:no redis_bind_interface Default value redis_bind_interface:127.0.0.1 redis_databases Default value redis_databases:16 redis_dbdir Default value redis_dbdir:/var/lib/redis redis_dbfilename Default value redis_dbfilename:dump.</description>
     </item>
     
