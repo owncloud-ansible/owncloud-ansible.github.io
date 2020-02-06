@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/apache/</guid>
-      <description>Warning\ This Ansible role is currently in beta state. Use it at your own risk.  Role to setup Apache webserver.
+      <description>Warning This Ansible role is currently in beta state. Use it at your own risk.  Role to setup Apache webserver.
  Default Variables  apache_allow_override apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl  Dependencies  Default Variables apache_allow_override Default value apache_allow_override:All apache_listen_ip Default value apache_listen_ip:&amp;#39;*&amp;#39; apache_listen_port Default value apache_listen_port:80 apache_listen_port_ssl Default value apache_listen_port_ssl:443 apache_mods_disabled Default value apache_mods_disabled:[] apache_mods_enabled Only used on Debian/Ubuntu.</description>
     </item>
     
