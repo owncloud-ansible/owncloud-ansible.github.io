@@ -289,9 +289,12 @@
         <h1>php</h1>
         
 
-<blockquote>
-<p><strong>WARNING</strong>: This Ansible role is currently in beta state. Use it at your own risk.</p>
+<p><a href="https://github.com/owncloud-ansible/php"><img src="https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;logoColor=white" alt="Source Code" /></a> <a href="https://drone.owncloud.com/owncloud-ansible/php"><img src="https://drone.owncloud.com/api/badges/owncloud-ansible/php/status.svg" alt="Build Status" /></a> <a href="https://github.com/owncloud-ansible/php/blob/master/LICENSE"><img src="https://img.shields.io/github/license/owncloud-ansible/php" alt="GitHub" /></a></p>
+
+<blockquote class="gdoc-hint warning">
+    <strong>Warning</strong><br/> This Ansible role is currently in beta state. Use it at your own risk.
 </blockquote>
+
 
 <p>Role to setup PHP.</p>
 
@@ -303,6 +306,7 @@
 <li><a href="#php-apc-enable-cli">php_apc_enable_cli</a></li>
 <li><a href="#php-apc-enabled">php_apc_enabled</a></li>
 <li><a href="#php-apc-shm-size">php_apc_shm_size</a></li>
+<li><a href="#php-apt-cache-update">php_apt_cache_update</a></li>
 <li><a href="#php-date-timezone">php_date_timezone</a></li>
 <li><a href="#php-default-version">php_default_version</a></li>
 <li><a href="#php-disable-functions">php_disable_functions</a></li>
@@ -373,195 +377,201 @@
 
 <h4 id="default-value-3">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_apc_shm_size<span class="p">:</span><span class="w"> </span>96M</code></pre></div>
-<h3 id="php-date-timezone">php_date_timezone</h3>
+<h3 id="php-apt-cache-update">php_apt_cache_update</h3>
+
+<p>Automatically update apt cache on package installations. This setting will only applied on apt-based operating systems e.g. Ubuntu.</p>
 
 <h4 id="default-value-4">Default value</h4>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_apt_cache_update<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
+<h3 id="php-date-timezone">php_date_timezone</h3>
+
+<h4 id="default-value-5">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_date_timezone<span class="p">:</span><span class="w"> </span>America/Chicago</code></pre></div>
 <h3 id="php-default-version">php_default_version</h3>
 
-<h4 id="default-value-5">Default value</h4>
+<h4 id="default-value-6">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_default_version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;7.2&#39;</span></code></pre></div>
 <h3 id="php-disable-functions">php_disable_functions</h3>
 
-<h4 id="default-value-6">Default value</h4>
+<h4 id="default-value-7">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_disable_functions<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="php-display-errors">php_display_errors</h3>
 
-<h4 id="default-value-7">Default value</h4>
+<h4 id="default-value-8">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_display_errors<span class="p">:</span><span class="w"> </span>Off</code></pre></div>
 <h3 id="php-display-startup-errors">php_display_startup_errors</h3>
 
-<h4 id="default-value-8">Default value</h4>
+<h4 id="default-value-9">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_display_startup_errors<span class="p">:</span><span class="w"> </span>Off</code></pre></div>
 <h3 id="php-error-reporting">php_error_reporting</h3>
 
-<h4 id="default-value-9">Default value</h4>
+<h4 id="default-value-10">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_error_reporting<span class="p">:</span><span class="w"> </span>E_ALL<span class="w"> </span>&amp;<span class="w"> </span>~E_DEPRECATED<span class="w"> </span>&amp;<span class="w"> </span>~E_STRICT</code></pre></div>
 <h3 id="php-expose-php">php_expose_php</h3>
 
-<h4 id="default-value-10">Default value</h4>
+<h4 id="default-value-11">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_expose_php<span class="p">:</span><span class="w"> </span>On</code></pre></div>
 <h3 id="php-file-uploads">php_file_uploads</h3>
 
-<h4 id="default-value-11">Default value</h4>
+<h4 id="default-value-12">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_file_uploads<span class="p">:</span><span class="w"> </span>On</code></pre></div>
 <h3 id="php-fpm-enabled">php_fpm_enabled</h3>
 
-<h4 id="default-value-12">Default value</h4>
+<h4 id="default-value-13">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_enabled<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="php-fpm-listen">php_fpm_listen</h3>
 
-<h4 id="default-value-13">Default value</h4>
+<h4 id="default-value-14">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_listen<span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">:</span><span class="m">9000</span></code></pre></div>
 <h3 id="php-fpm-listen-allowed-clients">php_fpm_listen_allowed_clients</h3>
 
-<h4 id="default-value-14">Default value</h4>
+<h4 id="default-value-15">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_listen_allowed_clients<span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span></code></pre></div>
 <h3 id="php-fpm-pm-max-children">php_fpm_pm_max_children</h3>
 
-<h4 id="default-value-15">Default value</h4>
+<h4 id="default-value-16">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_pm_max_children<span class="p">:</span><span class="w"> </span><span class="m">50</span></code></pre></div>
 <h3 id="php-fpm-pm-max-spare-servers">php_fpm_pm_max_spare_servers</h3>
 
-<h4 id="default-value-16">Default value</h4>
+<h4 id="default-value-17">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_pm_max_spare_servers<span class="p">:</span><span class="w"> </span><span class="m">5</span></code></pre></div>
 <h3 id="php-fpm-pm-min-spare-servers">php_fpm_pm_min_spare_servers</h3>
 
-<h4 id="default-value-17">Default value</h4>
+<h4 id="default-value-18">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_pm_min_spare_servers<span class="p">:</span><span class="w"> </span><span class="m">5</span></code></pre></div>
 <h3 id="php-fpm-pm-start-servers">php_fpm_pm_start_servers</h3>
 
-<h4 id="default-value-18">Default value</h4>
+<h4 id="default-value-19">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_fpm_pm_start_servers<span class="p">:</span><span class="w"> </span><span class="m">5</span></code></pre></div>
 <h3 id="php-max-execution-time">php_max_execution_time</h3>
 
-<h4 id="default-value-19">Default value</h4>
+<h4 id="default-value-20">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_max_execution_time<span class="p">:</span><span class="w"> </span><span class="s1">&#39;3600&#39;</span></code></pre></div>
 <h3 id="php-max-file-uploads">php_max_file_uploads</h3>
 
-<h4 id="default-value-20">Default value</h4>
+<h4 id="default-value-21">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_max_file_uploads<span class="p">:</span><span class="w"> </span><span class="s1">&#39;20&#39;</span></code></pre></div>
 <h3 id="php-max-input-time">php_max_input_time</h3>
 
-<h4 id="default-value-21">Default value</h4>
+<h4 id="default-value-22">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_max_input_time<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ php_max_execution_time }}&#39;</span></code></pre></div>
 <h3 id="php-max-input-vars">php_max_input_vars</h3>
 
-<h4 id="default-value-22">Default value</h4>
+<h4 id="default-value-23">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_max_input_vars<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1000&#39;</span></code></pre></div>
 <h3 id="php-memory-limit">php_memory_limit</h3>
 
-<h4 id="default-value-23">Default value</h4>
+<h4 id="default-value-24">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_memory_limit<span class="p">:</span><span class="w"> </span>256M</code></pre></div>
 <h3 id="php-opcache-blacklist-filename">php_opcache_blacklist_filename</h3>
 
-<h4 id="default-value-24">Default value</h4>
+<h4 id="default-value-25">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_blacklist_filename<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span></code></pre></div>
 <h3 id="php-opcache-enable-cli">php_opcache_enable_cli</h3>
 
-<h4 id="default-value-25">Default value</h4>
+<h4 id="default-value-26">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_enable_cli<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span></code></pre></div>
 <h3 id="php-opcache-enabled">php_opcache_enabled</h3>
 
-<h4 id="default-value-26">Default value</h4>
+<h4 id="default-value-27">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="php-opcache-interned-strings-buffer">php_opcache_interned_strings_buffer</h3>
 
-<h4 id="default-value-27">Default value</h4>
+<h4 id="default-value-28">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_interned_strings_buffer<span class="p">:</span><span class="w"> </span><span class="s1">&#39;16&#39;</span></code></pre></div>
 <h3 id="php-opcache-max-accelerated-files">php_opcache_max_accelerated_files</h3>
 
-<h4 id="default-value-28">Default value</h4>
+<h4 id="default-value-29">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_max_accelerated_files<span class="p">:</span><span class="w"> </span><span class="s1">&#39;4096&#39;</span></code></pre></div>
 <h3 id="php-opcache-max-file-size">php_opcache_max_file_size</h3>
 
-<h4 id="default-value-29">Default value</h4>
+<h4 id="default-value-30">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_max_file_size<span class="p">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span></code></pre></div>
 <h3 id="php-opcache-max-wasted-percentage">php_opcache_max_wasted_percentage</h3>
 
-<h4 id="default-value-30">Default value</h4>
+<h4 id="default-value-31">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_max_wasted_percentage<span class="p">:</span><span class="w"> </span><span class="s1">&#39;5&#39;</span></code></pre></div>
 <h3 id="php-opcache-memory-consumption">php_opcache_memory_consumption</h3>
 
-<h4 id="default-value-31">Default value</h4>
+<h4 id="default-value-32">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_memory_consumption<span class="p">:</span><span class="w"> </span><span class="s1">&#39;96&#39;</span></code></pre></div>
 <h3 id="php-opcache-revalidate-freq">php_opcache_revalidate_freq</h3>
 
-<h4 id="default-value-32">Default value</h4>
+<h4 id="default-value-33">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_revalidate_freq<span class="p">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span></code></pre></div>
 <h3 id="php-opcache-revalidate-path">php_opcache_revalidate_path</h3>
 
-<h4 id="default-value-33">Default value</h4>
+<h4 id="default-value-34">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_revalidate_path<span class="p">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span></code></pre></div>
 <h3 id="php-opcache-validate-timestamps">php_opcache_validate_timestamps</h3>
 
-<h4 id="default-value-34">Default value</h4>
+<h4 id="default-value-35">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_opcache_validate_timestamps<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span></code></pre></div>
 <h3 id="php-output-buffering">php_output_buffering</h3>
 
-<h4 id="default-value-35">Default value</h4>
+<h4 id="default-value-36">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_output_buffering<span class="p">:</span><span class="w"> </span><span class="s1">&#39;4096&#39;</span></code></pre></div>
 <h3 id="php-packages-extra">php_packages_extra</h3>
 
 <p>Can be used to install other dependency packages e.g. gcc (required by pecl).</p>
 
-<h4 id="default-value-36">Default value</h4>
+<h4 id="default-value-37">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="php-packages-state">php_packages_state</h3>
 
 <p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
 
-<h4 id="default-value-37">Default value</h4>
+<h4 id="default-value-38">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_packages_state<span class="p">:</span><span class="w"> </span>present</code></pre></div>
 <h3 id="php-post-max-size">php_post_max_size</h3>
 
-<h4 id="default-value-38">Default value</h4>
+<h4 id="default-value-39">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_post_max_size<span class="p">:</span><span class="w"> </span>32M</code></pre></div>
 <h3 id="php-realpath-cache-size">php_realpath_cache_size</h3>
 
-<h4 id="default-value-39">Default value</h4>
+<h4 id="default-value-40">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_realpath_cache_size<span class="p">:</span><span class="w"> </span>32K</code></pre></div>
 <h3 id="php-sendmail-path">php_sendmail_path</h3>
 
-<h4 id="default-value-40">Default value</h4>
+<h4 id="default-value-41">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_sendmail_path<span class="p">:</span><span class="w"> </span>/usr/sbin/sendmail<span class="w"> </span>-t<span class="w"> </span>-i</code></pre></div>
 <h3 id="php-session-cookie-lifetime">php_session_cookie_lifetime</h3>
 
-<h4 id="default-value-41">Default value</h4>
+<h4 id="default-value-42">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_cookie_lifetime<span class="p">:</span><span class="w"> </span><span class="m">0</span></code></pre></div>
 <h3 id="php-session-gc-divisor">php_session_gc_divisor</h3>
 
-<h4 id="default-value-42">Default value</h4>
+<h4 id="default-value-43">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_gc_divisor<span class="p">:</span><span class="w"> </span><span class="m">1000</span></code></pre></div>
 <h3 id="php-session-gc-maxlifetime">php_session_gc_maxlifetime</h3>
 
-<h4 id="default-value-43">Default value</h4>
+<h4 id="default-value-44">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_gc_maxlifetime<span class="p">:</span><span class="w"> </span><span class="m">1440</span></code></pre></div>
 <h3 id="php-session-gc-probability">php_session_gc_probability</h3>
 
-<h4 id="default-value-44">Default value</h4>
+<h4 id="default-value-45">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_gc_probability<span class="p">:</span><span class="w"> </span><span class="m">1</span></code></pre></div>
 <h3 id="php-session-save-handler">php_session_save_handler</h3>
 
-<h4 id="default-value-45">Default value</h4>
+<h4 id="default-value-46">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_save_handler<span class="p">:</span><span class="w"> </span>files</code></pre></div>
 <h3 id="php-session-save-path">php_session_save_path</h3>
 
-<h4 id="default-value-46">Default value</h4>
+<h4 id="default-value-47">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_session_save_path<span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span></code></pre></div>
 <h3 id="php-short-open-tag">php_short_open_tag</h3>
 
-<h4 id="default-value-47">Default value</h4>
+<h4 id="default-value-48">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_short_open_tag<span class="p">:</span><span class="w"> </span>Off</code></pre></div>
 <h3 id="php-upload-max-filesize">php_upload_max_filesize</h3>
 
-<h4 id="default-value-48">Default value</h4>
+<h4 id="default-value-49">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_upload_max_filesize<span class="p">:</span><span class="w"> </span>64M</code></pre></div>
 <h3 id="php-webserver-enabled">php_webserver_enabled</h3>
 
 <p>Set this to <code>False</code> if you&rsquo;re not using PHP with a webserver e.g. Apache/Nginx.</p>
 
-<h4 id="default-value-49">Default value</h4>
+<h4 id="default-value-50">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">php_webserver_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
