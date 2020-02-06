@@ -289,9 +289,12 @@
         <h1>owncloud</h1>
         
 
-<blockquote>
-<p><strong>WARNING</strong>: This Ansible role is currently in beta state. Use it at your own risk.</p>
+<p><a href="https://github.com/owncloud-ansible/owncloud"><img src="https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;logoColor=white" alt="Source Code" /></a> <a href="https://drone.owncloud.com/owncloud-ansible/owncloud"><img src="https://drone.owncloud.com/api/badges/owncloud-ansible/owncloud/status.svg" alt="Build Status" /></a> <a href="https://github.com/owncloud-ansible/owncloud/blob/master/LICENSE"><img src="https://img.shields.io/github/license/owncloud-ansible/owncloud" alt="GitHub" /></a></p>
+
+<blockquote class="gdoc-hint warning">
+    <strong>Warning</strong><br/> This Ansible role is currently in beta state. Use it at your own risk.
 </blockquote>
+
 
 <p>Ansible role to setup an ownCloud server. Currently, only a single ownCloud server is supported. Support for clustered mode is planned but not included right now.</p>
 
@@ -308,6 +311,8 @@
 <li><a href="#owncloud-app-group">owncloud_app_group</a></li>
 <li><a href="#owncloud-apps">owncloud_apps</a></li>
 <li><a href="#owncloud-apps-config">owncloud_apps_config</a></li>
+<li><a href="#owncloud-apps-deprecated">owncloud_apps_deprecated</a></li>
+<li><a href="#owncloud-apt-cache-update">owncloud_apt_cache_update</a></li>
 <li><a href="#owncloud-autosetup">owncloud_autosetup</a></li>
 <li><a href="#owncloud-config-extra">owncloud_config_extra</a></li>
 <li><a href="#owncloud-config-path">owncloud_config_path</a></li>
@@ -437,46 +442,58 @@
 </span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>password_policy</code></pre></div>
 <h4 id="example-usage">Example usage</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_apps<span class="p">:</span><span class="w">
-</span><span class="w"></span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>contacts<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//market.owncloud.local/carnet<span class="m">-0.16.2</span>.tar.gz<span class="w">
-</span><span class="w"></span>from_url<span class="p">:</span><span class="w"> </span>yes<span class="w">
-</span><span class="w"></span>url_username<span class="p">:</span><span class="w"> </span>my_user<span class="w">
-</span><span class="w"></span>url_password<span class="p">:</span>my_password<span class="w">
-</span><span class="w"></span>force_basic_auth<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w"></span>state<span class="p">:</span><span class="w"> </span>present</code></pre></div>
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>contacts<span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//market.owncloud.local/carnet<span class="m">-0.16.2</span>.tar.gz<span class="w">
+</span><span class="w">    </span>from_url<span class="p">:</span><span class="w"> </span>yes<span class="w">
+</span><span class="w">    </span>url_username<span class="p">:</span><span class="w"> </span>my_user<span class="w">
+</span><span class="w">    </span>url_password<span class="p">:</span>my_password<span class="w">
+</span><span class="w">    </span>force_basic_auth<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span>state<span class="p">:</span><span class="w"> </span>present</code></pre></div>
 <h3 id="owncloud-apps-config">owncloud_apps_config</h3>
 
 <h4 id="default-value-8">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_apps_config<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
-<h3 id="owncloud-autosetup">owncloud_autosetup</h3>
+<h3 id="owncloud-apps-deprecated">owncloud_apps_deprecated</h3>
+
+<p>To disable deprecated apps before a version upgrade we are introducing this new env variables. This way the admin can control which app gets properly disabled before an upgrade gets applies.</p>
 
 <h4 id="default-value-9">Default value</h4>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_apps_deprecated<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
+<h3 id="owncloud-apt-cache-update">owncloud_apt_cache_update</h3>
+
+<p>Automatically update apt cache on package installations. This setting will only applied on apt-based operating systems e.g. Ubuntu.</p>
+
+<h4 id="default-value-10">Default value</h4>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_apt_cache_update<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
+<h3 id="owncloud-autosetup">owncloud_autosetup</h3>
+
+<h4 id="default-value-11">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_autosetup<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-config-extra">owncloud_config_extra</h3>
 
 <p>For availabe configuration options see: <a href="https://doc.owncloud.com/server/admin_manual/configuration/server/config_sample_php_parameters.html">https://doc.owncloud.com/server/admin_manual/configuration/server/config_sample_php_parameters.html</a></p>
 
-<h4 id="default-value-10">Default value</h4>
+<h4 id="default-value-12">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_config_extra<span class="p">:</span><span class="w"> </span>{}</code></pre></div>
 <h3 id="owncloud-config-path">owncloud_config_path</h3>
 
-<h4 id="default-value-11">Default value</h4>
+<h4 id="default-value-13">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_config_path<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ owncloud_src_path }}/config&#39;</span></code></pre></div>
 <h3 id="owncloud-cors-allowed-domains">owncloud_cors_allowed_domains</h3>
 
-<h4 id="default-value-12">Default value</h4>
+<h4 id="default-value-14">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_cors_allowed_domains<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="owncloud-cron-backend">owncloud_cron_backend</h3>
 
 <p>Possible values are <code>webcron|cron|ajax</code>. See: <a href="https://doc.owncloud.com/server/admin_manual/configuration/server/background_jobs_configuration.htmlcron-jobs">https://doc.owncloud.com/server/admin_manual/configuration/server/background_jobs_configuration.htmlcron-jobs</a></p>
 
-<h4 id="default-value-13">Default value</h4>
+<h4 id="default-value-15">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_cron_backend<span class="p">:</span><span class="w"> </span>cron</code></pre></div>
 <h3 id="owncloud-cron-jobs">owncloud_cron_jobs</h3>
 
 <p>Will be applied only if owncloud_cron_backend is &lsquo;cron&rsquo;</p>
 
-<h4 id="default-value-14">Default value</h4>
+<h4 id="default-value-16">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_cron_jobs<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>oc<span class="w"> </span>cron<span class="w">
 </span><span class="w">    </span>job<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ owncloud_occ_executable }} system:cron&#39;</span><span class="w">
@@ -485,328 +502,331 @@
 
 <p>Be careful! See <a href="https://doc.owncloud.com/server/admin_manual/configuration/server/config_sample_php_parameters.htmldisable-ownclouds-built-in-csrf-protection-mechanism">https://doc.owncloud.com/server/admin_manual/configuration/server/config_sample_php_parameters.htmldisable-ownclouds-built-in-csrf-protection-mechanism</a></p>
 
-<h4 id="default-value-15">Default value</h4>
+<h4 id="default-value-17">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_csrf_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-data-path">owncloud_data_path</h3>
 
-<h4 id="default-value-16">Default value</h4>
+<h4 id="default-value-18">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_data_path<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ owncloud_src_path }}/data&#39;</span></code></pre></div>
 <h3 id="owncloud-db-host">owncloud_db_host</h3>
 
-<h4 id="default-value-17">Default value</h4>
+<h4 id="default-value-19">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_host<span class="p">:</span><span class="w"> </span>localhost</code></pre></div>
 <h3 id="owncloud-db-name">owncloud_db_name</h3>
 
-<h4 id="default-value-18">Default value</h4>
+<h4 id="default-value-20">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_name<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-db-password">owncloud_db_password</h3>
 
-<h4 id="default-value-19">Default value</h4>
+<h4 id="default-value-21">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_password<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-db-tableprefix">owncloud_db_tableprefix</h3>
 
-<h4 id="default-value-20">Default value</h4>
+<h4 id="default-value-22">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_tableprefix<span class="p">:</span><span class="w"> </span>oc_</code></pre></div>
 <h3 id="owncloud-db-type">owncloud_db_type</h3>
 
-<h4 id="default-value-21">Default value</h4>
+<h4 id="default-value-23">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_type<span class="p">:</span><span class="w"> </span>mysql</code></pre></div>
 <h3 id="owncloud-db-user">owncloud_db_user</h3>
 
-<h4 id="default-value-22">Default value</h4>
+<h4 id="default-value-24">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_db_user<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-default-app">owncloud_default_app</h3>
 
-<h4 id="default-value-23">Default value</h4>
+<h4 id="default-value-25">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_default_app<span class="p">:</span><span class="w"> </span>files</code></pre></div>
 <h3 id="owncloud-deploy-path">owncloud_deploy_path</h3>
 
-<h4 id="default-value-24">Default value</h4>
+<h4 id="default-value-26">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_deploy_path<span class="p">:</span><span class="w"> </span>/var/www/owncloud</code></pre></div>
 <h3 id="owncloud-download-url">owncloud_download_url</h3>
 
 <p>You can set a custom download url especialy for the enterprise version.</p>
 
-<h4 id="default-value-25">Default value</h4>
+<h4 id="default-value-27">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_download_url<span class="p">:</span><span class="w"> </span>https<span class="p">:</span>//download.owncloud.org/community/owncloud-{{<span class="w"> </span>owncloud_version<span class="w">
 </span><span class="w">  </span>}}.tar.bz2</code></pre></div>
 <h3 id="owncloud-enable-avatars">owncloud_enable_avatars</h3>
 
-<h4 id="default-value-26">Default value</h4>
+<h4 id="default-value-28">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_enable_avatars<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-encryption-enabled">owncloud_encryption_enabled</h3>
 
 <p>Only supported for ownCloud &gt;= 10.2.1</p>
 
-<h4 id="default-value-27">Default value</h4>
+<h4 id="default-value-29">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_encryption_enabled<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-encryption-force-encrypt-all">owncloud_encryption_force_encrypt_all</h3>
 
-<h4 id="default-value-28">Default value</h4>
+<h4 id="default-value-30">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_encryption_force_encrypt_all<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-federation-allow-incoming-server2server-share">owncloud_federation_allow_incoming_server2server_share</h3>
 
-<h4 id="default-value-29">Default value</h4>
+<h4 id="default-value-31">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_federation_allow_incoming_server2server_share<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-federation-allow-outgoing-server2server-share">owncloud_federation_allow_outgoing_server2server_share</h3>
 
-<h4 id="default-value-30">Default value</h4>
+<h4 id="default-value-32">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_federation_allow_outgoing_server2server_share<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-federation-auto-accept-trusted">owncloud_federation_auto_accept_trusted</h3>
 
-<h4 id="default-value-31">Default value</h4>
+<h4 id="default-value-33">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_federation_auto_accept_trusted<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-federation-auto-add-servers">owncloud_federation_auto_add_servers</h3>
 
-<h4 id="default-value-32">Default value</h4>
+<h4 id="default-value-34">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_federation_auto_add_servers<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-fqdn">owncloud_fqdn</h3>
 
-<h4 id="default-value-33">Default value</h4>
+<h4 id="default-value-35">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_fqdn<span class="p">:</span><span class="w"> </span>owncloud.example.com</code></pre></div>
 <h3 id="owncloud-install-from-filesystem">owncloud_install_from_filesystem</h3>
 
-<h4 id="default-value-34">Default value</h4>
+<h4 id="default-value-36">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_install_from_filesystem<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
+<h4 id="example-usage-1">Example usage</h4>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_install_from_filesystem<span class="p">:</span><span class="w"> </span>True<span class="w">
+</span><span class="w"></span>owncloud_download_url<span class="p">:</span><span class="w"> </span>/tmp/owncloud<span class="m">-10.3.1</span>.tar.bz2</code></pre></div>
 <h3 id="owncloud-integrity-ignore-missing-app-signature">owncloud_integrity_ignore_missing_app_signature</h3>
 
-<h4 id="default-value-35">Default value</h4>
+<h4 id="default-value-37">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_integrity_ignore_missing_app_signature<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="owncloud-knowledgebase-enabled">owncloud_knowledgebase_enabled</h3>
 
-<h4 id="default-value-36">Default value</h4>
+<h4 id="default-value-38">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_knowledgebase_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-log-cron">owncloud_log_cron</h3>
 
-<h4 id="default-value-37">Default value</h4>
+<h4 id="default-value-39">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_cron<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-log-dateformat">owncloud_log_dateformat</h3>
 
-<h4 id="default-value-38">Default value</h4>
+<h4 id="default-value-40">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_dateformat<span class="p">:</span><span class="w"> </span>Y-m-d<span class="w"> </span>H<span class="p">:</span>i<span class="p">:</span>s.u</code></pre></div>
 <h3 id="owncloud-log-file">owncloud_log_file</h3>
 
-<h4 id="default-value-39">Default value</h4>
+<h4 id="default-value-41">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_file<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ owncloud_data_path }}/owncloud.log&#39;</span></code></pre></div>
 <h3 id="owncloud-log-level">owncloud_log_level</h3>
 
-<h4 id="default-value-40">Default value</h4>
+<h4 id="default-value-42">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_level<span class="p">:</span><span class="w"> </span><span class="m">2</span></code></pre></div>
 <h3 id="owncloud-log-rotate-size">owncloud_log_rotate_size</h3>
 
-<h4 id="default-value-41">Default value</h4>
+<h4 id="default-value-43">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_rotate_size<span class="p">:</span><span class="w"> </span><span class="m">0</span></code></pre></div>
 <h3 id="owncloud-log-timezone">owncloud_log_timezone</h3>
 
-<h4 id="default-value-42">Default value</h4>
+<h4 id="default-value-44">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_timezone<span class="p">:</span><span class="w"> </span>Etc/UTC</code></pre></div>
 <h3 id="owncloud-log-type">owncloud_log_type</h3>
 
-<h4 id="default-value-43">Default value</h4>
+<h4 id="default-value-45">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_log_type<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-login-alternatives">owncloud_login_alternatives</h3>
 
 <p>Allows to specify additional login buttons on the logon screen (e.g. SSO)</p>
 
-<h4 id="default-value-44">Default value</h4>
+<h4 id="default-value-46">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_login_alternatives<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="owncloud-mail-smtp-auth-enabled">owncloud_mail_smtp_auth_enabled</h3>
 
-<h4 id="default-value-45">Default value</h4>
+<h4 id="default-value-47">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_mail_smtp_auth_enabled<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-medial-search-accounts-enabled">owncloud_medial_search_accounts_enabled</h3>
 
-<h4 id="default-value-46">Default value</h4>
+<h4 id="default-value-48">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_medial_search_accounts_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-occ-executable">owncloud_occ_executable</h3>
 
-<h4 id="default-value-47">Default value</h4>
+<h4 id="default-value-49">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_occ_executable<span class="p">:</span><span class="w"> </span>/usr/local/bin/occ</code></pre></div>
 <h3 id="owncloud-packages-extra">owncloud_packages_extra</h3>
 
-<h4 id="default-value-48">Default value</h4>
+<h4 id="default-value-50">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_packages_extra<span class="p">:</span><span class="w"> </span><span class="p">[]</span></code></pre></div>
 <h3 id="owncloud-password-force-change-on-first-login">owncloud_password_force_change_on_first_login</h3>
 
-<h4 id="default-value-49">Default value</h4>
+<h4 id="default-value-51">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_password_force_change_on_first_login<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-redis-enabled">owncloud_redis_enabled</h3>
 
-<h4 id="default-value-50">Default value</h4>
+<h4 id="default-value-52">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_redis_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-redis-host">owncloud_redis_host</h3>
 
-<h4 id="default-value-51">Default value</h4>
+<h4 id="default-value-53">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_redis_host<span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span></code></pre></div>
 <h3 id="owncloud-redis-port">owncloud_redis_port</h3>
 
-<h4 id="default-value-52">Default value</h4>
+<h4 id="default-value-54">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_redis_port<span class="p">:</span><span class="w"> </span><span class="m">6379</span></code></pre></div>
 <h3 id="owncloud-release-channel">owncloud_release_channel</h3>
 
-<h4 id="default-value-53">Default value</h4>
+<h4 id="default-value-55">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_release_channel<span class="p">:</span><span class="w"> </span>production</code></pre></div>
 <h3 id="owncloud-remember-login-cookie-lifetime">owncloud_remember_login_cookie_lifetime</h3>
 
-<h4 id="default-value-54">Default value</h4>
+<h4 id="default-value-56">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_remember_login_cookie_lifetime<span class="p">:</span><span class="w"> </span><span class="m">1296000</span></code></pre></div>
 <h3 id="owncloud-search-min-length">owncloud_search_min_length</h3>
 
-<h4 id="default-value-55">Default value</h4>
+<h4 id="default-value-57">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_search_min_length<span class="p">:</span><span class="w"> </span><span class="m">3</span></code></pre></div>
 <h3 id="owncloud-session-keepalive-enabled">owncloud_session_keepalive_enabled</h3>
 
-<h4 id="default-value-56">Default value</h4>
+<h4 id="default-value-58">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_session_keepalive_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-session-lifetime">owncloud_session_lifetime</h3>
 
-<h4 id="default-value-57">Default value</h4>
+<h4 id="default-value-59">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_session_lifetime<span class="p">:</span><span class="w"> </span><span class="m">86400</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-group-sharing">owncloud_share_api_allow_group_sharing</h3>
 
-<h4 id="default-value-58">Default value</h4>
+<h4 id="default-value-60">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_group_sharing<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-links">owncloud_share_api_allow_links</h3>
 
-<h4 id="default-value-59">Default value</h4>
+<h4 id="default-value-61">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_links<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-mail-notification">owncloud_share_api_allow_mail_notification</h3>
 
-<h4 id="default-value-60">Default value</h4>
+<h4 id="default-value-62">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_mail_notification<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-public-notification">owncloud_share_api_allow_public_notification</h3>
 
-<h4 id="default-value-61">Default value</h4>
+<h4 id="default-value-63">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_public_notification<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-public-upload">owncloud_share_api_allow_public_upload</h3>
 
-<h4 id="default-value-62">Default value</h4>
+<h4 id="default-value-64">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_public_upload<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-resharing">owncloud_share_api_allow_resharing</h3>
 
-<h4 id="default-value-63">Default value</h4>
+<h4 id="default-value-65">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_resharing<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-share-dialog-user-enumeration">owncloud_share_api_allow_share_dialog_user_enumeration</h3>
 
-<h4 id="default-value-64">Default value</h4>
+<h4 id="default-value-66">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_share_dialog_user_enumeration<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-allow-social-share">owncloud_share_api_allow_social_share</h3>
 
-<h4 id="default-value-65">Default value</h4>
+<h4 id="default-value-67">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_allow_social_share<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-auto-accept-share">owncloud_share_api_auto_accept_share</h3>
 
-<h4 id="default-value-66">Default value</h4>
+<h4 id="default-value-68">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_auto_accept_share<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-default-expire-date">owncloud_share_api_default_expire_date</h3>
 
-<h4 id="default-value-67">Default value</h4>
+<h4 id="default-value-69">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_default_expire_date<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-enabled">owncloud_share_api_enabled</h3>
 
-<h4 id="default-value-68">Default value</h4>
+<h4 id="default-value-70">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-enforce-expire-date">owncloud_share_api_enforce_expire_date</h3>
 
-<h4 id="default-value-69">Default value</h4>
+<h4 id="default-value-71">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_enforce_expire_date<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-enforce-password-links-read-only">owncloud_share_api_enforce_password_links_read_only</h3>
 
-<h4 id="default-value-70">Default value</h4>
+<h4 id="default-value-72">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_enforce_password_links_read_only<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-enforce-password-links-read-write">owncloud_share_api_enforce_password_links_read_write</h3>
 
-<h4 id="default-value-71">Default value</h4>
+<h4 id="default-value-73">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_enforce_password_links_read_write<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-enforce-password-links-write-only">owncloud_share_api_enforce_password_links_write_only</h3>
 
-<h4 id="default-value-72">Default value</h4>
+<h4 id="default-value-74">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_enforce_password_links_write_only<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-share-api-expire-after-n-days">owncloud_share_api_expire_after_n_days</h3>
 
-<h4 id="default-value-73">Default value</h4>
+<h4 id="default-value-75">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_expire_after_n_days<span class="p">:</span><span class="w"> </span><span class="m">7</span></code></pre></div>
 <h3 id="owncloud-share-api-only-share-with-group-members">owncloud_share_api_only_share_with_group_members</h3>
 
-<h4 id="default-value-74">Default value</h4>
+<h4 id="default-value-76">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_only_share_with_group_members<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-only-share-with-membership-groups">owncloud_share_api_only_share_with_membership_groups</h3>
 
-<h4 id="default-value-75">Default value</h4>
+<h4 id="default-value-77">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_only_share_with_membership_groups<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-share-api-share-dialog-user-enumeration-group-members">owncloud_share_api_share_dialog_user_enumeration_group_members</h3>
 
-<h4 id="default-value-76">Default value</h4>
+<h4 id="default-value-78">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_share_api_share_dialog_user_enumeration_group_members<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-show-server-hostname">owncloud_show_server_hostname</h3>
 
-<h4 id="default-value-77">Default value</h4>
+<h4 id="default-value-79">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_show_server_hostname<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-skeleton-path">owncloud_skeleton_path</h3>
 
-<h4 id="default-value-78">Default value</h4>
+<h4 id="default-value-80">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_skeleton_path<span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ owncloud_deploy_path }}/core/skeleton&#39;</span></code></pre></div>
 <h3 id="owncloud-src-path">owncloud_src_path</h3>
 
-<h4 id="default-value-79">Default value</h4>
+<h4 id="default-value-81">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_src_path<span class="p">:</span><span class="w"> </span>/usr/local/src/{{<span class="w"> </span>owncloud_system_user<span class="w"> </span>}}</code></pre></div>
 <h3 id="owncloud-syslog-log-format">owncloud_syslog_log_format</h3>
 
-<h4 id="default-value-80">Default value</h4>
+<h4 id="default-value-82">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_syslog_log_format<span class="p">:</span><span class="w"> </span><span class="s1">&#39;[%reqId%][%remoteAddr%][%user%][%app%][%method%][%url%]
 </span><span class="s1">  %message%&#39;</span></code></pre></div>
 <h3 id="owncloud-syslog-tag">owncloud_syslog_tag</h3>
 
-<h4 id="default-value-81">Default value</h4>
+<h4 id="default-value-83">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_syslog_tag<span class="p">:</span><span class="w"> </span>ownCloud</code></pre></div>
 <h3 id="owncloud-system-group">owncloud_system_group</h3>
 
-<h4 id="default-value-82">Default value</h4>
+<h4 id="default-value-84">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_system_group<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-system-user">owncloud_system_user</h3>
 
-<h4 id="default-value-83">Default value</h4>
+<h4 id="default-value-85">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_system_user<span class="p">:</span><span class="w"> </span>owncloud</code></pre></div>
 <h3 id="owncloud-system-user-comment">owncloud_system_user_comment</h3>
 
-<h4 id="default-value-84">Default value</h4>
+<h4 id="default-value-86">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_system_user_comment<span class="p">:</span><span class="w"> </span>Owncloud<span class="w"> </span>Application<span class="w"> </span>Manager</code></pre></div>
 <h3 id="owncloud-system-user-home">owncloud_system_user_home</h3>
 
-<h4 id="default-value-85">Default value</h4>
+<h4 id="default-value-87">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_system_user_home<span class="p">:</span><span class="w"> </span>/var/local/{{<span class="w"> </span>owncloud_system_user<span class="w"> </span>}}</code></pre></div>
 <h3 id="owncloud-system-user-shell">owncloud_system_user_shell</h3>
 
-<h4 id="default-value-86">Default value</h4>
+<h4 id="default-value-88">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_system_user_shell<span class="p">:</span><span class="w"> </span>/usr/sbin/nologin</code></pre></div>
 <h3 id="owncloud-token-auth-enforced">owncloud_token_auth_enforced</h3>
 
-<h4 id="default-value-87">Default value</h4>
+<h4 id="default-value-89">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_token_auth_enforced<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></div>
 <h3 id="owncloud-trusted-domains">owncloud_trusted_domains</h3>
 
-<h4 id="default-value-88">Default value</h4>
+<h4 id="default-value-90">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_trusted_domains<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span><span class="s1">&#39;{{ owncloud_fqdn }}&#39;</span></code></pre></div>
 <h3 id="owncloud-upgrade-3party-app-disable">owncloud_upgrade_3party_app_disable</h3>
 
-<h4 id="default-value-89">Default value</h4>
+<h4 id="default-value-91">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_upgrade_3party_app_disable<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-upgrade-migration-test">owncloud_upgrade_migration_test</h3>
 
-<h4 id="default-value-90">Default value</h4>
+<h4 id="default-value-92">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_upgrade_migration_test<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-version">owncloud_version</h3>
 
-<h4 id="default-value-91">Default value</h4>
+<h4 id="default-value-93">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_version<span class="p">:</span><span class="w"> </span><span class="m">10.3.1</span></code></pre></div>
 <h3 id="owncloud-version-hide">owncloud_version_hide</h3>
 
-<h4 id="default-value-92">Default value</h4>
+<h4 id="default-value-94">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_version_hide<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></div>
 <h3 id="owncloud-web-default-language">owncloud_web_default_language</h3>
 
-<h4 id="default-value-93">Default value</h4>
+<h4 id="default-value-95">Default value</h4>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">owncloud_web_default_language<span class="p">:</span><span class="w"> </span>en_US</code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
 
