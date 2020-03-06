@@ -1,9 +1,9 @@
 ---
 repository:
   name: owncloud-ansible.github.io
-  description: Documentation for official ownCloud Ansible roles.
+  description: Documentation for official ownCloud Ansible roles
   homepage: https://owncloud-ansible.github.io
-  topics: ansible, documentation
+  topics: ansible, owncloud, docs
 
   private: false
   has_issues: true
@@ -47,8 +47,9 @@ labels:
     description: This will not be worked on
 
 branches:
-  - name: master
+  - name: source
     protection:
+      required_pull_request_reviews: null
       required_status_checks:
         strict: true
         contexts:
@@ -57,5 +58,14 @@ branches:
       restrictions:
         users: []
         teams: []
+  - name: master
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks: null
+      enforce_admins: true
+      restrictions:
+        users: []
+        teams:
+          - bot
 
 ...
