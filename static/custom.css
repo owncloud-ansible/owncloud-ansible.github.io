@@ -1,6 +1,46 @@
-.gdoc-header { background: #3d496b; border-color: #2f333e; }
-.gdoc-footer { background: #2f333e; color: #ffffff; }
-.gdoc-footer__link, .gdoc-footer__link:visited, .gdoc-footer__link:hover { color: #e66f35; }
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Light.woff2) format("woff2"), url(fonts/SourceSansPro-Light.woff2) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Regular.woff2) format("woff2"), url(fonts/SourceSansPro-Regular.woff) format("woff");
+  font-weight:normal;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Semibold.woff2) format("woff2"), url(fonts/SourceSansPro-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Bold.woff2) format("woff2"), url(fonts/SourceSansPro-Bold.woff2) format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap
+}
+
+body { font-family: "Source Sans Pro"; font-weight: normal; }
+main.container, .gdoc-footer { font-size: 1.1em; }
+
+a { color: #4e85c8; }
+
+.gdoc-nav { font-size: .975rem; }
+.gdoc-header { background: #1b223d; border-color: #283747; }
+.gdoc-footer { background: #283747; color: #ffffff; }
+.gdoc-footer__link, .gdoc-footer__link:visited, .gdoc-footer__link:hover { color: #e56f35; }
+
+.gdoc-brand__img { width: auto; margin-right: 1.5rem; }
 
 /* custom shortcodes */
 /* button */

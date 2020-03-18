@@ -1,7 +1,7 @@
 ---
 baseURL: "https://owncloud-ansible.github.io/"
 languageCode: "en-us"
-title: "owncloud-ansible"
+title: "Ansible"
 theme: "hugo-geekdoc"
 
 pygmentsUseClasses: true
@@ -18,5 +18,5 @@ params:
   geekdocLegalNotice: https://owncloud.org/imprint/
   geekdocPrivacyPolicy: https://owncloud.org/privacy-policy/
   geekdocAnchor: true
-  geekdocAnchorLeft: false
+  geekdocAnchorLeft: true
   geekdocAnchorCopy: true
