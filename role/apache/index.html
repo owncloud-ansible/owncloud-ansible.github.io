@@ -306,23 +306,23 @@
 <li><a href="#default-variables">Default Variables</a>
 
 <ul>
-<li><a href="#apache-allow-override">apache_allow_override</a></li>
-<li><a href="#apache-apt-cache-update">apache_apt_cache_update</a></li>
-<li><a href="#apache-listen-ip">apache_listen_ip</a></li>
-<li><a href="#apache-listen-port">apache_listen_port</a></li>
-<li><a href="#apache-listen-port-ssl">apache_listen_port_ssl</a></li>
-<li><a href="#apache-mods-disabled">apache_mods_disabled</a></li>
-<li><a href="#apache-mods-enabled">apache_mods_enabled</a></li>
-<li><a href="#apache-options">apache_options</a></li>
-<li><a href="#apache-packages-extra">apache_packages_extra</a></li>
-<li><a href="#apache-packages-state">apache_packages_state</a></li>
-<li><a href="#apache-restart-state">apache_restart_state</a></li>
-<li><a href="#apache-ssl-cipher-suite">apache_ssl_cipher_suite</a></li>
-<li><a href="#apache-ssl-protocol">apache_ssl_protocol</a></li>
-<li><a href="#apache-state">apache_state</a></li>
-<li><a href="#apache-vhost-name">apache_vhost_name</a></li>
-<li><a href="#apache-vhosts">apache_vhosts</a></li>
-<li><a href="#apache-vhosts-ssl">apache_vhosts_ssl</a></li>
+<li><a href="#apache_allow_override">apache_allow_override</a></li>
+<li><a href="#apache_apt_cache_update">apache_apt_cache_update</a></li>
+<li><a href="#apache_listen_ip">apache_listen_ip</a></li>
+<li><a href="#apache_listen_port">apache_listen_port</a></li>
+<li><a href="#apache_listen_port_ssl">apache_listen_port_ssl</a></li>
+<li><a href="#apache_mods_disabled">apache_mods_disabled</a></li>
+<li><a href="#apache_mods_enabled">apache_mods_enabled</a></li>
+<li><a href="#apache_options">apache_options</a></li>
+<li><a href="#apache_packages_extra">apache_packages_extra</a></li>
+<li><a href="#apache_packages_state">apache_packages_state</a></li>
+<li><a href="#apache_restart_state">apache_restart_state</a></li>
+<li><a href="#apache_ssl_cipher_suite">apache_ssl_cipher_suite</a></li>
+<li><a href="#apache_ssl_protocol">apache_ssl_protocol</a></li>
+<li><a href="#apache_state">apache_state</a></li>
+<li><a href="#apache_vhost_name">apache_vhost_name</a></li>
+<li><a href="#apache_vhosts">apache_vhosts</a></li>
+<li><a href="#apache_vhosts_ssl">apache_vhosts_ssl</a></li>
 </ul></li>
 <li><a href="#dependencies">Dependencies</a></li>
 </ul>
@@ -398,11 +398,11 @@
 <div class="gdoc-page__anchorwrap"><h3 id="apache-ssl-cipher-suite"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache-ssl-cipher-suite" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#apache-ssl-cipher-suite"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_ssl_cipher_suite</h3></div>
 
 <div class="gdoc-page__anchorwrap"><h4 id="default-value-11"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-11" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#default-value-11"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
-<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_cipher_suite<span class="p">:</span><span class="w"> </span>AES256+EECDH<span class="p">:</span>AES256+EDH</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_cipher_suite<span class="p">:</span><span class="w"> </span>ECDHE-ECDSA-AES128-GCM-SHA256<span class="p">:</span>ECDHE-RSA-AES128-GCM-SHA256<span class="p">:</span>ECDHE-ECDSA-AES256-GCM-SHA384<span class="p">:</span>ECDHE-RSA-AES256-GCM-SHA384<span class="p">:</span>ECDHE-ECDSA-CHACHA20-POLY1305<span class="p">:</span>ECDHE-RSA-CHACHA20-POLY1305<span class="p">:</span>DHE-RSA-AES128-GCM-SHA256<span class="p">:</span>DHE-RSA-AES256-GCM-SHA384</code></pre></div>
 <div class="gdoc-page__anchorwrap"><h3 id="apache-ssl-protocol"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache-ssl-protocol" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#apache-ssl-protocol"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_ssl_protocol</h3></div>
 
 <div class="gdoc-page__anchorwrap"><h4 id="default-value-12"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-12" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#default-value-12"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
-<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_protocol<span class="p">:</span><span class="w"> </span>All<span class="w"> </span>-SSLv2<span class="w"> </span>-SSLv3</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML">apache_ssl_protocol<span class="p">:</span><span class="w"> </span>All<span class="w"> </span>-SSLv2<span class="w"> </span>-SSLv3<span class="w"> </span>-TLSv1<span class="w"> </span>-TLSv1<span class="m">.1</span></code></pre></div>
 <div class="gdoc-page__anchorwrap"><h3 id="apache-state"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache-state" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#apache-state"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_state</h3></div>
 
 <p>Set initial apache state. Recommended values: <code>started</code> or <code>stopped</code>.</p>
