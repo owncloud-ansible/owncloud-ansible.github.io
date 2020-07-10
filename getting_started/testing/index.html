@@ -7,17 +7,12 @@
 <meta name="description" content="Testing">
 
 <title>Testing | Ansible</title>
+
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
+<link rel="stylesheet" href="/main.min.css" media="screen">
+<link rel="stylesheet" href="/custom.css" media="screen">
 
-<link rel="stylesheet" href="/main.min.css">
-
-<link rel="stylesheet" href="/custom.css">
-
-
-<!--
-    Made with Geekdoc theme
-    https://github.com/xoxys/hugo-geekdoc
--->
+<!--Made with Geekdoc theme https://github.com/xoxys/hugo-geekdoc-->
 
 </head>
 
@@ -291,16 +286,12 @@
     
 
 
-
-
-<div class="gdoc-page__anchorwrap"><h2 id="testing-using-vagrant"><a data-clipboard-text="https://owncloud-ansible.github.io/getting_started/testing/#testing-using-vagrant" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#testing-using-vagrant"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Testing using Vagrant</h2></div>
-
+<div class="gdoc-page__anchorwrap"><h2 id="testing-using-vagrant"><a data-clipboard-text="https://owncloud-ansible.github.io/getting_started/testing/#testing-using-vagrant" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Testing using Vagrant" href="#testing-using-vagrant"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Testing using Vagrant</h2></div>
 <p>Vagrant makes it possible to run Ansible scripts inside a virtual machine (backed by VirtualBox).</p>
-
 <ul>
 <li>For the first time setup, please run <code>vagrant up</code></li>
 <li>Then after making changes to the playbooks, roles or inventory, please run <code>vagrant provision</code> to apply the changes to the virtual machine</li>
-<li>The deployed ownCloud instance is accessible under <a href="http://172.30.1.2/">http://172.30.1.2/</a> with user <code>admin</code> and password <code>owncloud</code></li>
+<li>The deployed ownCloud instance is accessible under http://172.30.1.2/ with user <code>admin</code> and password <code>owncloud</code></li>
 <li>The command <code>vagrant ssh</code> makes it possible to enter the VM for debugging purposes</li>
 </ul>
 
@@ -353,9 +344,8 @@
 </footer>
 
     </div>
-</body>
 
-
+    
 
 
 
@@ -364,10 +354,13 @@
 
 
 
-<script src="/js/clipboard.min.js"></script>
+<script defer src="/js/clipboard.min.js"></script>
 <script>
-    var clipboard = new ClipboardJS('.clip');
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var clipboard = new ClipboardJS('.clip');
+    });
 </script>
 
 
+</body>
 </html>

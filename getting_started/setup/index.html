@@ -7,17 +7,12 @@
 <meta name="description" content="Setup">
 
 <title>Setup | Ansible</title>
+
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
+<link rel="stylesheet" href="/main.min.css" media="screen">
+<link rel="stylesheet" href="/custom.css" media="screen">
 
-<link rel="stylesheet" href="/main.min.css">
-
-<link rel="stylesheet" href="/custom.css">
-
-
-<!--
-    Made with Geekdoc theme
-    https://github.com/xoxys/hugo-geekdoc
--->
+<!--Made with Geekdoc theme https://github.com/xoxys/hugo-geekdoc-->
 
 </head>
 
@@ -342,9 +337,8 @@
 </footer>
 
     </div>
-</body>
 
-
+    
 
 
 
@@ -353,10 +347,13 @@
 
 
 
-<script src="/js/clipboard.min.js"></script>
+<script defer src="/js/clipboard.min.js"></script>
 <script>
-    var clipboard = new ClipboardJS('.clip');
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var clipboard = new ClipboardJS('.clip');
+    });
 </script>
 
 
+</body>
 </html>
