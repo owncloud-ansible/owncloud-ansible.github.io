@@ -11,12 +11,12 @@
     
     
     <item>
-      <title></title>
+      <title>Setup</title>
       <link>https://owncloud-ansible.github.io/getting_started/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/getting_started/setup/</guid>
-      <description>Setup These docs are work in progress so they will be incomplete.
+      <description>These docs are work in progress so they will be incomplete.
 CentOS 7 Requirements These are the packages / repositories that need to be enabled / installed before the first playbook execution.
  Software Collections enabled: yum install centos-release-scl EPEL enabled: yum install epel-release GCC installed: yum install gcc  </description>
     </item>
