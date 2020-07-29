@@ -11,6 +11,17 @@
     
     
     <item>
+      <title></title>
+      <link>https://owncloud-ansible.github.io/getting_started/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud-ansible.github.io/getting_started/setup/</guid>
+      <description>Setup These docs are work in progress so they will be incomplete.
+CentOS 7 Requirements These are the packages / repositories that need to be enabled / installed before the first playbook execution.
+ Software Collections enabled: yum install centos-release-scl EPEL enabled: yum install epel-release GCC installed: yum install gcc  </description>
+    </item>
+    
+    <item>
       <title>apache</title>
       <link>https://owncloud-ansible.github.io/role/apache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -58,17 +69,6 @@
       <guid>https://owncloud-ansible.github.io/role/redis/</guid>
       <description>__Warning__This Ansible role is currently in beta state. Use it at your own risk.  Role to setup Redis server.
  Default Variables  redis_appendfsync redis_appendonly redis_apt_cache_update redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket   Dependencies   Default Variables redis_appendfsync Default value redis_appendfsync:everysecredis_appendonly Default value redis_appendonly:noredis_apt_cache_update Automatically update apt cache on package installations. This setting will only applied on apt-based operating systems e.</description>
-    </item>
-    
-    <item>
-      <title>Setup</title>
-      <link>https://owncloud-ansible.github.io/getting_started/setup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://owncloud-ansible.github.io/getting_started/setup/</guid>
-      <description>Work in Progress This is just a start for the documenation, so it will be incomplete.
-CentOS 7 Requirements These are the packages / repositories that need to be enabled / installed before the first playbook execution.
- Software Collections enabled: yum install centos-release-scl EPEL enabled: yum install epel-release GCC installed: yum install gcc  </description>
     </item>
     
     <item>
