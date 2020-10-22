@@ -310,7 +310,6 @@
 <li><a href="#apache_ssl_protocol">apache_ssl_protocol</a></li>
 <li><a href="#apache_state">apache_state</a></li>
 <li><a href="#apache_vhost_name">apache_vhost_name</a></li>
-<li><a href="#apache_vhosts">apache_vhosts</a></li>
 <li><a href="#apache_vhosts_ssl">apache_vhosts_ssl</a></li>
 </ul>
 </li>
@@ -341,14 +340,14 @@
 <p>Only used on Debian/Ubuntu.</p>
 <div class="gdoc-page__anchorwrap"><h4 id="default-value-6"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-6" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-6"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_mods_enabled</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- rewrite.load<span class="w">
-</span><span class="w">  </span>- ssl.load<span class="w">
-</span><span class="w">  </span>- headers.load<span class="w">
-</span><span class="w">  </span>- env.load<span class="w">
-</span><span class="w">  </span>- dir.load<span class="w">
-</span><span class="w">  </span>- mime.load<span class="w">
-</span><span class="w">  </span>- unique_id.load<span class="w">
-</span><span class="w">  </span>- autoindex.load<span class="w">
+</span><span class="w">  </span>- rewrite<span class="w">
+</span><span class="w">  </span>- ssl<span class="w">
+</span><span class="w">  </span>- headers<span class="w">
+</span><span class="w">  </span>- env<span class="w">
+</span><span class="w">  </span>- dir<span class="w">
+</span><span class="w">  </span>- mime<span class="w">
+</span><span class="w">  </span>- unique_id<span class="w">
+</span><span class="w">  </span>- autoindex<span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="apache_options"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_options" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor apache_options" href="#apache_options"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_options</h3></div>
 <div class="gdoc-page__anchorwrap"><h4 id="default-value-7"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-7" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-7"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_options</span><span class="p">:</span><span class="w">
@@ -379,13 +378,8 @@
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="apache_vhost_name"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhost_name" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor apache_vhost_name" href="#apache_vhost_name"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_vhost_name</h3></div>
 <div class="gdoc-page__anchorwrap"><h4 id="default-value-14"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-14" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-14"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_vhost_name</span><span class="p">:</span><span class="w"> </span>owncloud.conf<span class="w">
-</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="apache_vhosts"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhosts" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor apache_vhosts" href="#apache_vhosts"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_vhosts</h3></div>
-<div class="gdoc-page__anchorwrap"><h4 id="default-value-15"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-15" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-15"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
-<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_vhosts</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- <span class="k">servername</span><span class="p">:</span><span class="w"> </span>cloud.owncloud.demo<span class="w">
-</span><span class="w">    </span><span class="k">documentroot</span><span class="p">:</span><span class="w"> </span>/var/www/owncloud<span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="apache_vhosts_ssl"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhosts_ssl" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor apache_vhosts_ssl" href="#apache_vhosts_ssl"><svg class="icon link"><use xlink:href="#link"></use></svg></a>apache_vhosts_ssl</h3></div>
-<div class="gdoc-page__anchorwrap"><h4 id="default-value-16"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-16" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-16"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
+<div class="gdoc-page__anchorwrap"><h4 id="default-value-15"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-15" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Default value" href="#default-value-15"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Default value</h4></div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_vhosts_ssl</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h4 id="example-usage"><a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#example-usage" class="gdoc-page__anchor gdoc-page__anchor--left clip" aria-label="Anchor Example usage" href="#example-usage"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Example usage</h4></div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="k">apache_vhosts_ssl</span><span class="p">:</span><span class="w">
