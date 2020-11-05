@@ -14,7 +14,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.3.1/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.4.0/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 
 - name: sync
   image: xoxys/git-batch:latest
@@ -22,7 +22,7 @@ steps:
   - git-batch
 
 - name: build
-  image: klakegg/hugo:0.72.0-ext-alpine
+  image: klakegg/hugo:0.78.0-ext-alpine
   commands:
   - hugo-official
 
@@ -46,6 +46,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 791d20288a6358e75de114e39ff14b7038a81020e6da02446f977efd40f3fdd9
+hmac: c24c227d6ff862e2433e47814053ae7b12ea67701138264c13e9c58bc2b62b6b
 
 ...

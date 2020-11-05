@@ -15,8 +15,7 @@ params:
   geekdocBreadcrumb: true
   geekdocDateFormat: "Jan 2, 2006"
   geekdocSearch: true
-  geekdocLegalNotice: https://owncloud.org/imprint/
-  geekdocPrivacyPolicy: https://owncloud.org/privacy-policy/
+  geekdocLegalNotice: https://owncloud.com/imprint/
+  geekdocPrivacyPolicy: https://owncloud.com/privacy-statement/
   geekdocAnchor: true
-  geekdocAnchorLeft: true
   geekdocAnchorCopy: true
