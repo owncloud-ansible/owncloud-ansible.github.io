@@ -5,11 +5,7 @@
     <link>https://owncloud-ansible.github.io/getting_started/</link>
     <description>Recent content in Getting started on Ansible</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://owncloud-ansible.github.io/getting_started/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://owncloud-ansible.github.io/getting_started/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup</title>
       <link>https://owncloud-ansible.github.io/getting_started/setup/</link>
