@@ -152,6 +152,9 @@ template {
 .flex-auto {
   flex: 1 1 auto
 }
+.flex-inline {
+  display: inline-flex
+}
 .flex-even {
   flex: 1 1
 }
@@ -181,6 +184,10 @@ template {
 }
 .hidden {
   display: none
+}
+.badge-placeholder {
+  display: inline-block;
+  min-width: 4rem
 }
 @font-face {
   font-family: "Liberation Sans";
@@ -280,19 +287,10 @@ h6 {
   display: flex;
   align-items: center
 }
-h1 > code,
-h2 > code,
-h3 > code,
-h4 > code,
-h5 > code,
-h6 > code {
-  border-top: 3px solid #dee2e6;
-  font-size: .75em!important
-}
-h4 > code,
-h5 > code,
-h6 > code {
-  font-size: .8rem!important
+h4,
+h5,
+h6 {
+  font-size: 1rem!important
 }
 a {
   text-decoration: none;
@@ -306,6 +304,13 @@ a:visited {
 }
 img {
   vertical-align: middle
+}
+.fake-link:hover {
+  background-image: linear-gradient(#0a539a,#0a539a);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  text-decoration: none
 }
 .wrapper {
   display: flex;
@@ -476,16 +481,30 @@ img {
 .gdoc-post {
   word-wrap: break-word;
   border-top: 1px dashed #868e96;
-  padding-bottom: 1em;
+  padding: 2rem 0;
   line-height: 1.5
 }
-.gdoc-post__title a,
-.gdoc-post__title a:visited {
+.gdoc-post:first-of-type {
+  padding-top: 0
+}
+.gdoc-post__header h1 {
+  margin-top: 0
+}
+.gdoc-post__header a,
+.gdoc-post__header a:visited {
+  color: #343a40;
+  text-decoration: none
+}
+.gdoc-post__header a:hover {
+  background: 0 0;
+  text-decoration: underline;
   color: #343a40
 }
 .gdoc-post__date {
-  font-weight: 700;
   margin: 1em 0
+}
+.gdoc-post__date .icon {
+  font-size: 1.2em
 }
 .gdoc-post:first-child {
   border-top: 0
@@ -494,15 +513,17 @@ img {
   margin-top: 0
 }
 .gdoc-post__readmore {
-  margin-top: 1em;
+  margin: 1.5rem 0 2rem 0
+}
+.gdoc-post__readmore a:after {
+  font-family: GeekdocIcons;
+  content: "\ea02"
+}
+.gdoc-post__readmore a,
+.gdoc-post__readmore a:hover,
+.gdoc-post__readmore a:visited {
   color: #0a539a;
-  display: block
-}
-.gdoc-post__readmore:visited {
-  color: #0a539a
-}
-.gdoc-post__readmore:after {
-  content: "\1f82a"
+  text-decoration: none!important
 }
 .gdoc-footer {
   background: #2f333e;
@@ -510,7 +531,7 @@ img {
 }
 .gdoc-footer__item {
   margin-right: 1em;
-  line-height: 1.5em
+  line-height: 2em
 }
 .gdoc-footer__link {
   color: #ffa31e
@@ -632,77 +653,6 @@ img {
   transition-property: transform,margin-left,opacity;
   will-change: transform,margin-left
 }
-@media screen and (max-width:39rem) {
-  .gdoc-nav {
-    margin-left: -16rem;
-    font-size: 16px
-  }
-  .gdoc-nav__control {
-    display: inline-block
-  }
-  .gdoc-header .icon {
-    width: 1.5rem;
-    height: 1.5rem
-  }
-  .gdoc-brand {
-    font-size: 1.5rem
-  }
-  .gdoc-brand__img {
-    display: none
-  }
-  .gdoc-error {
-    padding: 6rem 1rem
-  }
-  .gdoc-error .icon {
-    width: 4rem;
-    height: 4rem
-  }
-  .gdoc-error__message {
-    padding-left: 2rem
-  }
-  .gdoc-error__line {
-    padding: .25rem 0
-  }
-  .gdoc-error__title {
-    font-size: 2rem
-  }
-  .gdoc-page__header .breadcrumb,
-  .hidden-mobile {
-    display: none
-  }
-  .gdoc-footer__item {
-    width: 100%
-  }
-  #menu-control:checked ~ main .gdoc-nav nav,
-  #menu-control:checked ~ main .gdoc-page {
-    transform: translateX(16rem)
-  }
-  #menu-control:checked ~ main .gdoc-page {
-    opacity: .25
-  }
-  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.menu {
-    display: none
-  }
-  #menu-control:checked ~ .gdoc-header .gdoc-nav__control .icon.arrow-back {
-    display: inline-block
-  }
-}
-@media print {
-  .gdoc-footer,
-  .gdoc-nav {
-    display: none
-  }
-  main {
-    flex-direction: column-reverse
-  }
-  .gdoc-toc {
-    flex: none
-  }
-  .gdoc-toc nav {
-    position: relative;
-    width: auto
-  }
-}
 .gdoc-markdown {
   line-height: 1.6em
 }
@@ -721,21 +671,21 @@ img {
 .gdoc-markdown h4,
 .gdoc-markdown h5,
 .gdoc-markdown h6 {
-  font-weight: 400;
-  line-height: 1em;
-  margin-top: 1.5em;
-  margin-bottom: 1rem
+  font-weight: 600
 }
-.gdoc-markdown h4,
-.gdoc-markdown h5,
-.gdoc-markdown h6 {
-  font-weight: bolder
+.gdoc-markdown h1 > code,
+.gdoc-markdown h2 > code,
+.gdoc-markdown h3 > code,
+.gdoc-markdown h4 > code,
+.gdoc-markdown h5 > code,
+.gdoc-markdown h6 > code {
+  border-top: 3px solid #dee2e6;
+  font-size: .75em!important
 }
-.gdoc-markdown h5 {
-  font-size: .875em
-}
-.gdoc-markdown h6 {
-  font-size: .75em
+.gdoc-markdown h4 > code,
+.gdoc-markdown h5 > code,
+.gdoc-markdown h6 > code {
+  font-size: .8rem!important
 }
 .gdoc-markdown b,
 .gdoc-markdown optgroup,
