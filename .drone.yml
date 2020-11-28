@@ -14,10 +14,10 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.5.0/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+  - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/download/v0.5.0/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 
 - name: sync
-  image: xoxys/git-batch:latest
+  image: thegeeklab/git-batch
   commands:
   - git-batch
 
@@ -27,7 +27,7 @@ steps:
   - hugo-official
 
 - name: publish
-  image: plugins/gh-pages:latest
+  image: plugins/gh-pages
   settings:
     pages_directory: public/
     password:
@@ -46,6 +46,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 2d9f71320fd968b56d9887ac85ef645513ef1c6e4f78ffe90b624b72063961bc
+hmac: 697b0058879056b1ae18b5a6f5992794a54c08e805fd06c905c0a30d34b7f93e
 
 ...
