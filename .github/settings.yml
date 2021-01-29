@@ -11,7 +11,7 @@ repository:
   has_wiki: false
   has_downloads: false
 
-  default_branch: master
+  default_branch: source
 
   allow_squash_merge: true
   allow_merge_commit: true
@@ -61,7 +61,7 @@ branches:
       restrictions:
         users: []
         teams: []
-  - name: master
+  - name: source
     protection:
       required_pull_request_reviews: null
       required_status_checks: null
