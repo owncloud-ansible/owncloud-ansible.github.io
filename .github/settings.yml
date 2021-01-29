@@ -61,7 +61,7 @@ branches:
       restrictions:
         users: []
         teams: []
-  - name: source
+  - name: master
     protection:
       required_pull_request_reviews: null
       required_status_checks: null

@@ -11,10 +11,9 @@ concurrency:
 
 steps:
 - name: assets
-  image: byrnedo/alpine-curl
+  image: owncloudci/alpine
   commands:
-  - mkdir -p themes/hugo-geekdoc/
-  - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/download/v0.5.0/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+  - make doc
 
 - name: sync
   image: thegeeklab/git-batch
@@ -22,7 +21,7 @@ steps:
   - git-batch
 
 - name: build
-  image: klakegg/hugo:0.78.0-ext-alpine
+  image: klakegg/hugo:0.80.0-ext-alpine
   commands:
   - hugo-official
 
@@ -46,6 +45,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 697b0058879056b1ae18b5a6f5992794a54c08e805fd06c905c0a30d34b7f93e
+hmac: 987d187efa163b5a9d9626a72cd26db27c2006209e1edf0d6a53b72ffb7a9824
 
 ...
