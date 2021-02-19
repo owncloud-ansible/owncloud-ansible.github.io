@@ -4,11 +4,9 @@
   "packageRules": [
     {
       "description": "Automerge docs theme updates",
-      "datasources": ["github-releases"],
-      "packagePatterns": [
-        "^thegeeklab/hugo-geekdoc"
-      ],
-      "updateTypes": ["minor", "patch"],
+      "matchDatasources": ["github-releases"],
+      "matchPackagePatterns": ["^thegeeklab/hugo-geekdoc"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ]
