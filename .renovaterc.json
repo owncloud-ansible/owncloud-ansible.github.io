@@ -9,5 +9,8 @@
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
-  ]
+  ],
+  "droneci": {
+    "enabled": false
+  }
 }
