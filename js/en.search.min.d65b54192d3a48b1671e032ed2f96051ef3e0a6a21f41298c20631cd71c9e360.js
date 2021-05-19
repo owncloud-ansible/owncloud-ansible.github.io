@@ -1,5 +1,6 @@
 'use strict';(function(){const input=document.querySelector('#gdoc-search-input');const results=document.querySelector('#gdoc-search-results');let showParent=false
-input.addEventListener('focus',init);input.addEventListener('keyup',search);function init(){input.removeEventListener('focus',init);loadScript('/js/groupBy-6a2fe26b6f.min.js');loadScript('/js/flexsearch-ad47a5e1ee.min.js',function(){const indexCfg={};const dataUrl="/en.search-data.min.json"
+if(input){input.addEventListener('focus',init);input.addEventListener('keyup',search);}
+function init(){input.removeEventListener('focus',init);loadScript('/js/groupBy-6a2fe26b6f.min.js');loadScript('/js/flexsearch-ad47a5e1ee.min.js',function(){const indexCfg={};const dataUrl="/en.search-data.min.json"
 indexCfg.doc={id:'id',field:['title','content'],store:['title','href','parent'],};const index=FlexSearch.create(indexCfg);window.geekdocSearchIndex=index;getJson(dataUrl,function(data){data.forEach(obj=>{window.geekdocSearchIndex.add(obj);});});});}
 function search(){while(results.firstChild){results.removeChild(results.firstChild);}
 if(!input.value){return results.classList.remove("has-hits");}
