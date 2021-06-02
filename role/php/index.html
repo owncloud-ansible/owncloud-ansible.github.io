@@ -11,7 +11,7 @@
 
 
     <meta name="description" content="WarningThis Ansible role is currently in beta state. Use it at your own risk.  Role to setup PHP.
- Default Variables  php_allow_url_fopen php_apc_enable_cli php_apc_enabled php_apc_shm_size php_apt_cache_update php_date_timezone php_default_version php_disable_functions php_display_errors php_display_startup_errors php_error_reporting php_expose_php php_file_uploads php_max_execution_time php_max_file_uploads php_max_input_time php_max_input_vars php_memory_limit php_opcache_blacklist_filename php_opcache_enable_cli php_opcache_enabled php_opcache_interned_strings_buffer php_opcache_max_accelerated_files php_opcache_max_file_size php_opcache_max_wasted_percentage php_opcache_memory_consumption php_opcache_revalidate_freq php_opcache_revalidate_path php_opcache_validate_timestamps php_output_buffering php_packages_extra php_packages_state php_post_max_size php_realpath_cache_size php_sendmail_path php_session_cookie_lifetime php_session_gc_divisor php_session_gc_maxlifetime php_session_gc_probability php_session_save_handler php_session_save_path php_short_open_tag php_upload_max_filesize php_webserver_enabled   Dependencies   Default Variables    php_allow_url_fopen    Default value    php_allow_url_fopen:Onphp_apc_enable_cli    Default value    php_apc_enable_cli:&#39;1&#39;php_apc_enabled    Default value    php_apc_enabled:truephp_apc_shm_size    Default value    php_apc_shm_size:96Mphp_apt_cache_update    Automatically update apt cache on package installations.">
+ Default Variables  php_allow_url_fopen php_apc_enable_cli php_apc_enabled php_apc_shm_size php_apt_cache_update php_date_timezone php_default_socket_timeout php_default_version php_disable_functions php_display_errors php_display_startup_errors php_error_reporting php_expose_php php_file_uploads php_max_execution_time php_max_file_uploads php_max_input_time php_max_input_vars php_memory_limit php_opcache_blacklist_filename php_opcache_enable_cli php_opcache_enabled php_opcache_interned_strings_buffer php_opcache_max_accelerated_files php_opcache_max_file_size php_opcache_max_wasted_percentage php_opcache_memory_consumption php_opcache_revalidate_freq php_opcache_revalidate_path php_opcache_validate_timestamps php_output_buffering php_packages_extra php_packages_state php_post_max_size php_realpath_cache_size php_sendmail_path php_session_cookie_lifetime php_session_gc_divisor php_session_gc_maxlifetime php_session_gc_probability php_session_save_handler php_session_save_path php_short_open_tag php_upload_max_filesize php_webserver_enabled   Dependencies   Default Variables    php_allow_url_fopen    Default value    php_allow_url_fopen:Onphp_apc_enable_cli    Default value    php_apc_enable_cli:&#39;1&#39;php_apc_enabled    Default value    php_apc_enabled:truephp_apc_shm_size    Default value    php_apc_shm_size:96Mphp_apt_cache_update    Automatically update apt cache on package installations.">
 
 
 
@@ -419,6 +419,7 @@
 <li><a class="gdoc-markdown__link" href="#php_apc_shm_size">php_apc_shm_size</a></li>
 <li><a class="gdoc-markdown__link" href="#php_apt_cache_update">php_apt_cache_update</a></li>
 <li><a class="gdoc-markdown__link" href="#php_date_timezone">php_date_timezone</a></li>
+<li><a class="gdoc-markdown__link" href="#php_default_socket_timeout">php_default_socket_timeout</a></li>
 <li><a class="gdoc-markdown__link" href="#php_default_version">php_default_version</a></li>
 <li><a class="gdoc-markdown__link" href="#php_disable_functions">php_disable_functions</a></li>
 <li><a class="gdoc-markdown__link" href="#php_display_errors">php_display_errors</a></li>
@@ -561,9 +562,9 @@
     </h4>
 </div><div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">php_date_timezone</span><span class="p">:</span><span class="w"> </span><span class="l">America/Chicago</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h3 id="php_default_version">
-        php_default_version
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#php_default_version" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor php_default_version" href="#php_default_version">
+    <h3 id="php_default_socket_timeout">
+        php_default_socket_timeout
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#php_default_socket_timeout" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor php_default_socket_timeout" href="#php_default_socket_timeout">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -571,6 +572,21 @@
     <h4 id="default-value-6">
         Default value
         <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-6" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-6">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div><div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">php_default_socket_timeout</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ php_max_execution_time }}&#39;</span><span class="w">
+</span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h3 id="php_default_version">
+        php_default_version
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#php_default_version" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor php_default_version" href="#php_default_version">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div><div class="gdoc-page__anchorwrap">
+    <h4 id="default-value-7">
+        Default value
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-7" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-7">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -583,9 +599,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-7">
+    <h4 id="default-value-8">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-7" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-7">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-8" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-8">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -598,9 +614,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-8">
+    <h4 id="default-value-9">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-8" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-8">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-9" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-9">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -613,9 +629,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-9">
+    <h4 id="default-value-10">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-9" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-9">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-10" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-10">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -628,9 +644,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-10">
+    <h4 id="default-value-11">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-10" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-10">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-11" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-11">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -643,9 +659,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-11">
+    <h4 id="default-value-12">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-11" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-11">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-12" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-12">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -658,9 +674,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-12">
+    <h4 id="default-value-13">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-12" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-12">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-13" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-13">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -673,9 +689,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-13">
+    <h4 id="default-value-14">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-13" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-13">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-14" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-14">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -688,9 +704,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-14">
+    <h4 id="default-value-15">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-14" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-14">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-15" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-15">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -703,9 +719,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-15">
+    <h4 id="default-value-16">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-15" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-15">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-16" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-16">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -718,9 +734,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-16">
+    <h4 id="default-value-17">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-16" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-16">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-17" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-17">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -733,9 +749,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-17">
+    <h4 id="default-value-18">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-17" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-17">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-18" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-18">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -748,9 +764,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-18">
+    <h4 id="default-value-19">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-18" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-18">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-19" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-19">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -763,9 +779,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-19">
+    <h4 id="default-value-20">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-19" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-19">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-20" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-20">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -778,9 +794,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-20">
+    <h4 id="default-value-21">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-20" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-20">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-21" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-21">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -793,9 +809,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-21">
+    <h4 id="default-value-22">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-21" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-21">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-22" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-22">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -808,9 +824,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-22">
+    <h4 id="default-value-23">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-22" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-22">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-23" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-23">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -823,9 +839,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-23">
+    <h4 id="default-value-24">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-23" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-23">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-24" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-24">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -838,9 +854,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-24">
+    <h4 id="default-value-25">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-24" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-24">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-25" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-25">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -853,9 +869,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-25">
+    <h4 id="default-value-26">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-25" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-25">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-26" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-26">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -868,9 +884,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-26">
+    <h4 id="default-value-27">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-26" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-26">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-27" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-27">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -883,9 +899,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-27">
+    <h4 id="default-value-28">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-27" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-27">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-28" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-28">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -898,9 +914,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-28">
+    <h4 id="default-value-29">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-28" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-28">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-29" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-29">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -913,9 +929,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-29">
+    <h4 id="default-value-30">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-29" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-29">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-30" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-30">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -929,9 +945,9 @@
     </h3>
 </div><p>Can be used to install other dependency packages e.g. gcc (required by pecl).</p>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-30">
+    <h4 id="default-value-31">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-30" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-30">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-31" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-31">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -945,9 +961,9 @@
     </h3>
 </div><p>Use <code>present</code> to make sure it&rsquo;s installed, or <code>latest</code> if you want to upgrade.</p>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-31">
+    <h4 id="default-value-32">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-31" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-31">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-32" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-32">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -960,9 +976,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-32">
+    <h4 id="default-value-33">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-32" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-32">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-33" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-33">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -975,9 +991,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-33">
+    <h4 id="default-value-34">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-33" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-33">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-34" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-34">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -990,9 +1006,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-34">
+    <h4 id="default-value-35">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-34" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-34">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-35" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-35">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1005,9 +1021,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-35">
+    <h4 id="default-value-36">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-35" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-35">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-36" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-36">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1020,9 +1036,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-36">
+    <h4 id="default-value-37">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-36" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-36">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-37" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-37">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1035,9 +1051,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-37">
+    <h4 id="default-value-38">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-37" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-37">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-38" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-38">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1050,9 +1066,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-38">
+    <h4 id="default-value-39">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-38" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-38">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-39" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-39">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1065,9 +1081,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-39">
+    <h4 id="default-value-40">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-39" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-39">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-40" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-40">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1080,9 +1096,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-40">
+    <h4 id="default-value-41">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-40" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-40">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-41" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-41">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1095,9 +1111,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-41">
+    <h4 id="default-value-42">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-41" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-41">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-42" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-42">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1110,9 +1126,9 @@
         </a>
     </h3>
 </div><div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-42">
+    <h4 id="default-value-43">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-42" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-42">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-43" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-43">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1126,9 +1142,9 @@
     </h3>
 </div><p>Set this to <code>False</code> if you&rsquo;re not using PHP with a webserver e.g. Apache/Nginx.</p>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-43">
+    <h4 id="default-value-44">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-43" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-43">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/php/#default-value-44" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default value" href="#default-value-44">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
