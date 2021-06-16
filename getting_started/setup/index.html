@@ -11,8 +11,8 @@
 
 
     <meta name="description" content="These docs are work in progress so they will be incomplete.
-CentOS 7    Requirements    These are the packages / repositories that need to be enabled / installed before the first playbook execution.
- Software Collections enabled: yum install centos-release-scl EPEL enabled: yum install epel-release GCC installed: yum install gcc  ">
+General    The current required Ansible min version is 2.10 on all Linux distribution. To install latest Ansible version with PIP use:
+python3 -m venv ~/ansible source ~/ansible/bin/activate pip3 install ansible CentOS 7    Requirements    These are the packages / repositories that need to be enabled / installed before the first playbook execution.">
 
 
 
@@ -407,6 +407,17 @@ CentOS 7    Requirements    These are the packages / repositories that need to b
         <h1>Setup</h1>
         <p>These docs are work in progress so they will be incomplete.</p>
 <div class="gdoc-page__anchorwrap">
+    <h2 id="general">
+        General
+        <a data-clipboard-text="https://owncloud-ansible.github.io/getting_started/setup/#general" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor General" href="#general">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><p>The current required Ansible min version is 2.10 on all Linux distribution. To install latest Ansible version with PIP use:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Shell" data-lang="Shell">python3 -m venv ~/ansible
+<span class="nb">source</span> ~/ansible/bin/activate
+pip3 install ansible
+</code></pre></div><div class="gdoc-page__anchorwrap">
     <h2 id="centos-7">
         CentOS 7
         <a data-clipboard-text="https://owncloud-ansible.github.io/getting_started/setup/#centos-7" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CentOS 7" href="#centos-7">
