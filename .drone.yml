@@ -21,9 +21,9 @@ steps:
   - git-batch
 
 - name: build
-  image: klakegg/hugo:0.80.0-ext-alpine
+  image: owncloudci/hugo:0.83.1
   commands:
-  - hugo-official
+  - hugo
 
 - name: publish
   image: plugins/gh-pages
@@ -45,6 +45,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 987d187efa163b5a9d9626a72cd26db27c2006209e1edf0d6a53b72ffb7a9824
+hmac: f417e282d4d9e660b38994de3aaad8c4f73f6c66893cd33241961f8e10237644
 
 ...
