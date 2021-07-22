@@ -24,7 +24,7 @@ steps:
   image: node:lts-alpine
   commands:
   - npm install -g markdownlint-cli
-  - markdownlint-cli -p .gitignore 'content/**/*.md' 'README.md'
+  - markdownlint -p .gitignore 'content/**/*.md' 'README.md'
 
 - name: spellcheck
   image: node:lts-alpine
@@ -60,6 +60,6 @@ trigger:
 
 ---
 kind: signature
-hmac: b9d5dca976556740b3d8985170d5e67ad698478019f5d70993dc265865c4982b
+hmac: 62b21f3595e947dde463e58b1476b0e41cf1c63685b7b2ea3e4ed509eaff2c71
 
 ...
