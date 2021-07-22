@@ -1,6 +1,6 @@
 # owncloud-ansible.github.io
 
-This repository is hosting the anible-owncloud GitHub Page. You can find the latest version
+This repository is hosting the `anible-owncloud` GitHub Page. You can find the latest version
 at [https://owncloud-ansible.github.io](https://owncloud-ansible.github.io)
 
 ## License

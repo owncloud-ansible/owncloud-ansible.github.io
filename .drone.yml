@@ -20,8 +20,23 @@ steps:
   commands:
   - git-batch
 
+- name: markdownlint
+  image: node:lts-alpine
+  commands:
+  - npm install -g markdownlint-cli
+  - markdownlint-cli -p .gitignore 'content/**/*.md' 'README.md'
+
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title --no-suggestions
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
 - name: build
-  image: owncloudci/hugo:0.83.1
+  image: owncloudci/hugo:0.85.0
   commands:
   - hugo
 
@@ -45,6 +60,6 @@ trigger:
 
 ---
 kind: signature
-hmac: f417e282d4d9e660b38994de3aaad8c4f73f6c66893cd33241961f8e10237644
+hmac: b9d5dca976556740b3d8985170d5e67ad698478019f5d70993dc265865c4982b
 
 ...
