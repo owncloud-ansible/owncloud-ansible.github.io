@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: default
+name: build
 
 platform:
   os: linux
@@ -59,7 +59,35 @@ trigger:
   - refs/pull/**
 
 ---
+kind: pipeline
+name: notification
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: notify
+  image: plugins/slack:1
+  settings:
+    channel:
+      from_secret: slack_channel
+    webhook:
+      from_secret: slack_webhook_private
+
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  status:
+  - success
+  - failure
+
+depends_on:
+- build
+
+---
 kind: signature
-hmac: 62b21f3595e947dde463e58b1476b0e41cf1c63685b7b2ea3e4ed509eaff2c71
+hmac: bdd0465537291e16aceaa69ee361e5f8040ad827c79fbde5c26a37c70a3cc6bd
 
 ...
