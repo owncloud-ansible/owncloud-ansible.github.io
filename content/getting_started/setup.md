@@ -4,6 +4,8 @@ title: Setup
 
 These docs are work in progress so they will be incomplete.
 
+{{< toc >}}
+
 ## Installing Ansible
 
 ### General
