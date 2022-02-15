@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/apache/</guid>
-      <description>WarningThis Ansible role is currently in beta state. Use it at your own risk.  Role to setup Apache webserver.
+      <description>ImportantWe have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.
  Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations.</description>
     </item>
     
@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/mariadb/</guid>
-      <description>WarningThis Ansible role is currently in beta state. Use it at your own risk.  Role to setup MariaDB server.
+      <description>ImportantWe have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup MariaDB server.
  Default Variables  mariadb_apt_cache_update mariadb_bind_address mariadb_config_file mariadb_config_include_dir mariadb_config_include_files mariadb_databases mariadb_datadir mariadb_enabled_on_startup mariadb_event_scheduler_state mariadb_group_concat_max_len mariadb_innodb_buffer_pool_size mariadb_innodb_file_format mariadb_innodb_file_per_table mariadb_innodb_flush_log_at_trx_commit mariadb_innodb_flush_method mariadb_innodb_io_capacity mariadb_innodb_large_prefix mariadb_innodb_lock_wait_timeout mariadb_innodb_log_buffer_size mariadb_innodb_log_file_size mariadb_innodb_read_io_threads mariadb_innodb_write_io_threads mariadb_join_buffer_size mariadb_key_buffer_size mariadb_log_error mariadb_log_file_group mariadb_lower_case_table_names mariadb_max_allowed_packet mariadb_max_connections mariadb_max_heap_table_size mariadb_myisam_sort_buffer_size mariadb_mysqldump_max_allowed_packet mariadb_overwrite_global_mycnf mariadb_packages mariadb_packages_extra mariadb_pid_file mariadb_port mariadb_query_cache_limit mariadb_query_cache_size mariadb_query_cache_type mariadb_read_buffer_size mariadb_read_rnd_buffer_size mariadb_root_password mariadb_skip_name_resolve mariadb_socket mariadb_sort_buffer_size mariadb_sql_mode mariadb_sync_binlog mariadb_table_open_cache mariadb_thread_cache_size mariadb_tmp_table_size mariadb_transaction_isolation_level mariadb_users mariadb_wait_timeout   Dependencies   Default Variables     mariadb_apt_cache_update     Automatically update apt cache on package installations.</description>
     </item>
     
@@ -42,7 +42,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/php/</guid>
-      <description>WarningThis Ansible role is currently in beta state. Use it at your own risk.  Role to setup PHP.
+      <description>ImportantWe have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup PHP.
  Default Variables  php_allow_url_fopen php_apc_enable_cli php_apc_enabled php_apc_shm_size php_apt_cache_update php_date_timezone php_default_socket_timeout php_default_version php_disable_functions php_display_errors php_display_startup_errors php_error_reporting php_expose_php php_file_uploads php_max_execution_time php_max_file_uploads php_max_input_time php_max_input_vars php_memory_limit php_opcache_blacklist_filename php_opcache_enable_cli php_opcache_enabled php_opcache_interned_strings_buffer php_opcache_max_accelerated_files php_opcache_max_file_size php_opcache_max_wasted_percentage php_opcache_memory_consumption php_opcache_revalidate_freq php_opcache_revalidate_path php_opcache_validate_timestamps php_output_buffering php_packages_extra php_packages_state php_post_max_size php_realpath_cache_size php_sendmail_path php_session_cookie_lifetime php_session_gc_divisor php_session_gc_maxlifetime php_session_gc_probability php_session_save_handler php_session_save_path php_short_open_tag php_upload_max_filesize php_webserver_enabled   Dependencies   Default Variables     php_allow_url_fopen     Default value     php_allow_url_fopen:Onphp_apc_enable_cli     Default value     php_apc_enable_cli:&amp;#39;1&amp;#39;php_apc_enabled     Default value     php_apc_enabled:truephp_apc_shm_size     Default value     php_apc_shm_size:96Mphp_apt_cache_update     Automatically update apt cache on package installations.</description>
     </item>
     
@@ -52,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/redis/</guid>
-      <description>WarningThis Ansible role is currently in beta state. Use it at your own risk.  Role to setup Redis server.
+      <description>ImportantWe have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Redis server.
  Default Variables  redis_appendfsync redis_appendonly redis_apt_cache_update redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket   Dependencies   Default Variables     redis_appendfsync     Default value     redis_appendfsync:everysecredis_appendonly     Default value     redis_appendonly:noredis_apt_cache_update     Automatically update apt cache on package installations.</description>
     </item>
     
