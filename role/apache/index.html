@@ -9,7 +9,7 @@
 
 
   <meta name="description" content="ImportantWe have switched to &lsquo;main&rsquo; as default branch. The &lsquo;master&rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.
- Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
+ Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
 
     <title>apache | Ansible</title>
 
@@ -33,7 +33,7 @@
   <meta property="og:title" content="apache" />
   <meta property="og:site_name" content="Ansible" />
   <meta property="og:description" content="ImportantWe have switched to &lsquo;main&rsquo; as default branch. The &lsquo;master&rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.
- Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
+ Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://owncloud-ansible.github.io/role/apache/" />
 
@@ -43,7 +43,7 @@
       <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="apache" />
   <meta name="twitter:description" content="ImportantWe have switched to &lsquo;main&rsquo; as default branch. The &lsquo;master&rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.
- Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
+ Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations." />
 
 
   <script type="application/ld+json">
@@ -54,7 +54,7 @@
       "name": "apache",
       "headline": "apache",
       "alternativeHeadline": "",
-      "description": "ImportantWe have switched to \u0026lsquo;main\u0026rsquo; as default branch. The \u0026lsquo;master\u0026rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.\n Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations.",
+      "description": "ImportantWe have switched to \u0026lsquo;main\u0026rsquo; as default branch. The \u0026lsquo;master\u0026rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Apache webserver.\n Default Variables  apache_allow_override apache_apt_cache_update apache_listen_ip apache_listen_port apache_listen_port_ssl apache_mods_disabled apache_mods_enabled apache_options apache_packages_extra apache_packages_state apache_restart_state apache_ssl_cipher_suite apache_ssl_protocol apache_state apache_vhost_name apache_vhosts apache_vhosts_ssl   Dependencies   Default Variables     apache_allow_override     Default value     apache_allow_override:Allapache_apt_cache_update     Automatically update apt cache on package installations.",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -78,7 +78,7 @@
           }
       },
       "url" : "https:\/\/owncloud-ansible.github.io\/role\/apache\/",
-      "wordCount" : "189",
+      "wordCount" : "335",
   }
   </script>
 
@@ -849,6 +849,11 @@
 >apache_vhost_name</a></li>
 <li><a
   class="gdoc-markdown__link"
+  href="#apache_vhosts"
+  
+>apache_vhosts</a></li>
+<li><a
+  class="gdoc-markdown__link"
   href="#apache_vhosts_ssl"
   
 >apache_vhosts_ssl</a></li>
@@ -1141,9 +1146,9 @@
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhost_name</span><span class="p">:</span><span class="w"> </span><span class="l">owncloud.conf</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h3 id="apache_vhosts_ssl">
-        apache_vhosts_ssl
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhosts_ssl" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: apache_vhosts_ssl" aria-label="Anchor to: apache_vhosts_ssl" href="#apache_vhosts_ssl">
+    <h3 id="apache_vhosts">
+        apache_vhosts
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhosts" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: apache_vhosts" aria-label="Anchor to: apache_vhosts" href="#apache_vhosts">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1156,7 +1161,9 @@
         </a>
     </h4>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhosts_ssl</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhosts</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud.owncloud.demo&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">documentroot</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/owncloud&#34;</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h4 id="example-usage">
         Example usage
@@ -1165,17 +1172,75 @@
         </a>
     </h4>
 </div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhosts</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud.owncloud.demo&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">documentroot</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/owncloud&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># optional properties</span><span class="w">
+</span><span class="w">    </span><span class="nt">serveradmin</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">serveralias</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">allow_override</span><span class="p">:</span><span class="w"> </span><span class="l">defaults to apache_allow_override</span><span class="w">
+</span><span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l">defaults to apache_options</span><span class="w">
+</span><span class="w">    </span><span class="nt">extra_parameters</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h3 id="apache_vhosts_ssl">
+        apache_vhosts_ssl
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#apache_vhosts_ssl" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: apache_vhosts_ssl" aria-label="Anchor to: apache_vhosts_ssl" href="#apache_vhosts_ssl">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>Define SSL enbaled Vhost configurations. The example below shows all available properties that can be set.</p>
+<div class="gdoc-page__anchorwrap">
+    <h4 id="default-value-16">
+        Default value
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#default-value-16" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-16">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhosts_ssl</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h4 id="example-usage-1">
+        Example usage
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/apache/#example-usage-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-1">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">apache_vhosts_ssl</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;local.dev&#34;</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud.owncloud.demo&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">documentroot</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/html&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># Location of the SSL certificate file to use. The file has to exist on the target host already or</span><span class="w">
+</span><span class="w">    </span><span class="c"># you can use `certificate_file_source` to deploy a certificate located on the Ansible control host.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">certificate_file_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># Location of the SSL certificate key file to use. The file has to exist on the target host already or</span><span class="w">
+</span><span class="w">    </span><span class="c"># you can use `certificate_key_source` to deploy a certificate key located on the Ansible control host.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.key&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># optional properties</span><span class="w">
+</span><span class="w">    </span><span class="nt">serveradmin</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">serveralias</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">allow_override</span><span class="p">:</span><span class="w"> </span><span class="l">defaults to apache_allow_override</span><span class="w">
+</span><span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l">defaults to apache_options</span><span class="w">
+</span><span class="w">    </span><span class="nt">extra_parameters</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># The properties `certificate_file_source` and `certificate_key_source` can be used to deploy SSl</span><span class="w">
+</span><span class="w">    </span><span class="c"># certificate files located on the Ansible control host to the target host (web server). If these</span><span class="w">
+</span><span class="w">    </span><span class="c"># variables are not set, the SSL certificates need to be located on the tarhet host already.</span><span class="w">
+</span><span class="w">    </span><span class="nt">certificate_file_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_key_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
-</span><span class="w">    </span><span class="c"># Optional.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_chain_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate_chain.crt&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_chain_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate_chain.crt&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">header_ocsp_trusted_certificate</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">
 </span><span class="w">    </span><span class="nt">header_hsts_options</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- <span class="l">max-age=63072000</span><span class="w">
 </span><span class="w">      </span>- <span class="l">includeSubDomains</span><span class="w">
