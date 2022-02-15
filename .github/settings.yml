@@ -11,7 +11,7 @@ repository:
   has_wiki: false
   has_downloads: false
 
-  default_branch: source
+  default_branch: main
 
   allow_squash_merge: true
   allow_merge_commit: true
@@ -50,7 +50,7 @@ labels:
     description: Needs to be verified by a maintainer
 
 branches:
-  - name: source
+  - name: main
     protection:
       required_pull_request_reviews: null
       required_status_checks:
@@ -59,7 +59,7 @@ branches:
           - continuous-integration/drone/pr
       enforce_admins: false
       restrictions: null
-  - name: master
+  - name: gh_pages
     protection:
       required_pull_request_reviews: null
       required_status_checks: null
@@ -68,5 +68,3 @@ branches:
         users: []
         teams:
           - bot
-
-...

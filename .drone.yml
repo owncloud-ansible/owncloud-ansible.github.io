@@ -10,53 +10,53 @@ concurrency:
   limit: 1
 
 steps:
-- name: assets
-  image: owncloudci/alpine
-  commands:
-  - make doc
+  - name: assets
+    image: owncloudci/alpine
+    commands:
+      - make doc
 
-- name: sync
-  image: thegeeklab/git-batch
-  commands:
-  - git-batch
+  - name: sync
+    image: thegeeklab/git-batch
+    commands:
+      - git-batch
 
-- name: markdownlint
-  image: node:lts-alpine
-  commands:
-  - npm install -g markdownlint-cli
-  - markdownlint -p .gitignore 'content/**/*.md' 'README.md'
+  - name: markdownlint
+    image: node:lts-alpine
+    commands:
+      - npm install -g markdownlint-cli
+      - markdownlint -p .gitignore 'content/**/*.md' 'README.md'
 
-- name: spellcheck
-  image: node:lts-alpine
-  commands:
-  - npm install -g spellchecker-cli
-  - spellchecker --files 'content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title --no-suggestions
-  environment:
-    FORCE_COLOR: true
-    NPM_CONFIG_LOGLEVEL: error
+  - name: spellcheck
+    image: node:lts-alpine
+    commands:
+      - npm install -g spellchecker-cli
+      - spellchecker --files 'content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title --no-suggestions
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
 
-- name: build
-  image: owncloudci/hugo:0.85.0
-  commands:
-  - hugo
+  - name: build
+    image: owncloudci/hugo:0.85.0
+    commands:
+      - hugo
 
-- name: publish
-  image: plugins/gh-pages
-  settings:
-    pages_directory: public/
-    password:
-      from_secret: github_token
-    target_branch: master
-    username:
-      from_secret: github_username
-  when:
-    ref:
-    - refs/heads/source
+  - name: publish
+    image: plugins/gh-pages
+    settings:
+      pages_directory: public/
+      password:
+        from_secret: github_token
+      target_branch: gh_pages
+      username:
+        from_secret: github_username
+    when:
+      ref:
+        - refs/heads/main
 
 trigger:
   ref:
-  - refs/heads/source
-  - refs/pull/**
+    - refs/heads/main
+    - refs/pull/**
 
 ---
 kind: pipeline
@@ -67,27 +67,27 @@ platform:
   arch: amd64
 
 steps:
-- name: notify
-  image: plugins/slack:1
-  settings:
-    channel:
-      from_secret: slack_channel
-    webhook:
-      from_secret: slack_webhook_private
+  - name: notify
+    image: plugins/slack:1
+    settings:
+      channel:
+        from_secret: slack_channel
+      webhook:
+        from_secret: slack_webhook_private
 
 trigger:
   ref:
-  - refs/heads/master
-  - refs/tags/**
+    - refs/heads/main
+    - refs/tags/**
   status:
-  - success
-  - failure
+    - success
+    - failure
 
 depends_on:
-- build
+  - build
 
 ---
 kind: signature
-hmac: bdd0465537291e16aceaa69ee361e5f8040ad827c79fbde5c26a37c70a3cc6bd
+hmac: 7310f6c9ccd64c9c635f8b229cc567436e7029357a9701e8e0bac5bf33480c3f
 
 ...
