@@ -58,7 +58,9 @@ branches:
         contexts:
           - continuous-integration/drone/pr
       enforce_admins: false
-      restrictions: null
+      restrictions:
+        users: []
+        teams: []
   - name: gh_pages
     protection:
       required_pull_request_reviews: null
