@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Ansible</title>
+    <link>https://owncloud-ansible.github.io/getting_started/</link>
+    <description>Recent content in Getting started on Ansible</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://owncloud-ansible.github.io/getting_started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup</title>
+      <link>https://owncloud-ansible.github.io/getting_started/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud-ansible.github.io/getting_started/setup/</guid>
+      <description>These docs are work in progress so they will be incomplete.
+ Installing Ansible  General Ubuntu PPA   Downloading the playground example playbooks Preparing the Ansible environment  Collections Roles   Special requirements for playbook run  CentOS 7      Installing Ansible     General     The current required Ansible min version is 2.10 on all Linux distribution. To install latest Ansible version with PIP use:</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://owncloud-ansible.github.io/getting_started/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud-ansible.github.io/getting_started/testing/</guid>
+      <description>Testing using Vagrant     Vagrant makes it possible to run Ansible scripts inside a virtual machine (backed by VirtualBox).
+ For the first time setup, please run vagrant up Then after making changes to the playbooks, roles or inventory, please run vagrant provision to apply the changes to the virtual machine The deployed ownCloud instance is accessible under http://172.30.1.2/ with user admin and password owncloud The command vagrant ssh makes it possible to enter the VM for debugging purposes  </description>
+    </item>
+    
+  </channel>
+</rss>

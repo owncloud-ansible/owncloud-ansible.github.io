@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://owncloud-ansible.github.io/getting_started/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/apache/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/categories/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/mariadb/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/owncloud/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/php/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/redis/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/role/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/getting_started/setup/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/tags/</loc>
+  </url><url>
+    <loc>https://owncloud-ansible.github.io/getting_started/testing/</loc>
+  </url>
+</urlset>
