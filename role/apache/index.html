@@ -78,7 +78,7 @@
           }
       },
       "url" : "https:\/\/owncloud-ansible.github.io\/role\/apache\/",
-      "wordCount" : "335",
+      "wordCount" : "359",
   }
   </script>
 
@@ -1216,6 +1216,8 @@
 </span><span class="w">
 </span><span class="w">    </span><span class="c"># Location of the SSL certificate file to use. The file has to exist on the target host already or</span><span class="w">
 </span><span class="w">    </span><span class="c"># you can use `certificate_file_source` to deploy a certificate located on the Ansible control host.</span><span class="w">
+</span><span class="w">    </span><span class="c"># This file contains the SSL certificate and may also include intermediate CA certificates, sorted from</span><span class="w">
+</span><span class="w">    </span><span class="c"># leaf to root to create a full chain certificate.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="w">
 </span><span class="w">
 </span><span class="w">
@@ -1237,8 +1239,6 @@
 </span><span class="w">    </span><span class="c"># variables are not set, the SSL certificates need to be located on the target host already.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_file_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_key_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">certificate_chain_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate_chain.crt&#34;</span><span class="w">
-</span><span class="w">    </span><span class="nt">certificate_chain_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate_chain.crt&#34;</span><span class="w">
 </span><span class="w">
 </span><span class="w">
 </span><span class="w">    </span><span class="nt">header_hsts_options</span><span class="p">:</span><span class="w">
