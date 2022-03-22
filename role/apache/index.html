@@ -1178,7 +1178,6 @@
 </span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud.owncloud.demo&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">documentroot</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/owncloud&#34;</span><span class="w">
 </span><span class="w">
-</span><span class="w">
 </span><span class="w">    </span><span class="c"># optional properties</span><span class="w">
 </span><span class="w">    </span><span class="nt">serveradmin</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="nt">serveralias</span><span class="p">:</span><span class="w">
@@ -1215,18 +1214,15 @@
 </span><span class="w">  </span>- <span class="nt">servername</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cloud.owncloud.demo&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">documentroot</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/var/www/html&#34;</span><span class="w">
 </span><span class="w">
-</span><span class="w">
 </span><span class="w">    </span><span class="c"># Location of the SSL certificate file to use. The file has to exist on the target host already or</span><span class="w">
 </span><span class="w">    </span><span class="c"># you can use `certificate_file_source` to deploy a certificate located on the Ansible control host.</span><span class="w">
 </span><span class="w">    </span><span class="c"># This file contains the SSL certificate and may also include intermediate CA certificates, sorted from</span><span class="w">
 </span><span class="w">    </span><span class="c"># leaf to root to create a full chain certificate.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.crt&#34;</span><span class="w">
 </span><span class="w">
-</span><span class="w">
 </span><span class="w">    </span><span class="c"># Location of the SSL certificate key file to use. The file has to exist on the target host already or</span><span class="w">
 </span><span class="w">    </span><span class="c"># you can use `certificate_key_source` to deploy a certificate key located on the Ansible control host.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_key_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/certificate.key&#34;</span><span class="w">
-</span><span class="w">
 </span><span class="w">
 </span><span class="w">    </span><span class="c"># optional properties</span><span class="w">
 </span><span class="w">    </span><span class="nt">serveradmin</span><span class="p">:</span><span class="w">
@@ -1235,13 +1231,11 @@
 </span><span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="l">defaults to apache_options</span><span class="w">
 </span><span class="w">    </span><span class="nt">extra_parameters</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="w">
-</span><span class="w">
 </span><span class="w">    </span><span class="c"># The properties `certificate_file_source` and `certificate_key_source` can be used to deploy SSL</span><span class="w">
 </span><span class="w">    </span><span class="c"># certificate files located on the Ansible control host to the target host (web server). If these</span><span class="w">
 </span><span class="w">    </span><span class="c"># variables are not set, the SSL certificates need to be located on the target host already.</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_file_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.crt&#34;</span><span class="w">
 </span><span class="w">    </span><span class="nt">certificate_key_source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/path/to/source/on/ansible_host/certificate.key&#34;</span><span class="w">
-</span><span class="w">
 </span><span class="w">
 </span><span class="w">    </span><span class="nt">header_hsts_options</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- <span class="l">max-age=63072000</span><span class="w">
