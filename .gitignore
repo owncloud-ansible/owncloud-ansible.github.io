@@ -1,5 +1,6 @@
-public/
-resources/
-content/module/
-content/role/
-themes/
+/public/
+/resources/
+/content/module/
+/content/role/
+/themes/
+/.hugo_build.lock

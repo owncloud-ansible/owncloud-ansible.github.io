@@ -10,6 +10,9 @@ pygmentsCodefences: true
 disablePathToLower: true
 
 params:
+  description: A Collection of Anible roles and resources to setup an ownCloud server.
+  images:
+    - "socialmedia.png"
   geekdocToC: 3
   geekdocLogo: logo.png
   geekdocBreadcrumb: true
