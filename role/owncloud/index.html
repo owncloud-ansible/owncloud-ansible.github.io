@@ -65,7 +65,7 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
       "headline": "owncloud",
       "description": "  \nRole to setup ownCloud server. Clustered mode is currently not supported.",
       "thumbnailUrl": "https://owncloud-ansible.github.io/socialmedia.png",
-      "wordCount" : "621",
+      "wordCount" : "622",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -1419,6 +1419,8 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
 </span><span class="w">    </span><span class="l">url_password:my_password</span><span class="w">
 </span><span class="w">    </span><span class="nt">force_basic_auth</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">unwanted_app</span><span class="w">
+</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h3 id="owncloud_apps_config">
         owncloud_apps_config
