@@ -90,8 +90,32 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/php/</guid>
-      <description>We have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup PHP.
- Default Variables  php_allow_url_fopen php_apc_enable_cli php_apc_enabled php_apc_shm_size php_apt_cache_update php_date_timezone php_default_socket_timeout php_default_version php_disable_functions php_display_errors php_display_startup_errors php_error_reporting php_expose_php php_file_uploads php_max_execution_time php_max_file_uploads php_max_input_time php_max_input_vars php_memory_limit php_opcache_blacklist_filename php_opcache_enable_cli php_opcache_enabled php_opcache_interned_strings_buffer php_opcache_max_accelerated_files php_opcache_max_file_size php_opcache_max_wasted_percentage php_opcache_memory_consumption php_opcache_revalidate_freq php_opcache_revalidate_path php_opcache_validate_timestamps php_output_buffering php_packages_extra php_packages_state php_post_max_size php_realpath_cache_size php_sendmail_path php_session_cookie_lifetime php_session_gc_divisor php_session_gc_maxlifetime php_session_gc_probability php_session_save_handler php_session_save_path php_short_open_tag php_upload_max_filesize php_webserver_enabled   Dependencies   Default Variables     php_allow_url_fopen     Default value     php_allow_url_fopen:Onphp_apc_enable_cli     Default value     php_apc_enable_cli:&amp;#39;1&amp;#39;php_apc_enabled     Default value     php_apc_enabled:truephp_apc_shm_size     Default value     php_apc_shm_size:96Mphp_apt_cache_update     Automatically update apt cache on package installations.</description>
+      <description>&lt;p&gt;&lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/php&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;amp;logoColor=white&#34;
+  alt=&#34;Source Code&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://drone.owncloud.com/owncloud-ansible/php&#34;
+  
+&gt;&lt;img
+  src=&#34;https://drone.owncloud.com/api/badges/owncloud-ansible/php/status.svg&#34;
+  alt=&#34;Build Status&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/php/blob/main/LICENSE&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/github/license/owncloud-ansible/php&#34;
+  alt=&#34;GitHub&#34;
+  
+/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Role to setup PHP.&lt;/p&gt;</description>
     </item>
     
     <item>
