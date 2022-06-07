@@ -80,8 +80,32 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/owncloud/</guid>
-      <description>We have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Ansible role to setup an ownCloud server. Currently, only a single ownCloud server is supported. Support for clustered mode is planned but not included right now.
- Default Variables  owncloud_admin_password owncloud_admin_username owncloud_allow_user_to_change_display_name owncloud_apcu_enabled owncloud_app_documents_enabled owncloud_app_documents_provider owncloud_app_group owncloud_apps owncloud_apps_config owncloud_apps_deprecated owncloud_apt_cache_update owncloud_autosetup owncloud_config_extra owncloud_config_path owncloud_cors_allowed_domains owncloud_cron_backend owncloud_cron_jobs owncloud_csrf_enabled owncloud_data_path owncloud_db_host owncloud_db_name owncloud_db_password owncloud_db_tableprefix owncloud_db_type owncloud_db_user owncloud_default_app owncloud_download_url owncloud_enable_avatars owncloud_encryption_enabled owncloud_encryption_force_encrypt_all owncloud_federation_allow_incoming_server2server_share owncloud_federation_allow_outgoing_server2server_share owncloud_federation_auto_accept_trusted owncloud_federation_auto_add_servers owncloud_fqdn owncloud_install_from_filesystem owncloud_integrity_ignore_missing_app_signature owncloud_knowledgebase_enabled owncloud_log_cron owncloud_log_dateformat owncloud_log_file owncloud_log_level owncloud_log_rotate_size owncloud_log_timezone owncloud_log_type owncloud_login_alternatives owncloud_mail_smtp_auth_enabled owncloud_medial_search_accounts_enabled owncloud_occ_executable owncloud_packages_extra owncloud_password_force_change_on_first_login owncloud_redis_enabled owncloud_redis_host owncloud_redis_port owncloud_release_channel owncloud_remember_login_cookie_lifetime owncloud_search_min_length owncloud_session_keepalive_enabled owncloud_session_lifetime owncloud_setup_run_once owncloud_share_api_allow_group_sharing owncloud_share_api_allow_links owncloud_share_api_allow_mail_notification owncloud_share_api_allow_public_notification owncloud_share_api_allow_public_upload owncloud_share_api_allow_resharing owncloud_share_api_allow_share_dialog_user_enumeration owncloud_share_api_allow_social_share owncloud_share_api_auto_accept_share owncloud_share_api_default_expire_date owncloud_share_api_enabled owncloud_share_api_enforce_expire_date owncloud_share_api_enforce_password_links_read_only owncloud_share_api_enforce_password_links_read_write owncloud_share_api_enforce_password_links_write_only owncloud_share_api_expire_after_n_days owncloud_share_api_only_share_with_group_members owncloud_share_api_only_share_with_membership_groups owncloud_share_api_share_dialog_user_enumeration_group_members owncloud_show_server_hostname owncloud_skeleton_path owncloud_src_path owncloud_syslog_log_format owncloud_syslog_tag owncloud_system_group owncloud_system_user owncloud_system_user_comment owncloud_system_user_home owncloud_system_user_shell owncloud_token_auth_enforced owncloud_trusted_domains owncloud_upgrade_3party_app_disable owncloud_upgrade_migration_test owncloud_version owncloud_version_hide owncloud_web_default_language   Dependencies   Default Variables     owncloud_admin_password     Default value     owncloud_admin_password:owncloudowncloud_admin_username     Default value     owncloud_admin_username:adminowncloud_allow_user_to_change_display_name     Default value     owncloud_allow_user_to_change_display_name:trueowncloud_apcu_enabled     Default value     owncloud_apcu_enabled:trueowncloud_app_documents_enabled     Default value     owncloud_app_documents_enabled:falseowncloud_app_documents_provider     Default value     owncloud_app_documents_provider:onlyofficeowncloud_app_group     Default value     owncloud_app_group:&amp;#39;{{ owncloud_system_group }}&amp;#39;owncloud_apps     Default value     owncloud_apps:- name:twofactor_totp- name:password_policyExample usage     owncloud_apps:- name:contacts- name:http://market.</description>
+      <description>&lt;p&gt;&lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/owncloud&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;amp;logoColor=white&#34;
+  alt=&#34;Source Code&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://drone.owncloud.com/owncloud-ansible/owncloud&#34;
+  
+&gt;&lt;img
+  src=&#34;https://drone.owncloud.com/api/badges/owncloud-ansible/owncloud/status.svg&#34;
+  alt=&#34;Build Status&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/owncloud/blob/main/LICENSE&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/github/license/owncloud-ansible/owncloud&#34;
+  alt=&#34;GitHub&#34;
+  
+/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Role to setup ownCloud server. Clustered mode is currently not supported.&lt;/p&gt;</description>
     </item>
     
     <item>
