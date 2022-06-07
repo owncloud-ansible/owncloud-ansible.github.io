@@ -52,8 +52,32 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://owncloud-ansible.github.io/role/redis/</guid>
-      <description>We have switched to &amp;lsquo;main&amp;rsquo; as default branch. The &amp;lsquo;master&amp;rsquo; branch is no longer maintained and will be removed after March 31, 2022!  Role to setup Redis server.
- Default Variables  redis_appendfsync redis_appendonly redis_apt_cache_update redis_bind_interface redis_databases redis_dbdir redis_dbfilename redis_disabled_commands redis_includes redis_logfile redis_loglevel redis_maxmemory redis_maxmemory_policy redis_maxmemory_samples redis_packages redis_packages_extra redis_port redis_rdbcompression redis_requirepass redis_save redis_timeout redis_unixsocket   Dependencies   Default Variables     redis_appendfsync     Default value     redis_appendfsync:everysecredis_appendonly     Default value     redis_appendonly:noredis_apt_cache_update     Automatically update apt cache on package installations.</description>
+      <description>&lt;p&gt;&lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/redis&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;amp;logoColor=white&#34;
+  alt=&#34;Source Code&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://drone.owncloud.com/owncloud-ansible/redis&#34;
+  
+&gt;&lt;img
+  src=&#34;https://drone.owncloud.com/api/badges/owncloud-ansible/redis/status.svg&#34;
+  alt=&#34;Build Status&#34;
+  
+/&gt;&lt;/a&gt; &lt;a
+  class=&#34;gdoc-markdown__link--raw&#34;
+  href=&#34;https://github.com/owncloud-ansible/redis/blob/main/LICENSE&#34;
+  
+&gt;&lt;img
+  src=&#34;https://img.shields.io/github/license/owncloud-ansible/redis&#34;
+  alt=&#34;GitHub&#34;
+  
+/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Role to setup Redis server.&lt;/p&gt;</description>
     </item>
     
   </channel>
