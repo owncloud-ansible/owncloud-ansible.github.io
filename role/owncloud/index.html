@@ -65,7 +65,7 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
       "headline": "owncloud",
       "description": "  \nRole to setup ownCloud server. Clustered mode is currently not supported.",
       "thumbnailUrl": "https://owncloud-ansible.github.io/socialmedia.png",
-      "wordCount" : "622",
+      "wordCount" : "667",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -1429,6 +1429,7 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
         </a>
     </h3>
 </div>
+<p>Manages ownCloud system and app configuration. The name attribute holds the name of the app which is either <code>system</code> or <code>&lt;app_name&gt;</code>. The <code>attribute</code> in the parameters dictionary hold the attribute of the app and <code>value</code> the new value to set.</p>
 <div class="gdoc-page__anchorwrap">
     <h4 id="default-value-8">
         Default value
@@ -1438,6 +1439,19 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
     </h4>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">owncloud_apps_config</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h4 id="example-usage-1">
+        Example usage
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/owncloud/#example-usage-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-1">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">owncloud_apps_config</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">files</span><span class="w">
+</span><span class="w">    </span><span class="nt">parameters</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l">default_quota</span><span class="w">
+</span><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 B&#34;</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h3 id="owncloud_apps_deprecated">
         owncloud_apps_deprecated
@@ -1510,9 +1524,9 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">owncloud_config_extra</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h4 id="example-usage-1">
+    <h4 id="example-usage-2">
         Example usage
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/owncloud/#example-usage-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-1">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/owncloud/#example-usage-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-2">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1940,9 +1954,9 @@ Role to setup ownCloud server. Clustered mode is currently not supported." />
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">owncloud_install_from_filesystem</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h4 id="example-usage-2">
+    <h4 id="example-usage-3">
         Example usage
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/owncloud/#example-usage-2" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-2">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/owncloud/#example-usage-3" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage-3">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
