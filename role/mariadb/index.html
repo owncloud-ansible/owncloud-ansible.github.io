@@ -65,7 +65,7 @@ Role to setup MariaDB server." />
       "headline": "mariadb",
       "description": "  \nRole to setup MariaDB server.",
       "thumbnailUrl": "https://owncloud-ansible.github.io/socialmedia.png",
-      "wordCount" : "548",
+      "wordCount" : "567",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -943,6 +943,10 @@ Role to setup MariaDB server." />
 >mariadb_root_password</a></li>
 <li><a
   class="gdoc-markdown__link"
+  href="#mariadb_server_id"
+>mariadb_server_id</a></li>
+<li><a
+  class="gdoc-markdown__link"
   href="#mariadb_skip_name_resolve"
 >mariadb_skip_name_resolve</a></li>
 <li><a
@@ -1772,6 +1776,27 @@ Role to setup MariaDB server." />
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">mariadb_root_password</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h3 id="mariadb_server_id">
+        mariadb_server_id
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#mariadb_server_id" class="gdoc-page__anchor clip flex align-center" title="Anchor to: mariadb_server_id" aria-label="Anchor to: mariadb_server_id" href="#mariadb_server_id">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>The <code>server_id</code> uniquely identifies the server instance in the community of replication partners, see <a
+  class="gdoc-markdown__link"
+  href="https://mariadb.com/docs/server/ref/mdb/system-variables/server_id/"
+>documentation</a>.</p>
+<div class="gdoc-page__anchorwrap">
+    <h4 id="default-value-36">
+        Default value
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-36" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-36">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">mariadb_server_id</span><span class="p">:</span><span class="w"> </span><span class="l">_unset_</span><span class="w">
+</span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h3 id="mariadb_skip_name_resolve">
         mariadb_skip_name_resolve
         <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#mariadb_skip_name_resolve" class="gdoc-page__anchor clip flex align-center" title="Anchor to: mariadb_skip_name_resolve" aria-label="Anchor to: mariadb_skip_name_resolve" href="#mariadb_skip_name_resolve">
@@ -1780,9 +1805,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-36">
+    <h4 id="default-value-37">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-36" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-36">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-37" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-37">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1815,9 +1840,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-37">
+    <h4 id="default-value-38">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-37" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-37">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-38" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-38">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1833,9 +1858,9 @@ Role to setup MariaDB server." />
 </div>
 <p>MariaDB supports several different modes. You can pass a list of options to to suit your needs.</p>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-38">
+    <h4 id="default-value-39">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-38" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-38">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-39" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-39">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1850,9 +1875,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-39">
+    <h4 id="default-value-40">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-39" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-39">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-40" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-40">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1867,9 +1892,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-40">
+    <h4 id="default-value-41">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-40" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-40">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-41" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-41">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1884,9 +1909,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-41">
+    <h4 id="default-value-42">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-41" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-41">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-42" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-42">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1901,9 +1926,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-42">
+    <h4 id="default-value-43">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-42" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-42">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-43" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-43">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1919,9 +1944,9 @@ Role to setup MariaDB server." />
 </div>
 <p>Set transaction isolation level. Possible values: <code>READ-UNCOMMITTED|READ-COMMITTED|REPEATABLE-READ|SERIALIZABLE</code></p>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-43">
+    <h4 id="default-value-44">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-43" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-43">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-44" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-44">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1936,9 +1961,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-44">
+    <h4 id="default-value-45">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-44" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-44">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-45" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-45">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
@@ -1957,9 +1982,9 @@ Role to setup MariaDB server." />
     </h3>
 </div>
 <div class="gdoc-page__anchorwrap">
-    <h4 id="default-value-45">
+    <h4 id="default-value-46">
         Default value
-        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-45" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-45">
+        <a data-clipboard-text="https://owncloud-ansible.github.io/role/mariadb/#default-value-46" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Default value" aria-label="Anchor to: Default value" href="#default-value-46">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h4>
