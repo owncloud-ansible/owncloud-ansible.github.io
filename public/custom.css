@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Light.woff2) format("woff2"),
+    url(fonts/SourceSansPro-Light.woff2) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Regular.woff2) format("woff2"),
+    url(fonts/SourceSansPro-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Semibold.woff2) format("woff2"),
+    url(fonts/SourceSansPro-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Bold.woff2) format("woff2"),
+    url(fonts/SourceSansPro-Bold.woff2) format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+}
+
+.gdoc-brand__img {
+  width: auto;
+  margin-right: 1.5rem;
+}
+
+.gdoc-header {
+  border-color: #283747;
+}
+
+/* Light mode theming */
+:root,
+:root[color-mode="light"] {
+  --header-background: #041e42;
+  --header-font-color: #ffffff;
+
+  --body-background: #ffffff;
+  --body-font-color: #343a40;
+
+  --button-background: #e56f35;
+  --button-border-color: #cd551a;
+
+  --link-color: #4e85c8;
+  --link-color-visited: #7749bf;
+
+  --code-background: #f5f6f8;
+  --code-accent-color: #e3e7eb;
+  --code-accent-color-lite: #eff1f3;
+
+  --accent-color: #e9ecef;
+  --accent-color-lite: #f8f9fa;
+
+  --control-icons: #b2bac1;
+
+  --footer-background: #283747;
+  --footer-font-color: #ffffff;
+  --footer-link-color: #e56f35;
+  --footer-link-color-visited: #e56f35;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --header-background: #041e42;
+    --header-font-color: #ffffff;
+
+    --body-background: #ffffff;
+    --body-font-color: #343a40;
+
+    --button-background: #e56f35;
+    --button-border-color: #cd551a;
+
+    --link-color: #4e85c8;
+    --link-color-visited: #7749bf;
+
+    --code-background: #f5f6f8;
+    --code-accent-color: #e3e7eb;
+    --code-accent-color-lite: #eff1f3;
+
+    --accent-color: #e9ecef;
+    --accent-color-lite: #f8f9fa;
+
+    --control-icons: #b2bac1;
+
+    --footer-background: #283747;
+    --footer-font-color: #ffffff;
+    --footer-link-color: #e56f35;
+    --footer-link-color-visited: #e56f35;
+  }
+}
+
+/* Dark mode theming */
+:root[color-mode="dark"] {
+  --header-background: #041e42;
+  --header-font-color: #ffffff;
+
+  --body-background: #343a40;
+  --body-font-color: #ced3d8;
+
+  --button-background: #e56f35;
+  --button-border-color: #cd551a;
+
+  --link-color: #4e85c8;
+  --link-color-visited: #936fcc;
+
+  --code-background: #2f353a;
+  --code-accent-color: #262b2f;
+  --code-accent-color-lite: #2b3035;
+
+  --accent-color: #2b3035;
+  --accent-color-lite: #2f353a;
+
+  --control-icons: #b2bac1;
+
+  --footer-background: #283747;
+  --footer-font-color: #ffffff;
+  --footer-link-color: #e56f35;
+  --footer-link-color-visited: #e56f35;
+}
+:root[color-mode="dark"] .gdoc-markdown .gdoc-button:hover {
+  -webkit-filter: saturate(0.8) brightness(0.85);
+  filter: saturate(0.8) brightness(0.85);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --header-background: #041e42;
+    --header-font-color: #ffffff;
+
+    --body-background: #343a40;
+    --body-font-color: #ced3d8;
+
+    --button-background: #e56f35;
+    --button-border-color: #cd551a;
+
+    --link-color: #4e85c8;
+    --link-color-visited: #936fcc;
+
+    --code-background: #2f353a;
+    --code-accent-color: #262b2f;
+    --code-accent-color-lite: #2b3035;
+
+    --accent-color: #2b3035;
+    --accent-color-lite: #2f353a;
+
+    --control-icons: #b2bac1;
+
+    --footer-background: #283747;
+    --footer-font-color: #ffffff;
+    --footer-link-color: #e56f35;
+    --footer-link-color-visited: #e56f35;
+  }
+
+  .gdoc-markdown .gdoc-button:hover {
+    -webkit-filter: saturate(0.8) brightness(0.85);
+    filter: saturate(0.8) brightness(0.85);
+  }
+}
